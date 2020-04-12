@@ -5,20 +5,51 @@
 <body>
     <div class="menu">
 <ul>
-    <li class= "logo">Logo</li>
+    <li class= "logo">Logo GOES HERE</li>
+    <li>MENU</li>
     <li>Lodge</li>
     <li>Lodge</li>
-    <li>Lodge</li>
-    
+
 </ul>
     </div>
 <div class="container">
+
+    
+    <div class="overlay">
+
+    </div>
 <video id = "banner-video" draggable="false" width= "100%" playsinline="" autoplay="" class=""><source type="video/mp4" src="https://i.imgur.com/MQotu6y.mp4"></video>
-    <script type='text/javascript'>
-        document.getElementById('banner-video').addEventListener('ended',myHandler,false);
-        function myHandler(e) {
-            console.log('working')
-        }
-    </script>
+
+</div>
+<div class="header-content">
+    <h1>
+        Great Bonefishing
+    </h1>
+    <h2>Turks and Caicos</h2>
+</div>
+
+<script type='text/javascript'>
+
+    document.getElementById('banner-video').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+        document.getElementsByClassName('overlay')[0].style.display = "block";
+    }
+</script>
+<div class="cta">
+    <h3>The best fishing in the Turks and Caicos is found in Bottle Creek, North Caicos- book a trip today and you're gaurunteed to catch bonefish!</h3>
+</div>
+<div class="flex-cont">
+    <div class="card">
+    <img src="https://media-cdn.tripadvisor.com/media/photo-o/16/c2/e5/cb/lodge-on-bottle-creek.jpg"/>
+    <div>Brand new Lodge</div>
+</div>
+<div class="card">
+    <img src="https://media-cdn.tripadvisor.com/media/photo-o/16/c2/e5/cb/lodge-on-bottle-creek.jpg"/>
+    <div>Brand new Lodge</div>
+</div>
+<div class="card">
+    <img src="https://media-cdn.tripadvisor.com/media/photo-o/16/c2/e5/cb/lodge-on-bottle-creek.jpg"/>
+    <div>Brand new Lodge</div>
+</div>
 </div>
 </body>

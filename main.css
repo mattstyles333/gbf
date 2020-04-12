@@ -4,12 +4,17 @@ video {
 .container {
     overflow:hidden;
     display:block;
-    height: 800px;
+
     margin-top: -150px;
-    
+    width:100%;
+    position: relative;
+    z-index: -1;
+    height: 800px;
 }
 body {
     margin: 0px;
+    font-family: "Avenir LT Std", Arial, Helvetica, sans-serif;
+    font-size: calc(1em + 1vw);
 }
 .menu {
     z-index: 1;
@@ -29,4 +34,105 @@ li {
     .container {
         margin-top:0px;
     }
+}
+li {
+    float: right;
+    padding-right:20px;
+}
+.logo {
+    float: left;
+}
+.overlay {
+    height: 100%;
+    position: abo;
+    position: absolute;
+    height: 100%;
+    background-color: #404e5c;
+    z-index: 2;
+    width: 100%;
+    opacity: 80%;
+    display:none;
+
+}
+h1 {
+    
+    font-family: "Varela";
+
+}
+h2 {
+    margin-top:-30px;
+    font-family: "Varela";
+    padding:5px;
+    font-size: calc(1em + .6vw);
+    font-weight: normal;
+    padding-left:20px;
+    margin-bottom:-20px;
+}
+h4 {
+    font-weight: normal;
+    font-size: calc(1em + .2vw);
+}
+.header-content {
+position: absolute;
+text-align: left;
+margin: 0;
+display:block;
+right:20px;
+left:20px;
+top:200px;
+color:white;
+
+}
+.cta {
+    display: block;
+    position: relative;
+    background-color:#4f6272;
+
+    border:solid;
+    border-color: white;
+
+
+}
+h3 {
+    color: white;
+    font-size: calc(1em + .4vw);
+    padding-left:30px;
+    font-weight: normal;
+}
+.flex-cont {
+    display:flex;
+    padding:3px;
+    margin-top:-5px;
+}
+.card {
+    width:33%;
+
+    position: relative;
+    margin:3px;
+    text-align: center;
+}
+.card:hover {
+    background: black;
+    opacity: 80%;
+    overflow:hidden;
+}
+.card > img:hover {
+    background: black;
+    transform: scale(1.5);
+    opacity: 50%;
+    overflow:hidden;
+}
+.card > img {
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    display: flex;
+
+}
+.card > div {
+    position: absolute;
+    top:30px;
+    color:white;
+    left:0px;
+    right:0px;
 }
