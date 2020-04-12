@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="main.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="menu">
@@ -32,8 +32,18 @@
 
     document.getElementById('banner-video').addEventListener('ended',myHandler,false);
     function myHandler(e) {
-        document.getElementsByClassName('overlay')[0].style.display = "block";
+        // document.getElementsByClassName('overlay')[0].style.display = "block";
+        $('.overlay').delay(600).animate({opacity:.8}, 700);
+        var $container = $("body");
+    var $scrollTo = $('.cta');
+    var amount = $scrollTo.offset().top - $container.offset().top + $container.scrollTop();
+    if(amount<1400) {
+        $('html, body').delay(1200).animate({scrollTop: ($('.cta').offset().top)},500);
     }
+    console.log(amount);
+    }
+
+    
 </script>
 <div class="cta">
     <h3>The best fishing in the Turks and Caicos is found in Bottle Creek, North Caicos- book a trip today and you're gaurunteed to catch bonefish!</h3>
