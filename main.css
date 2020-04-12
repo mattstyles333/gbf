@@ -47,8 +47,8 @@ li {
     background-color: #404e5c;
     z-index: 2;
     width: 100%;
-    opacity: 80%;
-    display:none;
+    opacity: 0%;
+
 
     /* Fade In using JS/JQ */
 
