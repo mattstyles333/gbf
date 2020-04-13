@@ -36,12 +36,7 @@
         $('.overlay').css('z-index', 3);
         $('.overlay').delay(600).animate({opacity:.8}, 700);
         var $container = $("body");
-    var $scrollTo = $('.cta');
-    var amount = $scrollTo.offset().top - $container.offset().top + $container.scrollTop();
-    if(amount<1400) {
-        $('html, body').delay(1200).animate({scrollTop: ($('.cta').offset().top)},500);
-    }
-    console.log(amount);
+
     }
 
     
@@ -50,17 +45,27 @@
     <h3>The best fishing in the Turks and Caicos is found in Bottle Creek, North Caicos- book a trip today and you're gaurunteed to catch bonefish!</h3>
 </div>
 <div class="flex-cont">
-    <div class="card">
-    <img src="./img/lodge-on-bottle-creek.jpg"/>
-    <div>Lodge</div>
-</div>
-<div class="card">
-    <img src="./img/endless-flats.jpg"/>
-    <div>Bottle Creek</div>
-</div>
-<div class="card">
-    <img src="./img/tailing-bonefish.jpg"/>
-    <div>Fishing</div>
-</div>
+    <a class="card-link" href="./">
+        <div class="card">
+            <img src="./img/tailing-bonefish.jpg"/>
+            <div>Fishing</div>
+
+        </div>
+    </a>
+    <a class="card-link" href="./">
+        <div class="card">
+            <img src="./img/endless-flats.jpg"/>
+            <div>Bottle Creek</div>
+
+        </div>
+    </a>
+
+    <a class="card-link" href="./">
+        <div class="card">
+            <img src="./img/lodge-on-bottle-creek.jpg"/>
+            <div>Lodge</div>
+
+        </div>
+    </a>
 </div>
 </body>
