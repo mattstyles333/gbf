@@ -33,6 +33,7 @@
     document.getElementById('banner-video').addEventListener('ended',myHandler,false);
     function myHandler(e) {
         // document.getElementsByClassName('overlay')[0].style.display = "block";
+        $('.overlay').css('z-index', 3);
         $('.overlay').delay(600).animate({opacity:.8}, 700);
         var $container = $("body");
     var $scrollTo = $('.cta');
