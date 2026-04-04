@@ -5,6 +5,40 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { siteConfig } from "./content";
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: siteConfig.name,
+  description:
+    "Guided bonefishing trips, DIY access, and waterfront lodge stays on Bottle Creek in North Caicos, Turks & Caicos.",
+  url: siteConfig.baseUrl,
+  image:
+    "https://www.greatbonefishing.com/wp-content/uploads/2018/12/cropped-fishing-along-the-mangroves.jpg",
+  email: siteConfig.email,
+  telephone: [siteConfig.phoneUSA, siteConfig.phoneTCI],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bottle Creek",
+    addressLocality: "North Caicos",
+    addressCountry: "TC",
+  },
+  areaServed: [
+    {
+      "@type": "Place",
+      name: "North Caicos",
+    },
+    {
+      "@type": "Place",
+      name: "Turks and Caicos Islands",
+    },
+  ],
+  priceRange: "$$",
+  sameAs: [
+    "https://www.tripadvisor.com/Attraction_Review-g656907-d12094913-Reviews-The_Great_Bonefishing_Company-North_Caicos_Turks_and_Caicos.html",
+    "https://www.greatsailfishing.com/",
+  ],
+};
+
 const lora = Lora({
   subsets: ["latin"],
   variable: "--font-heading",
@@ -81,6 +115,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lora.variable} ${geist.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

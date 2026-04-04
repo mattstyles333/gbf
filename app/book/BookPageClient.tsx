@@ -1,44 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 import PageHero from "../components/PageHero";
 import { siteConfig } from "../content";
 
-function buildInquiryHref(form: {
-  name: string;
-  email: string;
-  phone: string;
-  dates: string;
-  guests: string;
-  message: string;
-}) {
-  const subject = form.dates.trim()
-    ? `Bonefishing inquiry - ${form.dates.trim()}`
-    : "Bonefishing inquiry";
-
-  const body = [
-    "Hello Great Bone Fishing,",
-    "",
-    "I would like to check availability for a Turks & Caicos bonefishing trip.",
-    "",
-    `Name: ${form.name.trim() || "Not provided"}`,
-    `Email: ${form.email.trim() || "Not provided"}`,
-    `Phone: ${form.phone.trim() || "Not provided"}`,
-    `Guests: ${form.guests || "Not provided"}`,
-    `Preferred dates: ${form.dates.trim() || "Not provided"}`,
-    "",
-    "Trip details:",
-    form.message.trim() || "Not provided",
-    "",
-    "Thank you,",
-    form.name.trim() || "",
-  ].join("\n");
-
-  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
-export default function BookPageClient() {
-  const [status, setStatus] = useState<"idle" | "opening" | "ready">("idle");
+function BookPageContent({ sent }: { sent: boolean }) {
+  const [status, setStatus] = useState<"idle" | "sending">("idle");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -47,15 +16,6 @@ export default function BookPageClient() {
     guests: "",
     message: "",
   });
-
-  const inquiryHref = buildInquiryHref(form);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("opening");
-    window.location.href = inquiryHref;
-    setStatus("ready");
-  };
 
   return (
     <>
@@ -67,29 +27,28 @@ export default function BookPageClient() {
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              {status === "ready" ? (
+              {sent ? (
                 <div className="card p-12 text-center">
                   <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-6">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h2 className="text-2xl font-bold mb-3">Your Inquiry Draft Is Ready</h2>
+                  <h2 className="text-2xl font-bold mb-3">Inquiry Sent</h2>
                   <p className="text-slate-500 mb-6">
-                    Your email app should open with a pre-filled inquiry to our team. If
-                    nothing opened, email us directly and we&apos;ll reply within 24 to 48 hours.
+                    Thanks for reaching out. Your inquiry was submitted to our team. We usually
+                    reply within 24 to 48 hours with availability and the best options for your trip.
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
-                    <a href={inquiryHref} className="btn-primary">
-                      Open Email Again
-                    </a>
-                    <button
-                      type="button"
-                      onClick={() => setStatus("idle")}
+                    <Link href="/book" className="btn-primary">
+                      Send Another Inquiry
+                    </Link>
+                    <a
+                      href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
                       className="btn-outline !text-ocean-700 !border-ocean-400"
                     >
-                      Edit Inquiry
-                    </button>
+                      Call {siteConfig.phoneUSA}
+                    </a>
                   </div>
                   <p className="text-sm text-slate-500 mt-6">
                     Direct email:{" "}
@@ -102,10 +61,27 @@ export default function BookPageClient() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="card p-8">
+                <form
+                  action={`https://formsubmit.co/${siteConfig.email}`}
+                  method="POST"
+                  onSubmit={() => setStatus("sending")}
+                  className="card p-8"
+                >
+                  <input type="hidden" name="_subject" value="Great Bone Fishing inquiry" />
+                  <input type="hidden" name="_next" value={`${siteConfig.baseUrl}/book/?sent=1`} />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input
+                    type="text"
+                    name="_honey"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="hidden"
+                    aria-hidden="true"
+                  />
                   <h2 className="text-2xl font-bold mb-2">Start Your Inquiry</h2>
                   <p className="text-sm text-slate-500 mb-6">
-                    Submitting opens your email app with a pre-filled message to {siteConfig.email}.
+                    This form sends directly to {siteConfig.email}. No online payment is required.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
@@ -206,10 +182,10 @@ export default function BookPageClient() {
                   <div className="flex flex-wrap gap-4">
                     <button
                       type="submit"
-                      disabled={status === "opening"}
+                      disabled={status === "sending"}
                       className="btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      {status === "opening" ? "Opening Email..." : "Open Email Draft"}
+                      {status === "sending" ? "Sending..." : "Send Inquiry"}
                     </button>
                     <a
                       href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
@@ -295,5 +271,18 @@ export default function BookPageClient() {
         </div>
       </section>
     </>
+  );
+}
+
+function BookPageSearchParams() {
+  const searchParams = useSearchParams();
+  return <BookPageContent sent={searchParams.get("sent") === "1"} />;
+}
+
+export default function BookPageClient() {
+  return (
+    <Suspense fallback={<BookPageContent sent={false} />}>
+      <BookPageSearchParams />
+    </Suspense>
   );
 }

@@ -4,6 +4,45 @@ import Image from "next/image";
 import PageHero from "../components/PageHero";
 import BookingCTA from "../components/BookingCTA";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What should I bring?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Bring reef-friendly sunscreen, a hat, and polarized sunglasses. The breeze can feel cool, but sun protection still matters on the flats.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need polarized sunglasses?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Polarized lenses help cut glare so you can spot fish more easily on the flats.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I get lost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The mainland is usually visible and landmarks are easy to follow, but we still recommend fishing within the areas discussed during your briefing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How deep is the water?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most fishing water is ankle to calf deep. Access channels can be much deeper and should be used only for travel between flats.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "DIY Bonefishing — Turks & Caicos",
   description:
@@ -16,6 +55,10 @@ export const metadata: Metadata = {
 export default function DIYPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <PageHero
         title="DIY Bonefishing"
         subtitle="For experienced anglers who prefer to find their own way — explore the pristine flats of North Caicos at your own pace."

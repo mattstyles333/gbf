@@ -1,5 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig, navItems } from "../content";
+
+const tripAdvisorUrl =
+  "https://www.tripadvisor.com/Attraction_Review-g656907-d12094913-Reviews-The_Great_Bonefishing_Company-North_Caicos_Turks_and_Caicos.html";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,16 +20,21 @@ export default function Footer() {
             </p>
             <div className="mt-4 flex gap-3">
               <a
-                href="https://www.tripadvisor.com/"
+                href={tripAdvisorUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block"
+                className="inline-flex flex-col items-start gap-2"
               >
-                <img
+                <Image
                   src="https://www.tripadvisor.com/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png"
                   alt="TripAdvisor"
-                  className="h-6 opacity-70 hover:opacity-100 transition-opacity"
+                  width={170}
+                  height={40}
+                  className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
                 />
+                <span className="text-xs text-ocean-300 hover:text-white transition-colors">
+                  Read guest reviews
+                </span>
               </a>
             </div>
           </div>
