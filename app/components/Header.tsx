@@ -2,7 +2,70 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { navItems, siteConfig } from "../content";
+import { navItems, siteConfig, type NavItem } from "../content";
+
+function renderDropdownChildren(
+  children: NavItem[],
+  onSelect: () => void,
+  isMobile = false
+) {
+  const items: React.ReactNode[] = [];
+  let lastGroup: string | undefined;
+
+  children.forEach((child, i) => {
+    const group = child.group;
+
+    if (group !== lastGroup) {
+      if (isMobile) {
+        items.push(
+          <div key={`group-${group ?? "none"}-${i}`} className="mt-2 first:mt-0">
+            <div className="px-7 py-1.5 text-xs font-semibold uppercase tracking-widest text-ocean-500/80">
+              {group}
+            </div>
+          </div>
+        );
+      } else {
+        items.push(
+          <div key={`group-${group ?? "none"}-${i}`} className="mt-2 first:mt-0">
+            {group && (
+              <div className="px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-ocean-500/80">
+                {group}
+              </div>
+            )}
+          </div>
+        );
+      }
+      lastGroup = group;
+    }
+
+    if (isMobile) {
+      items.push(
+        <Link
+          key={child.href}
+          href={child.href}
+          onClick={onSelect}
+          className="block pl-8 pr-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/40 transition-colors"
+        >
+          {child.label}
+        </Link>
+      );
+    } else {
+      items.push(
+        <Link
+          key={child.href}
+          href={child.href}
+          onClick={onSelect}
+          className="flex items-center px-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/70 transition-colors"
+        >
+          <span className="w-1 h-1 rounded-full bg-ocean-500 mr-3 flex-shrink-0" />
+          {child.label}
+        </Link>
+      );
+    }
+  });
+
+  return items;
+}
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -11,11 +74,7 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.classList.add("mobile-nav-open");
-    } else {
-      document.body.classList.remove("mobile-nav-open");
-    }
+    document.body.classList.toggle("mobile-nav-open", mobileOpen);
     return () => document.body.classList.remove("mobile-nav-open");
   }, [mobileOpen]);
 
@@ -41,7 +100,11 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-ocean-950/95 backdrop-blur-sm border-b border-ocean-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
-        <Link href="/" className="flex items-center gap-3 group flex-shrink-0" onClick={closeMobile}>
+        <Link
+          href="/"
+          className="flex items-center gap-3 group flex-shrink-0"
+          onClick={closeMobile}
+        >
           <div className="w-9 h-9 rounded bg-gradient-to-br from-ocean-400 to-ocean-600 flex items-center justify-center shadow-sm">
             <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.5} className="w-5 h-5">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
@@ -65,7 +128,9 @@ export default function Header() {
               {item.children ? (
                 <div className="relative">
                   <button
-                    onClick={() => setOpenDropdown(openDropdown === item.href ? null : item.href)}
+                    onClick={() =>
+                      setOpenDropdown(openDropdown === item.href ? null : item.href)
+                    }
                     className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50"
                   >
                     {item.label}
@@ -79,19 +144,9 @@ export default function Header() {
                     </svg>
                   </button>
                   {openDropdown === item.href && (
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-ocean-900 border border-ocean-700/50 rounded-xl shadow-xl shadow-ocean-950/50 overflow-hidden animate-fadeIn">
+                    <div className="absolute top-full left-0 mt-2 w-60 bg-ocean-900 border border-ocean-700/50 rounded-xl shadow-xl shadow-ocean-950/50 overflow-hidden animate-fadeIn">
                       <div className="py-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={() => setOpenDropdown(null)}
-                            className="flex items-center px-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/70 transition-colors"
-                          >
-                            <span className="w-1 h-1 rounded-full bg-ocean-500 mr-3 flex-shrink-0" />
-                            {child.label}
-                          </Link>
-                        ))}
+                        {renderDropdownChildren(item.children, () => setOpenDropdown(null))}
                       </div>
                     </div>
                   )}
@@ -115,7 +170,10 @@ export default function Header() {
           >
             {siteConfig.phoneUSA}
           </a>
-          <Link href="/book" className="btn-primary text-sm font-semibold shadow-lg shadow-ocean-900/30">
+          <Link
+            href="/book"
+            className="btn-primary text-sm font-semibold shadow-lg shadow-ocean-900/30"
+          >
             Check Availability
           </Link>
         </div>
@@ -161,17 +219,8 @@ export default function Header() {
                       </svg>
                     </button>
                     {mobileExpanded === item.href && (
-                      <div className="mt-1 ml-4 pl-4 border-l border-ocean-700/50 space-y-0.5 animate-fadeIn">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={closeMobile}
-                            className="block px-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/30 rounded-lg transition-colors"
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                      <div className="mt-1 space-y-0.5 animate-fadeIn">
+                        {renderDropdownChildren(item.children, closeMobile, true)}
                       </div>
                     )}
                   </div>
@@ -196,7 +245,11 @@ export default function Header() {
                 </svg>
                 <span className="font-medium">{siteConfig.phoneUSA}</span>
               </a>
-              <Link href="/book" onClick={closeMobile} className="btn-primary w-full text-center font-semibold py-3.5">
+              <Link
+                href="/book"
+                onClick={closeMobile}
+                className="btn-primary w-full text-center font-semibold py-3.5"
+              >
                 Check Availability
               </Link>
             </div>

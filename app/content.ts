@@ -2,6 +2,7 @@ export interface NavItem {
   label: string;
   href: string;
   children?: NavItem[];
+  group?: string;
 }
 
 export interface PageMeta {
@@ -51,15 +52,17 @@ export const siteConfig = {
 };
 
 export const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
   {
     label: "Fishing",
     href: "/fishing",
     children: [
       { label: "Overview", href: "/fishing" },
-      { label: "North Caicos", href: "/fishing/north-caicos" },
-      { label: "Bottle Creek", href: "/fishing/bottle-creek" },
-      { label: "East Bay & South Cays", href: "/fishing/east-bay" },
+      { label: "North Caicos", href: "/fishing/north-caicos", group: "Our Locations" },
+      { label: "Bottle Creek", href: "/fishing/bottle-creek", group: "Our Locations" },
+      { label: "East Bay & South Cays", href: "/fishing/east-bay", group: "Our Locations" },
+      { label: "DIY Bonefishing", href: "/diy", group: "Self-Guided" },
+      { label: "Kayak Rentals", href: "/diy/fishing-kayaks", group: "Self-Guided" },
+      { label: "Guided vs. DIY", href: "/diy/guided-vs-diy", group: "Self-Guided" },
       { label: "Why Turks & Caicos", href: "/fishing/why-turks-caicos" },
     ],
   },
@@ -68,15 +71,13 @@ export const navItems: NavItem[] = [
     href: "/lodge",
   },
   {
-    label: "DIY Options",
-    href: "/diy",
+    label: "Plan Your Trip",
+    href: "/travel",
     children: [
-      { label: "DIY Bonefishing", href: "/diy" },
-      { label: "Fishing Kayaks", href: "/diy/fishing-kayaks" },
-      { label: "Guided vs. DIY", href: "/diy/guided-vs-diy" },
+      { label: "Travel Info", href: "/travel" },
+      { label: "Rates & Packages", href: "/rates" },
     ],
   },
-  { label: "Rates", href: "/rates" },
   {
     label: "Learn",
     href: "/learn",
@@ -87,7 +88,6 @@ export const navItems: NavItem[] = [
       { label: "Catch & Release", href: "/learn/catch-and-release" },
     ],
   },
-  { label: "Travel Info", href: "/travel" },
   { label: "Book", href: "/book" },
 ];
 
