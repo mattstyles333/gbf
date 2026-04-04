@@ -49,6 +49,11 @@ export default function FishingPage() {
                   Caicos where fish see very little traffic.
                 </p>
               </div>
+              <div className="mt-6">
+                <Link href="/fishing/guided-day" className="text-ocean-700 font-semibold hover:underline">
+                  What to expect on a guided day &rarr;
+                </Link>
+              </div>
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
@@ -231,6 +236,9 @@ export default function FishingPage() {
             </Link>
             <Link href="/learn/tackle-and-gear" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Tackle &amp; Gear &rarr;
+            </Link>
+            <Link href="/fishing/guided-day" className="text-white font-semibold hover:text-ocean-200 transition-colors">
+              Guided Day &rarr;
             </Link>
             <Link href="/learn/catch-and-release" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Catch &amp; Release &rarr;

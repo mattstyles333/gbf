@@ -10,7 +10,7 @@ interface Props {
 }
 
 const mapImageBySlug: Record<string, string | undefined> = {
-  "bottle-creek": undefined,
+  "bottle-creek": "/images/gallery/bottle-creek-aerial-map.png",
 };
 
 export async function generateStaticParams() {
