@@ -38,6 +38,11 @@ export default function TravelPage() {
                   the ferry runs strictly to schedule with up to six arrivals and departures
                   each day.
                 </p>
+                <p>
+                  Anglers coming from Providenciales typically catch the 7:30am ferry from
+                  Leeward, arrive in North Caicos around 8:00am, and are fishing shortly after.
+                  The goal is to have lines wet by about 8:30am and still make the return ferry comfortably.
+                </p>
               </div>
 
               {/* Ferry Details */}

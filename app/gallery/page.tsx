@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
-import Image from "next/image";
 import PageHero from "../components/PageHero";
 import BookingCTA from "../components/BookingCTA";
+import GalleryMasonry from "./GalleryMasonry";
 
 export const metadata: Metadata = {
   title: "Photo Gallery — Bonefishing in Turks & Caicos",
@@ -184,28 +184,7 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
-            {allGalleryImages.map((image, index) => (
-              <figure key={image.src} className="card mb-5 break-inside-avoid overflow-hidden bg-white">
-                <div className={`relative w-full ${image.heightClass}`}>
-                  <Image
-                    src={image.src}
-                    alt={image.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    priority={index < 6}
-                  />
-                </div>
-                <figcaption className="p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocean-600 mb-2">
-                    {image.category}
-                  </p>
-                  <p className="text-sm text-slate-700 leading-relaxed">{image.title}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <GalleryMasonry images={allGalleryImages} />
         </div>
       </section>
       <BookingCTA title="Seen Enough to Start Planning?" subtitle="Tell us the kind of trip you want and we&apos;ll recommend the right guided, DIY, or lodge setup for your dates." />

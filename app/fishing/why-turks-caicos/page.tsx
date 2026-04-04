@@ -34,6 +34,10 @@ export default function WhyTurksCaicosPage() {
               <p className="text-slate-600 leading-relaxed">
                 Unlike heavily pressured destinations in the Bahamas or Florida Keys, the North Caicos fishery still feels quiet and underfished. Our guides at Bottle Creek have watched these waters for decades and know how the fish move through the flats, channels, and mangrove edges.
               </p>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                The attraction is not just the fish count. Bonefish here are visual, fast, and challenging,
+                which makes every good shot memorable whether you are wading ankle-deep water or casting from the bow.
+              </p>
             </div>
             <div className="bg-ocean-50 rounded-2xl p-8 border border-ocean-100">
               <h3 className="text-xl font-heading font-bold text-slate-900 mb-4">

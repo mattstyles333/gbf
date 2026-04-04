@@ -82,6 +82,11 @@ export default function DIYPage() {
                 approximately three-quarters of a mile from the water&apos;s edge at the
                 lodge across to the mangroves of the closest productive flat.
               </p>
+              <p className="text-slate-500 leading-relaxed mb-6">
+                DIY works best when you want flexibility. You can fish early, rest when the
+                tide goes slack, and head back out later without committing to a full guided day.
+                It is one of the most practical ways to extend your time on the flats without adding guide or fuel cost.
+              </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/diy/fishing-kayaks" className="btn-primary">
                   Fishing Kayaks
@@ -120,6 +125,10 @@ export default function DIYPage() {
                   Available in 11ft and 14ft sizes for flats fishing. Rent kayaks at the
                   lodge or separately. Perfect for anglers who want to explore the nearby
                   bonefishing flats on their own.
+                </p>
+                <p className="text-slate-500 text-sm leading-relaxed mb-4">
+                  Kayaks are quiet, easy to launch, and ideal for reaching skinny water,
+                  mangrove edges, and nearby estuaries that can be awkward to approach by boat.
                 </p>
                 <Link href="/diy/fishing-kayaks" className="text-ocean-600 font-semibold text-sm hover:underline">
                   Learn more &rarr;
