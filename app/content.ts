@@ -85,6 +85,7 @@ export const navItems: NavItem[] = [
       { label: "Bonefish Season", href: "/learn/bonefish-season" },
       { label: "Bonefish Flies", href: "/learn/bonefish-flies" },
       { label: "Catch & Release", href: "/learn/catch-and-release" },
+      { label: "FAQ", href: "/faq" },
       { label: "Gallery", href: "/gallery" },
     ],
   },

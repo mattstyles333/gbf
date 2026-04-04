@@ -38,6 +38,12 @@ export default function LearnPage() {
       desc: "How to handle bonefish with care: wet hands, horizontal hold, proper release technique, and predator awareness.",
       icon: "🐟",
     },
+    {
+      href: "/faq",
+      title: "FAQ",
+      desc: "Answers to common trip-planning questions about rates, ferry timing, tackle, lodge packages, and DIY fishing.",
+      icon: "❓",
+    },
   ];
 
   return (

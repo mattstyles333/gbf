@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import BookingCTA from "./components/BookingCTA";
 import { siteConfig, fishingSpots } from "./content";
+import { homepageFaqItems, faqSchema } from "./faqData";
 
 export const metadata: Metadata = {
   title: "World-Class Bonefishing in Turks & Caicos",
@@ -16,6 +17,10 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...faqSchema, mainEntity: faqSchema.mainEntity.slice(0, homepageFaqItems.length) }) }}
+      />
       {/* Hero */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <div className="absolute inset-0">
@@ -322,6 +327,33 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link href="/rates" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">
               Full Rate Details
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <p className="text-ocean-600 font-semibold uppercase tracking-widest text-sm mb-3">
+              Quick Answers
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
+            <p className="mt-4 text-slate-500 text-lg">
+              The key trip-planning questions guests usually ask before they book dates.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto space-y-4">
+            {homepageFaqItems.map((item) => (
+              <div key={item.question} className="card p-6">
+                <h3 className="text-lg font-bold mb-2">{item.question}</h3>
+                <p className="text-slate-500 leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/faq" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">
+              Full FAQ
             </Link>
           </div>
         </div>
