@@ -294,6 +294,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
                     or PayPal.
                   </p>
                   <p className="mb-2">Card, PayPal, and Venmo payments add a 3.5% processing charge.</p>
+                  <p className="mb-2">Fly gear hire is available for $60 + tax.</p>
                   <p>Venmo: <strong>@Kevin-Styles-1</strong></p>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">

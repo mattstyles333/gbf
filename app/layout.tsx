@@ -119,7 +119,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <Header />
-        <main className="flex-1 pt-16 lg:pt-20">{children}</main>
+        <main className="flex-1 pt-20 lg:pt-24">{children}</main>
         <Footer />
       </body>
     </html>

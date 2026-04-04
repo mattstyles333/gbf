@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type GalleryImage = {
@@ -13,6 +13,29 @@ type GalleryImage = {
 export default function GalleryMasonry({ images }: { images: GalleryImage[] }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const activeImage = activeIndex === null ? null : images[activeIndex];
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveIndex(null);
+      }
+
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((prev) =>
+          prev === null ? images.length - 1 : (prev - 1 + images.length) % images.length,
+        );
+      }
+
+      if (event.key === "ArrowRight") {
+        setActiveIndex((prev) => (prev === null ? 0 : (prev + 1) % images.length));
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activeIndex, images.length]);
 
   return (
     <>

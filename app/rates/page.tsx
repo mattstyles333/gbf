@@ -89,6 +89,7 @@ export default function RatesPage() {
                   "All tackle and equipment",
                   "7:30am departure, back by 2pm, and back on the 4pm ferry",
                   "Up to 2 guests per boat",
+                  "Fly gear available for hire: $60 + tax",
                   "Fishing license available ($15/day)",
                   "$175 deposit to confirm booking",
                   "Balance in cash on the day",
@@ -219,6 +220,7 @@ export default function RatesPage() {
                 <li>• The balance can be paid in cash on the day, or the day before by Venmo, card, or PayPal</li>
                 <li>• Card, PayPal, and Venmo payments add a 3.5% processing charge</li>
                 <li>• Venmo: @Kevin-Styles-1</li>
+                <li>• Fly gear hire is available for $60 + tax</li>
                 <li>• All rates are in US Dollars</li>
                 <li>• 12% TCI Government tax applies to all rates</li>
                 <li>• Fishing licenses are required and available at $15/day</li>

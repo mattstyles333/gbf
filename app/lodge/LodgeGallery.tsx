@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type LodgeImage = {
@@ -13,6 +13,27 @@ export default function LodgeGallery({ images }: { images: LodgeImage[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const active = images[activeIndex];
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setLightboxOpen(false);
+      }
+
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+      }
+
+      if (event.key === "ArrowRight") {
+        setActiveIndex((prev) => (prev + 1) % images.length);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [images.length, lightboxOpen]);
 
   return (
     <>
