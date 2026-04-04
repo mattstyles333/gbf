@@ -93,7 +93,7 @@ export default function DIYPage() {
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2018/07/Flatsmin.jpeg"
+                src="/images/gallery/solo-on-the-flats-of.jpg"
                 alt="DIY bonefishing in North Caicos"
                 fill
                 className="object-cover"
@@ -107,7 +107,7 @@ export default function DIYPage() {
             <div className="card overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://www.greatbonefishing.com/wp-content/uploads/2013/01/Manta_Ray.png"
+                  src="/images/gbf/Manta_Ray.png"
                   alt="Fishing Kayaks"
                   fill
                   className="object-cover"
@@ -129,7 +129,7 @@ export default function DIYPage() {
             <div className="card overflow-hidden">
               <div className="relative h-48">
                 <Image
-                  src="https://www.greatbonefishing.com/wp-content/uploads/2013/01/Versaboard.jpg"
+                  src="/images/gbf/Versaboard.jpg"
                   alt="Stand Up Paddleboards"
                   fill
                   className="object-cover"

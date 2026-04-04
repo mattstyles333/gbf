@@ -66,14 +66,14 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    label: "Lodge & Stay",
+    label: "Stay",
     href: "/lodge",
   },
   {
-    label: "Plan Your Trip",
+    label: "Travel",
     href: "/travel",
     children: [
-      { label: "Travel Info", href: "/travel" },
+      { label: "Getting Here", href: "/travel" },
       { label: "Rates & Packages", href: "/rates" },
     ],
   },
@@ -85,6 +85,7 @@ export const navItems: NavItem[] = [
       { label: "Bonefish Season", href: "/learn/bonefish-season" },
       { label: "Bonefish Flies", href: "/learn/bonefish-flies" },
       { label: "Catch & Release", href: "/learn/catch-and-release" },
+      { label: "Gallery", href: "/gallery" },
     ],
   },
   { label: "Book", href: "/book" },
@@ -103,7 +104,7 @@ export const fishingSpots: FishingSpot[] = [
       "Only minutes from launch",
     ],
     imageUrl:
-      "https://www.greatbonefishing.com/wp-content/uploads/2012/10/bottle-top.jpg",
+      "/images/gallery/typical-flat-in-better.jpg",
   },
   {
     name: "East Bay & South Cays",
@@ -117,7 +118,7 @@ export const fishingSpots: FishingSpot[] = [
       "Reef snorkeling nearby",
     ],
     imageUrl:
-      "https://www.greatbonefishing.com/wp-content/uploads/2012/11/Hewes3.jpg",
+      "/images/gallery/east-bay-cay-flat.jpg",
   },
   {
     name: "North Caicos",
@@ -131,7 +132,7 @@ export const fishingSpots: FishingSpot[] = [
       "Nature reserves nearby",
     ],
     imageUrl:
-      "https://www.greatbonefishing.com/wp-content/uploads/2012/10/caicos-top.jpg",
+      "/images/gallery/north-caicos-flats-around.jpg",
   },
 ];
 

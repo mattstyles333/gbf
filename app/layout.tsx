@@ -12,8 +12,7 @@ const localBusinessSchema = {
   description:
     "Guided bonefishing trips, DIY access, and waterfront lodge stays on Bottle Creek in North Caicos, Turks & Caicos.",
   url: siteConfig.baseUrl,
-  image:
-    "https://www.greatbonefishing.com/wp-content/uploads/2018/12/cropped-fishing-along-the-mangroves.jpg",
+  image: `${siteConfig.baseUrl}/images/gbf/cropped-fishing-along-the-mangroves.jpg`,
   email: siteConfig.email,
   telephone: [siteConfig.phoneUSA, siteConfig.phoneTCI],
   address: {
@@ -81,7 +80,7 @@ export const metadata: Metadata = {
       "World-class bonefishing on the pristine flats of Bottle Creek, North Caicos, Turks & Caicos.",
     images: [
       {
-        url: "https://www.greatbonefishing.com/wp-content/uploads/2018/12/cropped-fishing-along-the-mangroves.jpg",
+        url: "/images/gbf/cropped-fishing-along-the-mangroves.jpg",
         width: 1200,
         height: 630,
         alt: "Bonefishing in the Turks & Caicos",

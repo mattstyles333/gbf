@@ -99,7 +99,7 @@ export default function TravelPage() {
             <div>
               <div className="relative h-72 rounded-xl overflow-hidden shadow-2xl mb-8">
                 <Image
-                  src="https://www.greatbonefishing.com/wp-content/uploads/2017/11/Ferry.jpg"
+                  src="/images/gbf/Ferry.jpg"
                   alt="Ferry from Providenciales to North Caicos"
                   fill
                   className="object-cover"

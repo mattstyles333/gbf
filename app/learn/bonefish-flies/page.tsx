@@ -35,7 +35,7 @@ export default function BonefishFliesPage() {
                   name: "Crazy Charlie",
                   desc: "A classic — and famous — bonefish fly that should always hold prime position in the fly box. Imitates small, sand-colored crustaceans. Deadly on the flats of the Caicos Bank.",
                   colors: "Pink/white, tan, beige — sizes #4–#6",
-                  image: "https://www.greatbonefishing.com/wp-content/uploads/2012/10/Crazy-Charlie-150x150.jpg",
+                  image: "/images/gbf/Crazy-Charlie.jpg",
                 },
                 {
                   name: "Gotcha",

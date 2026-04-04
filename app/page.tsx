@@ -17,14 +17,17 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://www.greatbonefishing.com/wp-content/uploads/2018/12/cropped-fishing-along-the-mangroves.jpg')",
-          }}
-        />
+      <section className="relative flex min-h-screen items-center overflow-hidden pt-16 lg:pt-20">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/gallery/fishing-along-the-mangroves.jpg"
+            alt="Bonefishing along the mangroves of North Caicos"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-ocean-950/88 via-ocean-950/58 to-transparent" />
         <div className="relative z-10 section-container py-32">
           <div className="max-w-2xl">
@@ -42,16 +45,16 @@ export default function HomePage() {
              </p>
              <div className="flex flex-wrap gap-4">
               <Link href="/book" className="btn-primary text-lg px-8 py-4">
-                Check Availability
-              </Link>
-               <Link href="/fishing" className="btn-outline text-lg px-8 py-4">
-                 Learn About the Fishing
+                 Book
                </Link>
+                <Link href="/fishing" className="btn-outline text-lg px-8 py-4">
+                  Fishing
+                </Link>
              </div>
              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ocean-100">
-               <li>Guided trips from $700 per boat</li>
+               <li>Guided trips from $700</li>
                <li>4-night lodge packages from $1,250pp</li>
-               <li>Two anglers max per skiff</li>
+               <li>Two anglers max per boat</li>
              </ul>
              <div className="mt-12 inline-flex flex-wrap items-center gap-4 rounded-full border border-white/16 bg-ocean-950/40 px-5 py-3 backdrop-blur-md shadow-lg shadow-ocean-950/20">
                <a
@@ -70,7 +73,14 @@ export default function HomePage() {
                >
                  TCI: {siteConfig.phoneTCI}
                </a>
-            </div>
+               <span className="text-white/35">|</span>
+               <a
+                 href={`mailto:${siteConfig.email}`}
+                 className="text-white/90 hover:text-sand-200 transition-colors"
+               >
+                 {siteConfig.email}
+               </a>
+             </div>
           </div>
         </div>
       </section>
@@ -212,7 +222,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2019/03/Lodge-Location.jpg"
+                src="/images/gbf/Bonefish-Fishing-Lodge.jpg"
                 alt="Bonefish Lodge on Bottle Creek"
                 fill
                 className="object-cover"
@@ -229,7 +239,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2018/07/Flatsmin.jpeg"
+                src="/images/gallery/calf-deep-wading-for.jpg"
                 alt="DIY bonefishing in Turks & Caicos"
                 fill
                 className="object-cover"

@@ -41,7 +41,7 @@ export default function FishingKayaksPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/book" className="btn-primary">
-                  Book Kayak Rental
+                  Rent Kayak
                 </Link>
                 <Link href="/diy" className="btn-outline !text-ocean-700 !border-ocean-400">
                   DIY Overview
@@ -50,7 +50,7 @@ export default function FishingKayaksPage() {
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2013/01/Manta_Ray.png"
+                src="/images/gbf/Manta_Ray.png"
                 alt="Fishing Kayaks in Turks & Caicos"
                 fill
                 className="object-contain"
@@ -98,7 +98,7 @@ export default function FishingKayaksPage() {
               </div>
             </div>
             <Link href="/book" className="btn-primary w-full justify-center mt-6">
-              Check Availability
+              Book
             </Link>
           </div>
         </div>

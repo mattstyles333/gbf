@@ -26,7 +26,7 @@ export default function SeasonsPage() {
             {/* Calendar Image */}
             <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden mb-12 shadow-xl">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2012/10/seasons-top.jpg"
+                src="/images/gallery/endless-flats.jpg"
                 alt="Turks and Caicos fishing seasons"
                 fill
                 className="object-cover"

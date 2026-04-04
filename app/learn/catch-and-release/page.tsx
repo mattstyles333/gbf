@@ -24,7 +24,7 @@ export default function CatchAndReleasePage() {
           <div className="max-w-3xl mx-auto">
             <div className="relative h-72 rounded-xl overflow-hidden shadow-2xl mb-12">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2023/12/BY-bonefish-12.jpg"
+                src="/images/gallery/gentle-release.jpg"
                 alt="Proper bonefish handling"
                 fill
                 className="object-cover"

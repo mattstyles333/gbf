@@ -46,7 +46,7 @@ export default function LodgePage() {
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2019/03/Lodge-Location.jpg"
+                src="/images/gbf/Bonefish-Fishing-Lodge.jpg"
                 alt="Bonefish Lodge location on Bottle Creek"
                 fill
                 className="object-cover"
@@ -57,13 +57,13 @@ export default function LodgePage() {
 
           {/* Gallery */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-16">
-            {[
-              { src: "https://www.greatbonefishing.com/wp-content/uploads/2019/03/Lodge-Bedroom-1.jpg", alt: "Lodge bedroom" },
-              { src: "https://www.greatbonefishing.com/wp-content/uploads/2019/03/Lodge-Bath.jpg", alt: "Lodge bathroom" },
-              { src: "https://www.greatbonefishing.com/wp-content/uploads/2019/03/Double-Room.jpg", alt: "Double room" },
-              { src: "https://www.greatbonefishing.com/wp-content/uploads/2019/03/Bonefish-Fishing-Lodge.jpg", alt: "Bonefish Lodge" },
-              { src: "https://www.greatbonefishing.com/wp-content/uploads/2019/03/Balcony.jpg", alt: "Lodge balcony" },
-            ].map((img, i) => (
+              {[
+                { src: "/images/gbf/Lodge-Bedroom-1.jpg", alt: "Lodge bedroom" },
+                { src: "/images/gbf/Lodge-Bath.jpg", alt: "Lodge bathroom" },
+                { src: "/images/gbf/Double-Room.jpg", alt: "Double room" },
+                { src: "/images/gbf/Bonefish-Fishing-Lodge.jpg", alt: "Bonefish Lodge" },
+                { src: "/images/gbf/Balcony.jpg", alt: "Lodge balcony" },
+              ].map((img, i) => (
               <div key={i} className="relative h-32 rounded-lg overflow-hidden">
                 <Image
                   src={img.src}
@@ -154,7 +154,7 @@ export default function LodgePage() {
               <div className="card overflow-hidden">
                 <div className="relative h-56">
                   <Image
-                    src="https://www.greatbonefishing.com/wp-content/uploads/2012/11/Driveway-2.jpg"
+                    src="/images/gbf/Driveway-2.jpg"
                     alt="Villa Dolce Vita"
                     fill
                     className="object-cover"
@@ -179,7 +179,7 @@ export default function LodgePage() {
               <div className="card overflow-hidden">
                 <div className="relative h-56 bg-slate-200">
                   <Image
-                    src="https://www.greatbonefishing.com/wp-content/uploads/2012/11/PelicanBeachHotel.gif"
+                    src="/images/gbf/PelicanBeachHotel.gif"
                     alt="Pelican Beach Hotel"
                     fill
                     className="object-cover object-center"

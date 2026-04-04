@@ -20,6 +20,7 @@ const PAGES = [
   { path: "/learn/bonefish-season/", name: "Bonefish Season" },
   { path: "/learn/bonefish-flies/", name: "Bonefish Flies" },
   { path: "/learn/catch-and-release/", name: "Catch & Release" },
+  { path: "/gallery/", name: "Gallery" },
   { path: "/book/", name: "Book" },
 ];
 
@@ -52,7 +53,7 @@ for (const { path, name } of PAGES) {
 
     await expect(page.locator("header")).toBeVisible();
     await expect(page.locator("footer")).toBeVisible();
-    await expect(page.locator('a:has-text("Check Availability")').first()).toBeVisible();
+    await expect(page.locator('a:has-text("Book")').first()).toBeVisible();
   });
 
   test(`${name} has correct page title`, async ({ page }) => {

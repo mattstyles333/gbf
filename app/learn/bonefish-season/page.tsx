@@ -24,7 +24,7 @@ export default function BonefishSeasonPage() {
           <div className="max-w-3xl mx-auto">
             <div className="relative h-72 rounded-xl overflow-hidden shadow-2xl mb-12">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2012/10/Fetured1.jpg"
+                src="/images/gallery/double-figure-bonefish-alt.jpg"
                 alt="Bonefish catch and release"
                 fill
                 className="object-cover"

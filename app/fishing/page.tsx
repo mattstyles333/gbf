@@ -52,7 +52,7 @@ export default function FishingPage() {
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="https://www.greatbonefishing.com/wp-content/uploads/2012/10/Fishing-top.jpg"
+                src="/images/gallery/sightfishing-for-bonefish.jpg"
                 alt="Guided bonefishing in Turks & Caicos"
                 fill
                 className="object-cover"
@@ -80,7 +80,7 @@ export default function FishingPage() {
                   "Smooth, functional drag system",
                   "Weight-forward floating line",
                 ],
-                image: "https://www.greatbonefishing.com/wp-content/uploads/2012/10/IMG_0247p-150x150.jpg",
+                image: "/images/gbf/IMG_0247p.jpg",
               },
               {
                 title: "Leaders & Tippet",
@@ -91,7 +91,7 @@ export default function FishingPage() {
                   "Fly patterns: #4, #6, #8",
                   "Colors: off-white, brown, beige, yellow, green, pink",
                 ],
-                image: "https://www.greatbonefishing.com/wp-content/uploads/2012/10/IMG_0251-150x150.jpg",
+                image: "/images/gbf/IMG_0251.jpg",
               },
               {
                 title: "Spin Tackle",
@@ -102,7 +102,7 @@ export default function FishingPage() {
                   "Grub tails with weighted head",
                   "White, pink, or chartreuse colors",
                 ],
-                image: "https://www.greatbonefishing.com/wp-content/uploads/2012/10/IMG_0250-150x150.jpg",
+                image: "/images/gbf/IMG_0250.jpg",
               },
             ].map((tackle, i) => (
               <div key={i} className="card overflow-hidden">
@@ -229,7 +229,7 @@ export default function FishingPage() {
               Catch &amp; Release &rarr;
             </Link>
             <Link href="/book" className="text-white font-semibold hover:text-ocean-200 transition-colors">
-              Book a Trip &rarr;
+              Book &rarr;
             </Link>
           </div>
         </div>

@@ -112,7 +112,7 @@ export default function Header() {
               alt="Great Bone Fishing logo"
               fill
               sizes="44px"
-              className="object-contain"
+              className="object-contain saturate-125 contrast-110 brightness-110 drop-shadow-[0_0_1px_rgba(255,255,255,0.98)] drop-shadow-[0_0_4px_rgba(255,255,255,0.45)]"
               priority
             />
           </span>
@@ -120,14 +120,14 @@ export default function Header() {
             <span className="text-white font-bold text-base tracking-tight leading-none block">
               {siteConfig.name}
             </span>
-            <span className="text-ocean-400 text-xs tracking-widest uppercase leading-none mt-0.5">
+            <span className="hidden 2xl:block text-ocean-400 text-xs tracking-widest uppercase leading-none mt-0.5 whitespace-nowrap">
               {siteConfig.tagline}
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-0.5" ref={dropdownRef}>
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" ref={dropdownRef}>
           {navItems.map((item) => (
             <div key={item.href} className="relative">
               {item.children ? (
@@ -136,7 +136,7 @@ export default function Header() {
                     onClick={() =>
                       setOpenDropdown(openDropdown === item.href ? null : item.href)
                     }
-                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50"
+                    className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50 xl:px-4"
                   >
                     {item.label}
                     <svg
@@ -159,7 +159,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50"
+                  className="whitespace-nowrap px-3 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50 xl:px-4"
                 >
                   {item.label}
                 </Link>
@@ -168,18 +168,18 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4">
           <a
             href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
-            className="text-sm font-medium text-ocean-300 hover:text-white transition-colors"
+            className="whitespace-nowrap rounded-lg border border-white/10 px-3 py-2 text-sm font-medium text-ocean-200 hover:text-white hover:bg-ocean-800/40 transition-colors"
           >
-            {siteConfig.phoneUSA}
+            Call
           </a>
           <Link
             href="/book"
-            className="btn-primary text-sm font-semibold shadow-lg shadow-ocean-900/30"
+            className="btn-primary whitespace-nowrap px-5 text-sm font-semibold shadow-lg shadow-ocean-900/30"
           >
-            Check Availability
+            Book
           </Link>
         </div>
 
@@ -255,7 +255,7 @@ export default function Header() {
                 onClick={closeMobile}
                 className="btn-primary w-full text-center font-semibold py-3.5"
               >
-                Check Availability
+                Book
               </Link>
             </div>
           </nav>
