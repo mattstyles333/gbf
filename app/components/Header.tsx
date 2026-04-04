@@ -100,7 +100,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-ocean-950/95 backdrop-blur-sm border-b border-ocean-800/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-ocean-950/92 backdrop-blur-md border-b border-white/10 shadow-lg shadow-ocean-950/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         <Link
           href="/"
@@ -110,9 +110,9 @@ export default function Header() {
           <Image
             src="/logo.svg"
             alt="Great Bone Fishing logo"
-            width={52}
-            height={45}
-            className="flex-shrink-0"
+            width={60}
+            height={42}
+            className="h-11 w-auto flex-shrink-0"
             priority
           />
           <div className="hidden sm:block">

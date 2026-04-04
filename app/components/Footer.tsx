@@ -9,7 +9,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="text-white" style={{ background: "var(--slate-900)" }}>
+    <footer className="text-white" style={{ background: "var(--footer-bg)" }}>
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}

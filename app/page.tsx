@@ -25,7 +25,7 @@ export default function HomePage() {
               "url('https://www.greatbonefishing.com/wp-content/uploads/2018/12/cropped-fishing-along-the-mangroves.jpg')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-900/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ocean-950/88 via-ocean-950/58 to-transparent" />
         <div className="relative z-10 section-container py-32">
           <div className="max-w-2xl">
             <p className="text-ocean-300 uppercase tracking-widest text-sm font-semibold mb-4">
