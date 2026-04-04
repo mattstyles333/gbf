@@ -108,7 +108,7 @@ export default function Header() {
           onClick={closeMobile}
         >
           <Image
-            src="/logo.svg"
+            src="/logo-icon.svg"
             alt="Great Bone Fishing"
             width={44}
             height={44}
