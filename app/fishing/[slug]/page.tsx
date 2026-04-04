@@ -9,6 +9,10 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const mapImageBySlug: Record<string, string | undefined> = {
+  "bottle-creek": undefined,
+};
+
 export async function generateStaticParams() {
   return fishingSpots.map((spot) => ({ slug: spot.slug }));
 }
@@ -112,6 +116,35 @@ export default async function FishingSpotPage({ params }: Props) {
                   <p key={i}>{para}</p>
                 ))}
               </div>
+
+              {slug === "bottle-creek" && (
+                <div className="mt-10 card p-6 sm:p-8">
+                  <h2 className="text-2xl font-bold mb-4">Why Bottle Creek Works Better Than Provo-Based Day Runs</h2>
+                  <div className="space-y-4 text-slate-500 leading-relaxed">
+                    <p>
+                      One of Bottle Creek&apos;s biggest advantages is proximity. The water we fish is close to the launch,
+                      protected from heavy exposure, and connected by a network of creeks, channels, and estuaries that flush on every tide.
+                    </p>
+                    <p>
+                      Compared with running out of Providenciales, where some anglers may spend 10 to 20 miles running to fishable water,
+                      Bottle Creek keeps you close to productive habitat. That means less time in exposed ocean, less fuel burn, and more time fishing the best part of the day.
+                    </p>
+                    <p>
+                      The surrounding estuaries and tidal drains constantly refresh the fishery. Fish move through mangrove edges, cuts, and shallow flats as water rises and falls,
+                      which is why this area can stay consistent across a range of conditions.
+                    </p>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-4">
+                    <Link href="/travel" className="text-ocean-700 font-semibold hover:underline">Travel logistics</Link>
+                    <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline">Guided day rates</Link>
+                  </div>
+                  {mapImageBySlug[slug] && (
+                    <div className="relative h-80 mt-6 rounded-xl overflow-hidden">
+                      <Image src={mapImageBySlug[slug]!} alt="Aerial view of Bottle Creek and surrounding flats" fill className="object-cover" sizes="100vw" />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div>
               <div className="card p-6 sticky top-24">

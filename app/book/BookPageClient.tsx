@@ -318,6 +318,9 @@ function BookPageContent({ sent }: { sent: boolean }) {
                   <Link href="/lodge" className="text-ocean-700 font-semibold hover:underline text-sm">
                     View lodge
                   </Link>
+                  <Link href="/learn/tackle-and-gear" className="text-ocean-700 font-semibold hover:underline text-sm">
+                    Tackle &amp; gear
+                  </Link>
                   <Link href="/fishing" className="text-ocean-700 font-semibold hover:underline text-sm">
                     Explore fishing
                   </Link>

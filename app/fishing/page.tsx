@@ -69,6 +69,10 @@ export default function FishingPage() {
           <h2 className="text-3xl font-bold text-center mb-12">
             Recommended Tackle
           </h2>
+          <p className="max-w-3xl mx-auto text-center text-slate-500 text-lg mb-10">
+            Want the full breakdown on rods, leaders, flies, footwear, and what we can provide?
+            See the dedicated <Link href="/learn/tackle-and-gear" className="text-ocean-700 font-semibold hover:underline">tackle and gear guide</Link>.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -224,6 +228,9 @@ export default function FishingPage() {
             </Link>
             <Link href="/learn/bonefish-flies" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Bonefish Flies &rarr;
+            </Link>
+            <Link href="/learn/tackle-and-gear" className="text-white font-semibold hover:text-ocean-200 transition-colors">
+              Tackle &amp; Gear &rarr;
             </Link>
             <Link href="/learn/catch-and-release" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Catch &amp; Release &rarr;

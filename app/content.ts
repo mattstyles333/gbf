@@ -83,6 +83,7 @@ export const navItems: NavItem[] = [
     children: [
       { label: "Seasons", href: "/learn/seasons" },
       { label: "Bonefish Season", href: "/learn/bonefish-season" },
+      { label: "Tackle & Gear", href: "/learn/tackle-and-gear" },
       { label: "Bonefish Flies", href: "/learn/bonefish-flies" },
       { label: "Catch & Release", href: "/learn/catch-and-release" },
       { label: "FAQ", href: "/faq" },

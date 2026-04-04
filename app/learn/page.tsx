@@ -27,6 +27,12 @@ export default function LearnPage() {
       icon: "🌊",
     },
     {
+      href: "/learn/tackle-and-gear",
+      title: "Tackle & Gear",
+      desc: "What rods, reels, leaders, flies, footwear, and sun gear make sense for Bottle Creek and the nearby North Caicos flats.",
+      icon: "🎣",
+    },
+    {
       href: "/learn/bonefish-flies",
       title: "Bonefish Flies",
       desc: "The best flies for the Turks & Caicos: Crazy Charlie, Gotcha, Merkin, Clouser Minnows, and when to use each.",
