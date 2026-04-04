@@ -53,23 +53,23 @@ export default function HomePage() {
                <li>4-night lodge packages from $1,250pp</li>
                <li>Two anglers max per skiff</li>
              </ul>
-             <div className="mt-12 flex items-center gap-6">
-              <a
-                href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
-                className="flex items-center gap-2 text-white hover:text-ocean-300 transition-colors"
-              >
+             <div className="mt-12 inline-flex flex-wrap items-center gap-4 rounded-full border border-white/16 bg-ocean-950/40 px-5 py-3 backdrop-blur-md shadow-lg shadow-ocean-950/20">
+               <a
+                 href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
+                 className="flex items-center gap-2 text-white hover:text-sand-200 transition-colors"
+               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span className="font-semibold">{siteConfig.phoneUSA}</span>
               </a>
-              <span className="text-ocean-400">|</span>
-              <a
-                href={`tel:${siteConfig.phoneTCI.replace(/[^0-9+]/g, "")}`}
-                className="text-ocean-200 hover:text-white transition-colors"
-              >
-                TCI: {siteConfig.phoneTCI}
-              </a>
+               <span className="text-white/35">|</span>
+               <a
+                 href={`tel:${siteConfig.phoneTCI.replace(/[^0-9+]/g, "")}`}
+                 className="text-white/90 hover:text-sand-200 transition-colors"
+               >
+                 TCI: {siteConfig.phoneTCI}
+               </a>
             </div>
           </div>
         </div>

@@ -57,16 +57,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--foreground);
 }
 
 a {
-  color: var(--accent);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-a:hover {
+a:not([class]) {
+  color: var(--accent);
+}
+
+a:not([class]):hover {
   color: var(--accent-dark);
 }
 
