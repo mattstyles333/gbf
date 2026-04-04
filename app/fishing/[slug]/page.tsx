@@ -139,8 +139,16 @@ export default async function FishingSpotPage({ params }: Props) {
                     <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline">Guided day rates</Link>
                   </div>
                   {mapImageBySlug[slug] && (
-                    <div className="relative h-80 mt-6 rounded-xl overflow-hidden">
-                      <Image src={mapImageBySlug[slug]!} alt="Aerial view of Bottle Creek and surrounding flats" fill className="object-cover" sizes="100vw" />
+                    <div className="relative mt-6 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 p-3">
+                      <div className="relative h-[28rem] w-full">
+                        <Image
+                          src={mapImageBySlug[slug]!}
+                          alt="Aerial view of Bottle Creek and surrounding flats"
+                          fill
+                          className="object-contain"
+                          sizes="100vw"
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
