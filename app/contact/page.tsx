@@ -2,8 +2,15 @@ import type { Metadata } from "next";
 import { siteConfig } from "../content";
 
 export const metadata: Metadata = {
-  title: `Contact — ${siteConfig.name}`,
+  title: "Contact",
   description: `Contact ${siteConfig.name} to check availability and book your bonefishing trip in the Turks & Caicos. Call ${siteConfig.phoneUSA} or ${siteConfig.phoneTCI}.`,
+  alternates: {
+    canonical: "/book/",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function ContactPage() {

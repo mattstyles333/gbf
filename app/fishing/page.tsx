@@ -3,12 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHero from "../components/PageHero";
 import BookingCTA from "../components/BookingCTA";
-import { fishingSpots, siteConfig } from "../content";
+import { fishingSpots } from "../content";
 
 export const metadata: Metadata = {
   title: "Guided Bonefishing — Turks & Caicos",
   description:
-    "World-class guided bonefishing on the pristine flats of North Caicos and the Caicos Bank. Experienced local guides, classic flats skiffs, and unforgettable sight-fishing.",
+    "Guided bonefishing on North Caicos with local guides, classic flats skiffs, clear water, and easy access to productive flats.",
+  alternates: {
+    canonical: "/fishing/",
+  },
 };
 
 export default function FishingPage() {
@@ -35,16 +38,15 @@ export default function FishingPage() {
                   to ensure that it is also a safe and positive one.
                 </p>
                 <p>
-                  The productive flats are only minutes from launch, so you don&apos;t waste
-                  time running around the shallow banks. Classic flats skiffs allow
-                  anglers to effectively cast at sighted fish while poling across the
-                  flats. The bonefish tend to be mid-size fish of up to a few pounds
-                  when commuting the flats in schools, while larger bonefish can be found
-                  in singles and pairs cruising the flats and willing to take a fly.
+                  The productive flats are only minutes from the launch, so you spend
+                  more time casting and less time running. Classic flats skiffs let
+                  anglers pole quietly into range of sighted fish, whether you prefer
+                  to wade or fish from the bow.
                 </p>
                 <p>
-                  Although many of the flats around Providenciales are well known and well
-                  fished&hellip;&hellip;we fish elsewhere&hellip;&hellip;
+                  While many anglers focus on Providenciales, our program is built
+                  around quieter, less-pressured water near Bottle Creek and North
+                  Caicos where fish see very little traffic.
                 </p>
               </div>
             </div>

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Bonefishing Rates — Turks & Caicos",
   description:
     "Transparent bonefishing rates for the Turks & Caicos. Full-day guided trips from $700, lodge packages from $1,250 per person. No hidden fees.",
+  alternates: {
+    canonical: "/rates/",
+  },
 };
 
 export default function RatesPage() {
@@ -22,9 +25,9 @@ export default function RatesPage() {
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-2">Guided Fishing</h2>
             <p className="text-slate-500 mb-8">
-              Our bonefishing rates are some of the least expensive to be found in the
-              region. We offer a range of options from self-guided flyfishing to guided
-              fishing charter on the flats and creeks of the islands.
+              Straightforward guided, lodge, and DIY pricing for anglers who want great
+              water without resort-style markup. We&apos;ll help you choose the option that
+              best fits your budget, experience, and trip goals.
             </p>
             <div className="card p-8 mb-8">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
@@ -53,7 +56,7 @@ export default function RatesPage() {
                   "Fishing license available ($15/day)",
                   "$175 deposit to confirm booking",
                   "Balance in cash on the day",
-                  "Day license available at $15",
+                  "We help match dates to tides and conditions",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
                     <svg className="w-4 h-4 text-ocean-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,9 +69,9 @@ export default function RatesPage() {
             </div>
 
             <p className="text-slate-500 text-sm">
-              <strong className="text-foreground">Note:</strong> We won&apos;t book you unless the
-              conditions are right. We prefer to talk to you before you commit to a trip to
-              make the best recommendations for your skill and experience level.
+              <strong className="text-foreground">Note:</strong> We&apos;d rather be honest about tides,
+              wind, and angler fit than push you into the wrong dates. Reach out first and
+              we&apos;ll recommend the best plan for your group.
             </p>
           </div>
 

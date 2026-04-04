@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Getting Here — Travel & Transport to North Caicos",
   description:
     "How to get from Providenciales to our fishing operation on North Caicos. Ferry schedule, transfer details, and travel tips for your bonefishing trip.",
+  alternates: {
+    canonical: "/travel/",
+  },
 };
 
 export default function TravelPage() {

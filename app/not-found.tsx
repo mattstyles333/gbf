@@ -1,7 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function NotFound() {
@@ -53,16 +58,16 @@ export default function NotFound() {
         </h1>
         <p style={{ color: "#475569", marginBottom: "1.5rem" }}>
           The page you&apos;re looking for doesn&apos;t exist. Try the{" "}
-          <a href="/" style={{ color: "#0ea5e9", fontWeight: 600 }}>
+          <Link href="/" style={{ color: "#0ea5e9", fontWeight: 600 }}>
             homepage
-          </a>{" "}
+          </Link>{" "}
           or{" "}
-          <a href="/book" style={{ color: "#0ea5e9", fontWeight: 600 }}>
+          <Link href="/book" style={{ color: "#0ea5e9", fontWeight: 600 }}>
             contact us
-          </a>
+          </Link>
           .
         </p>
-        <a
+        <Link
           href="/"
           style={{
             display: "inline-flex",
@@ -78,7 +83,7 @@ export default function NotFound() {
           }}
         >
           Go to Homepage
-        </a>
+        </Link>
       </div>
     </div>
   );

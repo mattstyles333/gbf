@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+  metadataBase: new URL(siteConfig.baseUrl),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -69,9 +70,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  alternates: {
-    canonical: siteConfig.baseUrl,
   },
 };
 

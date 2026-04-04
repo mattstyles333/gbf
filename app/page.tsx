@@ -5,7 +5,12 @@ import BookingCTA from "./components/BookingCTA";
 import { siteConfig, fishingSpots } from "./content";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — World-Class Bonefishing in Turks & Caicos`,
+  title: "World-Class Bonefishing in Turks & Caicos",
+  description:
+    "Guided bonefishing, DIY kayak access, and waterfront lodge stays on North Caicos. Fish Bottle Creek with local guides who know the tides.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function HomePage() {
@@ -30,20 +35,25 @@ export default function HomePage() {
               Bonefishing at Its{" "}
               <span className="text-ocean-400">Absolute Best</span>
             </h1>
-            <p className="text-ocean-100 text-lg sm:text-xl leading-relaxed mb-8">
-              Fish the pristine flats of North Caicos with local guides who have
-              spent their lives on these waters. Untouched fisheries, crystal-clear
-              water, and bonefish that have never seen a fly.
-            </p>
-            <div className="flex flex-wrap gap-4">
+             <p className="text-ocean-100 text-lg sm:text-xl leading-relaxed mb-8">
+               Fish Bottle Creek and the Caicos Bank with local guides who grew up on
+               this water. Choose guided skiff days, DIY kayak access, or lodge
+               packages built around the tides.
+             </p>
+             <div className="flex flex-wrap gap-4">
               <Link href="/book" className="btn-primary text-lg px-8 py-4">
                 Check Availability
               </Link>
-              <Link href="/fishing" className="btn-outline text-lg px-8 py-4">
-                Learn About the Fishing
-              </Link>
-            </div>
-            <div className="mt-12 flex items-center gap-6">
+               <Link href="/fishing" className="btn-outline text-lg px-8 py-4">
+                 Learn About the Fishing
+               </Link>
+             </div>
+             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ocean-100">
+               <li>Guided trips from $700 per boat</li>
+               <li>4-night lodge packages from $1,250pp</li>
+               <li>Two anglers max per skiff</li>
+             </ul>
+             <div className="mt-12 flex items-center gap-6">
               <a
                 href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
                 className="flex items-center gap-2 text-white hover:text-ocean-300 transition-colors"

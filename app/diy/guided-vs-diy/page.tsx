@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Guided vs. DIY Bonefishing — Which Is Right for You?",
   description:
     "Compare guided bonefishing with self-guided options in the Turks & Caicos. Cost, experience level, independence, and what to expect from each approach.",
+  alternates: {
+    canonical: "/diy/guided-vs-diy/",
+  },
 };
 
 export default function GuidedVsDIYPage() {

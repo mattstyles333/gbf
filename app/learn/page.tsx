@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Learn — Bonefishing in Turks & Caicos",
   description:
     "Learn about bonefishing in the Turks & Caicos: seasons, bonefish behavior, flies, tackle, wading, and catch & release best practices.",
+  alternates: {
+    canonical: "/learn/",
+  },
 };
 
 export default function LearnPage() {

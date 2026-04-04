@@ -46,7 +46,7 @@ export const siteConfig = {
   tagline: "World-Class Bonefishing in the Turks & Caicos",
   phoneUSA: "(336) 655-0541",
   phoneTCI: "(649) 241-6263",
-  email: "[email protected]",
+  email: "GreatBonefishing@gmail.com",
   address: "Bottle Creek, North Caicos TCI",
   baseUrl: "https://greatbonefishing.com",
 };
@@ -95,7 +95,7 @@ export const fishingSpots: FishingSpot[] = [
     name: "Bottle Creek",
     slug: "bottle-creek",
     description:
-      "The heart of our operations. A protected reserve on North Caicos with pristine bonefish flats, hard bottom, and crystal-clear water. Home to some of the best sight-fishing in the Caribbean.",
+      "Protected North Caicos reserve with hard-bottom flats, clear water, and some of the most consistent sight-fishing in the islands.",
     highlights: [
       "Ankle-deep wading flats",
       "Classic flats skiffs",
@@ -109,7 +109,7 @@ export const fishingSpots: FishingSpot[] = [
     name: "East Bay & South Cays",
     slug: "east-bay",
     description:
-      "South of Bottle Creek, a network of tidal creeks, channels, and open flats adjacent to small cays. Excellent for large bonefish on the rising tide, with ocean-side flats that hold big fish on a falling tide.",
+      "Remote creeks, channels, and ocean-side flats that fish best on moving tides and regularly hold larger bonefish.",
     highlights: [
       "Remote and unfished",
       "Large bonefish on tides",
@@ -123,7 +123,7 @@ export const fishingSpots: FishingSpot[] = [
     name: "North Caicos",
     slug: "north-caicos",
     description:
-      "The most lush of the Caicos Islands, with a strong local infrastructure and vast bonefish habitat. Mangrove nurseries, wide open flats, and minimal fishing pressure make it a bonefish paradise.",
+      "The lushest of the Caicos Islands, with mangrove nurseries, open flats, and very light fishing pressure across the Caicos Bank.",
     highlights: [
       "Average bonefish 4–5 lbs, larger common",
       "Wading directly from land possible",

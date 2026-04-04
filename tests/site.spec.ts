@@ -23,16 +23,6 @@ const PAGES = [
   { path: "/book/", name: "Book" },
 ];
 
-async function checkNoErrors(page: any, name: string) {
-  const errors: string[] = [];
-  page.on(ConsoleMessage, (msg: ConsoleMessage) => {
-    if (msg.type() === "error") {
-      errors.push(msg.text());
-    }
-  });
-  return errors;
-}
-
 for (const { path, name } of PAGES) {
   test(`${name} (${path}) loads without errors`, async ({ page }) => {
     const consoleErrors: string[] = [];

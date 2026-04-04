@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${spot.name} — Bonefishing in Turks & Caicos`,
     description: spot.description,
+    alternates: {
+      canonical: `/fishing/${slug}/`,
+    },
   };
 }
 
@@ -42,7 +45,7 @@ export default async function FishingSpotPage({ params }: Props) {
         "Nestled on the north coast of North Caicos, the Bottle Creek Reserve is a gem for bonefishing enthusiasts. This protected area is renowned for its pristine bonefish flats and diverse marine life.",
         "The clear waters and shallow flats make it an excellent spot for sight fishing, allowing anglers to easily spot and cast to bonefish. The bonefish here have likely never seen a Crazy Charlie or a bonefish jig and do not hesitate to investigate.",
         "Beyond bonefish, the reserve is home to a variety of other species, including tarpon, permit, and barracuda, making it a versatile fishing destination. The vast expanse of water ranging from mangroves to channels and small estuaries is largely unfished and bonefish are easily stalked.",
-        "The productive flats are only minutes from embarking on the boat so you don't waste a lot of time running around the shallow banks to get to water that consistently hold fish. This has the dual benefit of significantly lower fuel costs and so a less expensive bonefishing experience as well as more time out on the water actually fishing!",
+        "The productive flats are only minutes from the boat launch, so you spend less time running and more time actually fishing. That means lower fuel burn, straightforward pricing, and more shots at fish during the best part of the tide.",
       ],
       tips: [
         "Ankle-deep wading flats throughout",

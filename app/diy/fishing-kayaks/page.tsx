@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Fishing Kayaks — DIY Bonefishing in Turks & Caicos",
   description:
     "Fishing kayaks available for rent in 11ft and 14ft sizes at the Bonefish Lodge. Perfect for self-guided bonefishing on the flats of North Caicos.",
+  alternates: {
+    canonical: "/diy/fishing-kayaks/",
+  },
 };
 
 export default function FishingKayaksPage() {

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import PageHero from "../components/PageHero";
 import BookingCTA from "../components/BookingCTA";
@@ -7,7 +6,10 @@ import BookingCTA from "../components/BookingCTA";
 export const metadata: Metadata = {
   title: "Bonefishing Lodge — Turks & Caicos",
   description:
-    "Stay at our bonefishing lodge on Bottle Creek, North Caicos. Newly built one and two bedroom units directly across from the best bonefish flats. Packages from $1,250 per person.",
+    "Stay on Bottle Creek in one- and two-bedroom waterfront units, just steps from the flats. Lodge packages start at $1,250 per person.",
+  alternates: {
+    canonical: "/lodge/",
+  },
 };
 
 export default function LodgePage() {
@@ -28,8 +30,8 @@ export default function LodgePage() {
                 Right Across From the Flats
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-6">
-                Experience world-class bonefishing at our budget-friendly lodge in Turks
-                &amp; Caicos, located directly across from some of the best bonefish
+                Stay at our comfortable waterfront lodge in Turks &amp; Caicos, located
+                directly across from some of the best bonefish
                 flats in the region. The newly constructed lodge consists of several one
                 and two bedroom units. Each is air-conditioned and fully furnished and
                 equipped with its own kitchen, bathroom, and deck or patio overlooking the

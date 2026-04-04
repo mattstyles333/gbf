@@ -7,7 +7,10 @@ import BookingCTA from "../components/BookingCTA";
 export const metadata: Metadata = {
   title: "DIY Bonefishing — Turks & Caicos",
   description:
-    "Self-guided bonefishing in the Turks & Caicos. Fishing kayaks, Stand Up Paddleboards, and DIY packages for experienced anglers. Save on guide costs while fishing the pristine flats of North Caicos.",
+    "Self-guided bonefishing on North Caicos with kayak access, practical local advice, and lodge-based options for experienced anglers.",
+  alternates: {
+    canonical: "/diy/",
+  },
 };
 
 export default function DIYPage() {
@@ -25,9 +28,8 @@ export default function DIYPage() {
                 Bonefishing Without a Guide
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-5">
-                Bonefishing in the Turks &amp; Caicos can be expensive — but for anglers
-                who have experience or just prefer to find their own way, there is
-                another way.
+                DIY bonefishing is a strong fit for anglers who already read tides,
+                wade confidently, and want the freedom to fish on their own schedule.
               </p>
               <p className="text-slate-500 leading-relaxed mb-6">
                 The Bonefish Lodge is situated directly across from good wading flats

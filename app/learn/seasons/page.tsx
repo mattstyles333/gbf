@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Fishing Seasons — Turks & Caicos",
   description:
     "Bonefishing seasons in the Turks & Caicos: weather conditions, water temperature, and what to expect from autumn through summer.",
+  alternates: {
+    canonical: "/learn/seasons/",
+  },
 };
 
 export default function SeasonsPage() {

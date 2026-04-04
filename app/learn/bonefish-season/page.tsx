@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Bonefish Season & Spawning — Turks & Caicos",
   description:
     "When bonefish spawn in the Turks & Caicos, how it affects fishing behavior, and why late spring is peak season for large bonefish.",
+  alternates: {
+    canonical: "/learn/bonefish-season/",
+  },
 };
 
 export default function BonefishSeasonPage() {

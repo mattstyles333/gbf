@@ -4,9 +4,12 @@ import BookingCTA from "../../components/BookingCTA";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Why Turks & Caicos — World-Class Bonefishing in the Caribbean",
+  title: "Why Fish Turks & Caicos for Bonefish?",
   description:
     "Discover why Turks & Caicos is considered one of the world's premier bonefish destinations. Pristine flats, clear water, and experienced guides.",
+  alternates: {
+    canonical: "/fishing/why-turks-caicos/",
+  },
 };
 
 export default function WhyTurksCaicosPage() {
