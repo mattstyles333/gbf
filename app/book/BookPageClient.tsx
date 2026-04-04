@@ -12,6 +12,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
     name: "",
     email: "",
     phone: "",
+    tripType: "guided-day-trip",
     dates: "",
     guests: "",
     message: "",
@@ -133,6 +134,22 @@ function BookPageContent({ sent }: { sent: boolean }) {
                         className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent"
                         placeholder="+1 (336) 655-0541"
                       />
+                    </div>
+                    <div>
+                      <label htmlFor="tripType" className="block text-sm font-semibold text-slate-700 mb-1">
+                        Trip Type
+                      </label>
+                      <select
+                        id="tripType"
+                        name="tripType"
+                        value={form.tripType}
+                        onChange={(e) => setForm({ ...form, tripType: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent"
+                      >
+                        <option value="guided-day-trip">Guided Day Trip</option>
+                        <option value="lodge-package">Lodge Package</option>
+                        <option value="diy-kayak-fishing">DIY Kayak Fishing</option>
+                      </select>
                     </div>
                     <div>
                       <label htmlFor="guests" className="block text-sm font-semibold text-slate-700 mb-1">
