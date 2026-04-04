@@ -1,0 +1,155 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import PageHero from "../../components/PageHero";
+import BookingCTA from "../../components/BookingCTA";
+import { fishingSpots } from "../../content";
+
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return fishingSpots.map((spot) => ({ slug: spot.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const spot = fishingSpots.find((s) => s.slug === slug);
+  if (!spot) return {};
+  return {
+    title: `${spot.name} — Bonefishing in Turks & Caicos`,
+    description: spot.description,
+  };
+}
+
+export default async function FishingSpotPage({ params }: Props) {
+  const { slug } = await params;
+  const spot = fishingSpots.find((s) => s.slug === slug);
+
+  if (!spot) {
+    return (
+      <div className="section-container py-32 text-center">
+        <h1 className="text-3xl font-bold mb-4">Location not found</h1>
+        <Link href="/fishing" className="btn-primary">Back to Fishing</Link>
+      </div>
+    );
+  }
+
+  const spotContent: Record<string, { body: string[]; tips: string[] }> = {
+    "bottle-creek": {
+      body: [
+        "Nestled on the north coast of North Caicos, the Bottle Creek Reserve is a gem for bonefishing enthusiasts. This protected area is renowned for its pristine bonefish flats and diverse marine life.",
+        "The clear waters and shallow flats make it an excellent spot for sight fishing, allowing anglers to easily spot and cast to bonefish. The bonefish here have likely never seen a Crazy Charlie or a bonefish jig and do not hesitate to investigate.",
+        "Beyond bonefish, the reserve is home to a variety of other species, including tarpon, permit, and barracuda, making it a versatile fishing destination. The vast expanse of water ranging from mangroves to channels and small estuaries is largely unfished and bonefish are easily stalked.",
+        "The productive flats are only minutes from embarking on the boat so you don't waste a lot of time running around the shallow banks to get to water that consistently hold fish. This has the dual benefit of significantly lower fuel costs and so a less expensive bonefishing experience as well as more time out on the water actually fishing!",
+      ],
+      tips: [
+        "Ankle-deep wading flats throughout",
+        "Only minutes from boat launch",
+        "Double-digit bonefish possible",
+        "Also home to tarpon, permit, barracuda",
+      ],
+    },
+    "east-bay": {
+      body: [
+        "To the South of Bottle Creek lies East Bay and a series of small cays that each has flats adjacent to channels that empty to the ocean. The flats are dry at low tide, but early on the rising tide can be very good for large fish coming out of the deeper water and onto the flats.",
+        "These channels and flats continue through to the ocean side where the East Bay flats offer huge open shallow water that often hold large fish on a falling tide early in the day.",
+        "There is a good flowing estuary back into Bottle Creek at the North end of this flat that may offer productive fishing when the prevailing Northeast wind overpowers the fishing in East Bay.",
+        "The flats adjacent to the cays are best waded as it is difficult to get a boat high enough onto them to reach the productive flows, but the East Bay flats on the ocean side are set up perfectly to pole or drift over the gin-clear water looking for schools of meandering bonefish.",
+        "There are also some small reefs lying just off the cays that offer opportunities for snorkeling, and one area in particular is well known by locals for collecting live conch for dinner.",
+      ],
+      tips: [
+        "Best on rising tide for large fish",
+        "Remote, never-fished flats",
+        "Channels require local knowledge",
+        "Snorkeling and reef nearby",
+      ],
+    },
+    "north-caicos": {
+      body: [
+        "North Caicos is located East of Providenciales and marks the start of access to the vast inshore flats of the Caicos Bank. The island is lush with vegetation and boasts a strong infrastructure of roads, energy supply, and communications.",
+        "The waters surrounding North Caicos cover the spectrum of a classical bonefish environment — from mangrove estuaries that act as nurseries for juvenile fish, to the large open flats of the Caicos Bank. This variety offers a challenge for novice and expert anglers alike.",
+        "The flats and estuaries are largely unfished as they lie a good distance from the main tourist destination of Providenciales and so mostly out of range for the casual angler vacationing on the main island. The bonefish average 4–5lbs but much larger fish are common, with double digit bonefish caught regularly on both fly and conventional spinning gear.",
+        "There are several areas that can be waded directly from land or the beach, but the productive tidal flats for the most part have to be reached by boat or kayak. The island is sufficiently far from the main tourist areas that there is little fishing pressure and the fish tend not to be skittish and will take a fly willingly.",
+      ],
+      tips: [
+        "Average bonefish 4–5 lbs, larger common",
+        "Wading directly from land possible",
+        "Very little fishing pressure",
+        "Mangrove estuaries for juveniles",
+      ],
+    },
+  };
+
+  const content = spotContent[slug] || { body: [], tips: [] };
+
+  return (
+    <>
+      <PageHero
+        title={spot.name}
+        subtitle="One of the finest bonefish habitats in the Caribbean."
+      />
+      <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
+        <div className="section-container">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2">
+              <div className="relative h-72 sm:h-96 rounded-xl overflow-hidden shadow-2xl mb-10">
+                <Image
+                  src={spot.imageUrl}
+                  alt={`${spot.name} bonefishing`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                />
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6">About {spot.name}</h2>
+              <div className="space-y-5 text-slate-500 leading-relaxed">
+                {content.body.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="card p-6 sticky top-24">
+                <h3 className="text-lg font-bold mb-4">Key Highlights</h3>
+                <ul className="space-y-3">
+                  {spot.highlights.map((h, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                      <svg className="w-5 h-5 text-ocean-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+                {content.tips.length > 0 && (
+                  <>
+                    <hr className="my-5 border-slate-100" />
+                    <h3 className="text-lg font-bold mb-4">Angler Notes</h3>
+                    <ul className="space-y-2">
+                      {content.tips.map((tip, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-slate-500">
+                          <span className="text-ocean-400 shrink-0">+</span>
+                          {tip}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                <hr className="my-5 border-slate-100" />
+                <Link href="/book" className="btn-primary w-full justify-center">
+                  Check Availability
+                </Link>
+                <Link href="/fishing" className="btn-outline w-full justify-center mt-3">
+                  All Fishing Locations
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <BookingCTA />
+    </>
+  );
+}
