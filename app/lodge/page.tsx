@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "../components/PageHero";
 import BookingCTA from "../components/BookingCTA";
+import LodgeGallery from "./LodgeGallery";
+
+const lodgeImages = [
+  { src: "/images/gbf/Bonefish-Fishing-Lodge.jpg", alt: "Bonefish Lodge exterior on Bottle Creek", title: "Waterfront lodge exterior" },
+  { src: "/images/gallery/lodge-bedroom-1.jpg", alt: "Lodge bedroom interior", title: "Private lodge bedroom" },
+  { src: "/images/gbf/Double-Room.jpg", alt: "Double room inside the lodge", title: "Double room setup" },
+  { src: "/images/gbf/Lodge-Bath.jpg", alt: "Lodge bathroom", title: "Private bathroom" },
+  { src: "/images/gbf/Balcony.jpg", alt: "Balcony overlooking the water", title: "Deck and water views" },
+];
 
 export const metadata: Metadata = {
   title: "Bonefishing Lodge — Turks & Caicos",
@@ -30,19 +39,29 @@ export default function LodgePage() {
                 Right Across From the Flats
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-6">
-                Stay at our comfortable waterfront lodge in Turks &amp; Caicos, located
-                directly across from some of the best bonefish
-                flats in the region. The newly constructed lodge consists of several one
-                and two bedroom units. Each is air-conditioned and fully furnished and
-                equipped with its own kitchen, bathroom, and deck or patio overlooking the
-                flats of Bottle Creek.
+                Stay at our comfortable waterfront lodge in Turks &amp; Caicos, directly
+                across from some of the best bonefish flats in the region. It is a practical,
+                economical alternative to resort-style accommodation for anglers who care more
+                about time on the water than polished excess. The lodge consists of one- and
+                two-bedroom units, each air-conditioned and fully furnished with its own kitchen,
+                bathroom, and deck or patio overlooking Bottle Creek.
               </p>
               <p className="text-slate-500 text-lg leading-relaxed">
                 The lodge is located directly on the shore of Bottle Creek. The grounds
                 slope gently to the water where you will find the flats boats and fishing
                 kayaks. It is directly across from one of the most productive flats — so
                 you can choose your time based on tides and fish for as long as you like.
+                That proximity is especially useful in the early morning, when the skinny water
+                is still cool and schools of tailing bonefish can push high onto the flats.
               </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="#package" className="btn-primary">
+                  See Lodge Package
+                </a>
+                <a href="#lodge-gallery" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">
+                  Browse Photos
+                </a>
+              </div>
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
@@ -55,29 +74,27 @@ export default function LodgePage() {
             </div>
           </div>
 
-          {/* Gallery */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-16">
-              {[
-                { src: "/images/gbf/Lodge-Bedroom-1.jpg", alt: "Lodge bedroom" },
-                { src: "/images/gbf/Lodge-Bath.jpg", alt: "Lodge bathroom" },
-                { src: "/images/gbf/Double-Room.jpg", alt: "Double room" },
-                { src: "/images/gbf/Bonefish-Fishing-Lodge.jpg", alt: "Bonefish Lodge" },
-                { src: "/images/gbf/Balcony.jpg", alt: "Lodge balcony" },
-              ].map((img, i) => (
-              <div key={i} className="relative h-32 rounded-lg overflow-hidden">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                  sizes="20vw"
-                />
-              </div>
-            ))}
+          <div id="lodge-gallery" className="mb-16">
+            <div className="max-w-3xl mb-8">
+              <p className="text-ocean-600 font-semibold uppercase tracking-widest text-sm mb-3">
+                Lodge Photos
+              </p>
+              <h2 className="text-3xl font-bold mb-4">See the Rooms and Waterfront Setting</h2>
+              <p className="text-slate-500 text-lg leading-relaxed">
+                Browse the lodge rooms, deck views, and exterior setting on Bottle Creek.
+                For a wider look at the fishery and day-to-day atmosphere, visit the full gallery.
+              </p>
+            </div>
+            <LodgeGallery images={lodgeImages} />
+            <div className="mt-5">
+              <a href="/gallery" className="text-ocean-600 font-semibold hover:underline">
+                View full photo gallery &rarr;
+              </a>
+            </div>
           </div>
 
           {/* Package */}
-          <div className="card p-8 sm:p-12 mb-16">
+          <div id="package" className="card p-8 sm:p-12 mb-16">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-8">
               <div>
                 <p className="text-ocean-600 font-semibold uppercase tracking-widest text-sm mb-2">
@@ -104,6 +121,13 @@ export default function LodgePage() {
               for fishing self-guided in our fishing kayaks for the following day. The
               third fishing day is back on a flats boat with a guide.
             </p>
+            <div className="rounded-2xl border border-ocean-100 bg-ocean-50/70 p-5 mb-8">
+              <p className="text-sm text-ocean-900 font-semibold mb-2">Good fit for</p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Anglers who want a comfortable lodge base, one guided orientation day, and enough time
+                to mix skiff fishing with independent sessions on the flats.
+              </p>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <h3 className="font-bold mb-3">What&apos;s Included</h3>
@@ -144,6 +168,10 @@ export default function LodgePage() {
                 <h3 className="font-bold mb-3 mt-6">Minimum Stay</h3>
                 <p className="text-sm text-slate-600">Three nights minimum.</p>
               </div>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href="/book" className="btn-primary">Book This Package</a>
+              <a href="/rates" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Compare Rates</a>
             </div>
           </div>
 

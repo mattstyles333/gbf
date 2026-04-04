@@ -82,7 +82,7 @@ export default function FishingKayaksPage() {
             <div className="space-y-3 text-sm text-slate-600">
               <div className="flex justify-between items-center py-2 border-b border-slate-100">
                 <span>Kayak Rental (non-lodge guests)</span>
-                <strong className="text-ocean-700">$110/day</strong>
+                <strong className="text-ocean-700">$110/day + tax</strong>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-slate-100">
                 <span>Available Sizes</span>

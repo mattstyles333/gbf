@@ -39,7 +39,7 @@ export default function HomePage() {
               <span className="text-ocean-400">Absolute Best</span>
             </h1>
              <p className="text-ocean-100 text-lg sm:text-xl leading-relaxed mb-8">
-               Fish Bottle Creek and the Caicos Bank with local guides who grew up on
+               Fish Bottle Creek and the surrounding flats and estuaries with local guides who grew up on
                this water. Choose guided skiff days, DIY kayak access, or lodge
                packages built around the tides.
              </p>
@@ -107,7 +107,7 @@ export default function HomePage() {
                   </svg>
                 ),
                 title: "Crystal-Clear Sight Fishing",
-                desc: "The gin-clear flats of the Caicos Bank give you every advantage. Spot tailing bonefish, sight-cast to cruising singles, and watch the take.",
+                desc: "The clear flats around Bottle Creek make sight-fishing highly visual. Spot tailing fish, cast to cruising singles, and watch the take in shallow water.",
               },
               {
                 icon: (
@@ -140,8 +140,8 @@ export default function HomePage() {
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold">Where We Fly-Fish</h2>
             <p className="mt-4 text-slate-500 max-w-2xl mx-auto text-lg">
-              Based on Bottle Creek in North Caicos, we have access to vast,
-              largely unfished flats across the Caicos Bank.
+              Based on Bottle Creek in North Caicos, we fish nearby flats,
+              channels, and estuaries that stay lightly pressured and highly productive.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

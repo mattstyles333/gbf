@@ -54,7 +54,7 @@ export default function TravelPage() {
                   </div>
                   <div className="flex gap-3">
                     <span className="font-semibold text-foreground w-28 shrink-0">Cost</span>
-                    <span className="text-slate-600">$65 round trip</span>
+                    <span className="text-slate-600">$70 round trip</span>
                   </div>
                   <div className="flex gap-3">
                     <span className="font-semibold text-foreground w-28 shrink-0">Reservations</span>

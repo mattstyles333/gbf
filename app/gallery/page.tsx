@@ -132,6 +132,41 @@ const galleryImages = fs
                   : "h-[30rem]",
   }));
 
+const lodgeGalleryImages = [
+  {
+    src: "/images/gbf/Bonefish-Fishing-Lodge.jpg",
+    title: "Waterfront lodge exterior",
+    category: "Lodge",
+    heightClass: "h-[24rem]",
+  },
+  {
+    src: "/images/gallery/lodge-bedroom-1.jpg",
+    title: "Private lodge bedroom",
+    category: "Lodge",
+    heightClass: "h-[20rem]",
+  },
+  {
+    src: "/images/gbf/Double-Room.jpg",
+    title: "Double room setup",
+    category: "Lodge",
+    heightClass: "h-[22rem]",
+  },
+  {
+    src: "/images/gbf/Lodge-Bath.jpg",
+    title: "Private bathroom",
+    category: "Lodge",
+    heightClass: "h-[18rem]",
+  },
+  {
+    src: "/images/gbf/Balcony.jpg",
+    title: "Deck and water views",
+    category: "Lodge",
+    heightClass: "h-[24rem]",
+  },
+];
+
+const allGalleryImages = [...lodgeGalleryImages, ...galleryImages];
+
 export default function GalleryPage() {
   return (
     <>
@@ -144,13 +179,13 @@ export default function GalleryPage() {
           <div className="max-w-3xl mb-10">
             <p className="text-slate-600 text-lg leading-relaxed">
               These images come from the fishery, the lodge, and days spent on the water around
-              Bottle Creek and the Caicos Bank. Use them to get a better feel for the water,
+              Bottle Creek and the nearby flats and estuaries of North Caicos. Use them to get a better feel for the water,
               the fish, and the style of trip we offer.
             </p>
           </div>
 
           <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
-            {galleryImages.map((image, index) => (
+            {allGalleryImages.map((image, index) => (
               <figure key={image.src} className="card mb-5 break-inside-avoid overflow-hidden bg-white">
                 <div className={`relative w-full ${image.heightClass}`}>
                   <Image

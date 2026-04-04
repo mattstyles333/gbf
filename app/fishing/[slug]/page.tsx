@@ -71,8 +71,8 @@ export default async function FishingSpotPage({ params }: Props) {
     },
     "north-caicos": {
       body: [
-        "North Caicos is located East of Providenciales and marks the start of access to the vast inshore flats of the Caicos Bank. The island is lush with vegetation and boasts a strong infrastructure of roads, energy supply, and communications.",
-        "The waters surrounding North Caicos cover the spectrum of a classical bonefish environment — from mangrove estuaries that act as nurseries for juvenile fish, to the large open flats of the Caicos Bank. This variety offers a challenge for novice and expert anglers alike.",
+        "North Caicos is located east of Providenciales and gives access to a broad range of productive inshore water. The island is lush with vegetation and has enough infrastructure to make travel, lodging, and fishing straightforward.",
+        "The waters surrounding North Caicos cover the full spectrum of classic bonefish habitat — from mangrove estuaries that act as nurseries for juvenile fish to open flats, cuts, and channels around Bottle Creek. This variety offers a challenge for novice and expert anglers alike.",
         "The flats and estuaries are largely unfished as they lie a good distance from the main tourist destination of Providenciales and so mostly out of range for the casual angler vacationing on the main island. The bonefish average 4–5lbs but much larger fish are common, with double digit bonefish caught regularly on both fly and conventional spinning gear.",
         "There are several areas that can be waded directly from land or the beach, but the productive tidal flats for the most part have to be reached by boat or kayak. The island is sufficiently far from the main tourist areas that there is little fishing pressure and the fish tend not to be skittish and will take a fly willingly.",
       ],

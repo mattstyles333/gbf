@@ -33,7 +33,7 @@ export default function BonefishFliesPage() {
               {[
                 {
                   name: "Crazy Charlie",
-                  desc: "A classic — and famous — bonefish fly that should always hold prime position in the fly box. Imitates small, sand-colored crustaceans. Deadly on the flats of the Caicos Bank.",
+                  desc: "A classic — and famous — bonefish fly that should always hold prime position in the fly box. Imitates small, sand-colored crustaceans and is deadly on the flats around Bottle Creek.",
                   colors: "Pink/white, tan, beige — sizes #4–#6",
                   image: "/images/gbf/Crazy-Charlie.jpg",
                 },

@@ -116,8 +116,8 @@ export default function Header() {
               priority
             />
           </span>
-          <div className="hidden sm:block">
-            <span className="text-white font-bold text-base tracking-tight leading-none block">
+          <div className="min-w-0 flex-1 sm:flex-none">
+            <span className="block truncate text-lg font-bold tracking-tight leading-none text-white sm:text-base">
               {siteConfig.name}
             </span>
             <span className="hidden 2xl:block text-ocean-400 text-xs tracking-widest uppercase leading-none mt-0.5 whitespace-nowrap">

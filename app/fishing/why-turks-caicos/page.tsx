@@ -26,13 +26,13 @@ export default function WhyTurksCaicosPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">
-                The Caicos Bank Advantage
+                Why Bottle Creek Stands Out
               </h2>
               <p className="text-slate-600 leading-relaxed mb-4">
-                The Caicos Bank — a vast, shallow plateau of hard white sand and turtle grass — stretches for miles east of Providenciales and north of North Caicos. Bonefish here have never seen a fly. The fish are naive, the water is crystal clear, and the flats go on for miles.
+                Bottle Creek and the nearby flats, creeks, and estuaries of North Caicos offer a rare mix of hard wading bottom, clear water, and very light fishing pressure. Fish here are aggressive, the water is easy to read, and the access is remarkably straightforward.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Unlike heavily pressured destinations in the Bahamas or Florida Keys, the TCI bonefish population remains robust. Our guides at Bottle Creek have watched these flats for decades, and they show you exactly where the fish live — not just the tourist spots.
+                Unlike heavily pressured destinations in the Bahamas or Florida Keys, the North Caicos fishery still feels quiet and underfished. Our guides at Bottle Creek have watched these waters for decades and know how the fish move through the flats, channels, and mangrove edges.
               </p>
             </div>
             <div className="bg-ocean-50 rounded-2xl p-8 border border-ocean-100">
@@ -41,10 +41,10 @@ export default function WhyTurksCaicosPage() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  { stat: "50+ sq mi", label: "of accessible bonefish flats around North Caicos" },
-                  { stat: "< 10%", label: "of the Caicos Bank has ever been fished" },
+                  { stat: "Minutes", label: "from the dock to our productive flats and channels" },
+                  { stat: "2–4 lbs", label: "common school fish on moving water" },
                   { stat: "2–6 lbs", label: "average bonefish size on our flats" },
-                  { stat: "10+ lbs", label: "occasional large bonefish on the outer fringes" },
+                  { stat: "10+ lbs", label: "occasional larger fish in singles and pairs" },
                 ].map(({ stat, label }) => (
                   <li key={stat} className="flex gap-3">
                     <span className="text-ocean-600 font-bold text-lg flex-shrink-0">{stat}</span>
@@ -67,7 +67,7 @@ export default function WhyTurksCaicosPage() {
                 },
                 {
                   title: "Minimal Pressure",
-                  desc: "Most of the Caicos Bank sees fewer than 100 angler-days per year. These bonefish haven't learned to evade flies.",
+                  desc: "The waters we fish around Bottle Creek and North Caicos see very little pressure. These bonefish are not conditioned like fish in crowded destinations.",
                 },
                 {
                   title: "Year-Round Fishing",
@@ -79,7 +79,7 @@ export default function WhyTurksCaicosPage() {
                 },
                 {
                   title: "Pristine Environment",
-                  desc: "The TCI has strict marine protections. The Caicos Reserve at Bottle Creek is a no-development zone, keeping the flats healthy.",
+                  desc: "Bottle Creek remains lightly developed and naturally productive, with healthy flats, mangrove edges, and protected water that support a strong fishery.",
                 },
                 {
                   title: "Multiple Habitats",

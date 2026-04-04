@@ -124,7 +124,7 @@ export const fishingSpots: FishingSpot[] = [
     name: "North Caicos",
     slug: "north-caicos",
     description:
-      "The lushest of the Caicos Islands, with mangrove nurseries, open flats, and very light fishing pressure across the Caicos Bank.",
+      "The lushest of the Caicos Islands, with mangrove nurseries, open flats, and very light fishing pressure around Bottle Creek and nearby North Caicos water.",
     highlights: [
       "Average bonefish 4–5 lbs, larger common",
       "Wading directly from land possible",

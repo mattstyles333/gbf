@@ -17,7 +17,7 @@ export default function LearnPage() {
     {
       href: "/learn/seasons",
       title: "Fishing Seasons",
-      desc: "Weather, tides, and fish activity across autumn, winter, spring, and summer on the flats of the Caicos Bank.",
+      desc: "Weather, tides, and fish activity across autumn, winter, spring, and summer around Bottle Creek and the nearby North Caicos flats.",
       icon: "📅",
     },
     {

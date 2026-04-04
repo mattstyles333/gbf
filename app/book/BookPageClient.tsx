@@ -83,6 +83,9 @@ function BookPageContent({ sent }: { sent: boolean }) {
                   <p className="text-sm text-slate-500 mb-6">
                     This form sends directly to {siteConfig.email}. No online payment is required.
                   </p>
+                  <div className="mb-6 rounded-xl bg-ocean-50 border border-ocean-100 p-4 text-sm text-slate-600">
+                    Most guests start by comparing <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline">guided rates</Link>, <Link href="/rates#lodge-packages" className="text-ocean-700 font-semibold hover:underline">lodge packages</Link>, and <Link href="/rates#diy-options" className="text-ocean-700 font-semibold hover:underline">DIY options</Link> before sending dates.
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-1">
@@ -200,6 +203,24 @@ function BookPageContent({ sent }: { sent: boolean }) {
 
             <div>
               <div className="card p-6 mb-6">
+                <h3 className="font-bold mb-3">Before You Submit</h3>
+                <p className="text-sm text-slate-500 mb-4">
+                  If you&apos;re still comparing options, the rates page breaks down guided days, lodge packages, and DIY pricing.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline text-sm">
+                    Guided rates
+                  </Link>
+                  <Link href="/rates#lodge-packages" className="text-ocean-700 font-semibold hover:underline text-sm">
+                    Lodge packages
+                  </Link>
+                  <Link href="/rates#diy-options" className="text-ocean-700 font-semibold hover:underline text-sm">
+                    DIY pricing
+                  </Link>
+                </div>
+              </div>
+
+              <div className="card p-6 mb-6">
                 <h3 className="font-bold mb-4">Contact Info</h3>
                 <ul className="space-y-4 text-sm">
                   <li>
@@ -242,8 +263,8 @@ function BookPageContent({ sent }: { sent: boolean }) {
                   {[
                     "Send your inquiry or call us directly",
                     "We reply with availability, recommendations, and rates",
-                    "We email deposit details to lock in your dates",
-                    "Balance is due on arrival or on the day of fishing",
+                    "We send deposit details to lock in your dates",
+                    "Balance can be paid in cash on the day, or the day before by Venmo, card, or PayPal",
                   ].map((step, i) => (
                     <li key={i} className="flex gap-3">
                       <span className="flex-shrink-0 w-5 h-5 rounded-full bg-ocean-100 text-ocean-700 flex items-center justify-center text-xs font-bold">
@@ -265,6 +286,27 @@ function BookPageContent({ sent }: { sent: boolean }) {
                   We&apos;re happy to talk through tides, travel logistics, and the right fit for
                   your group before you commit.
                 </p>
+                <div className="mt-5 rounded-xl bg-slate-50 border border-slate-100 p-4 text-sm text-slate-600">
+                  <p className="font-semibold text-slate-800 mb-2">Payment notes</p>
+                  <p className="mb-2">Deposits can be made by credit card or PayPal.</p>
+                  <p className="mb-2">
+                    Balance can be paid in cash on the day, or the day before by Venmo, card,
+                    or PayPal.
+                  </p>
+                  <p className="mb-2">Card, PayPal, and Venmo payments add a 3.5% processing charge.</p>
+                  <p>Venmo: <strong>@Kevin-Styles-1</strong></p>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <Link href="/lodge" className="text-ocean-700 font-semibold hover:underline text-sm">
+                    View lodge
+                  </Link>
+                  <Link href="/fishing" className="text-ocean-700 font-semibold hover:underline text-sm">
+                    Explore fishing
+                  </Link>
+                  <Link href="/gallery" className="text-ocean-700 font-semibold hover:underline text-sm">
+                    Browse gallery
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -184,7 +184,7 @@ export default function FishingPage() {
       <section className="py-16 sm:py-20" style={{ background: "var(--card-bg)" }}>
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">The Bonefish of the Caicos Bank</h2>
+            <h2 className="text-3xl font-bold mb-6">The Bonefish Around Bottle Creek</h2>
             <p className="text-slate-500 text-lg leading-relaxed mb-8">
               The bonefish here are plentiful and aggressive feeders. Tides, season,
               moon, and weather all play into their feeding patterns, so experience
