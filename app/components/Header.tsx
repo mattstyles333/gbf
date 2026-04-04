@@ -57,9 +57,8 @@ function renderDropdownChildren(
           key={child.href}
           href={child.href}
           onClick={onSelect}
-          className="flex items-center px-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/70 transition-colors"
+          className="block px-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/70 transition-colors"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-ocean-400 mr-3 flex-shrink-0" />
           {child.label}
         </Link>
       );
@@ -107,14 +106,16 @@ export default function Header() {
           className="flex items-center gap-3 group flex-shrink-0"
           onClick={closeMobile}
         >
-          <Image
-            src="/logo.svg"
-            alt="Great Bone Fishing logo"
-            width={60}
-            height={42}
-            className="h-11 w-auto flex-shrink-0"
-            priority
-          />
+          <span className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden lg:h-11 lg:w-11">
+            <Image
+              src="/logo.svg"
+              alt="Great Bone Fishing logo"
+              fill
+              sizes="44px"
+              className="object-contain"
+              priority
+            />
+          </span>
           <div className="hidden sm:block">
             <span className="text-white font-bold text-base tracking-tight leading-none block">
               {siteConfig.name}
