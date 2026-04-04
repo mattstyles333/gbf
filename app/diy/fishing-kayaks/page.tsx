@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import PageHero from "../components/PageHero";
-import BookingCTA from "../components/BookingCTA";
+import PageHero from "../../components/PageHero";
+import BookingCTA from "../../components/BookingCTA";
 
 export const metadata: Metadata = {
   title: "Fishing Kayaks — DIY Bonefishing in Turks & Caicos",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import PageHero from "../components/PageHero";
-import BookingCTA from "../components/BookingCTA";
+import PageHero from "../../components/PageHero";
+import BookingCTA from "../../components/BookingCTA";
 
 export const metadata: Metadata = {
   title: "Guided vs. DIY Bonefishing — Which Is Right for You?",

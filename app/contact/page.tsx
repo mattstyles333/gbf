@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "./content";
+import { siteConfig } from "../content";
 
 export const metadata: Metadata = {
   title: `Contact — ${siteConfig.name}`,
