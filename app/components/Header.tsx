@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { navItems, siteConfig, type NavItem } from "../content";
 
 function renderDropdownChildren(
@@ -12,28 +13,29 @@ function renderDropdownChildren(
   const items: React.ReactNode[] = [];
   let lastGroup: string | undefined;
 
-  children.forEach((child, i) => {
+  children.forEach((child) => {
     const group = child.group;
 
     if (group !== lastGroup) {
-      if (isMobile) {
-        items.push(
-          <div key={`group-${group ?? "none"}-${i}`} className="mt-2 first:mt-0">
-            <div className="px-7 py-1.5 text-xs font-semibold uppercase tracking-widest text-ocean-500/80">
-              {group}
-            </div>
-          </div>
-        );
-      } else {
-        items.push(
-          <div key={`group-${group ?? "none"}-${i}`} className="mt-2 first:mt-0">
-            {group && (
-              <div className="px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-ocean-500/80">
+      if (group) {
+        const groupKey = `group-${group}`;
+        if (isMobile) {
+          items.push(
+            <div key={groupKey} className="mt-4 first:mt-0">
+              <div className="px-6 py-1.5 text-xs font-semibold uppercase tracking-widest text-ocean-500/80">
                 {group}
               </div>
-            )}
-          </div>
-        );
+            </div>
+          );
+        } else {
+          items.push(
+            <div key={groupKey} className="mt-3 first:mt-0">
+              <div className="px-4 py-1 text-xs font-semibold uppercase tracking-widest text-ocean-500/80">
+                {group}
+              </div>
+            </div>
+          );
+        }
       }
       lastGroup = group;
     }
@@ -44,7 +46,7 @@ function renderDropdownChildren(
           key={child.href}
           href={child.href}
           onClick={onSelect}
-          className="block pl-8 pr-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/40 transition-colors"
+          className="block pl-6 pr-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/40 transition-colors"
         >
           {child.label}
         </Link>
@@ -57,7 +59,7 @@ function renderDropdownChildren(
           onClick={onSelect}
           className="flex items-center px-4 py-2.5 text-sm text-ocean-300 hover:text-white hover:bg-ocean-800/70 transition-colors"
         >
-          <span className="w-1 h-1 rounded-full bg-ocean-500 mr-3 flex-shrink-0" />
+          <span className="w-1.5 h-1.5 rounded-full bg-ocean-400 mr-3 flex-shrink-0" />
           {child.label}
         </Link>
       );
@@ -105,17 +107,19 @@ export default function Header() {
           className="flex items-center gap-3 group flex-shrink-0"
           onClick={closeMobile}
         >
-          <div className="w-9 h-9 rounded bg-gradient-to-br from-ocean-400 to-ocean-600 flex items-center justify-center shadow-sm">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.5} className="w-5 h-5">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-          </div>
-          <div>
-            <span className="text-white font-bold text-lg tracking-tight leading-none block">
+          <Image
+            src="/logo.svg"
+            alt="Great Bone Fishing"
+            width={44}
+            height={44}
+            className="flex-shrink-0"
+            priority
+          />
+          <div className="hidden sm:block">
+            <span className="text-white font-bold text-base tracking-tight leading-none block">
               {siteConfig.name}
             </span>
-            <span className="hidden sm:block text-ocean-400 text-xs tracking-widest uppercase leading-none mt-0.5">
+            <span className="text-ocean-400 text-xs tracking-widest uppercase leading-none mt-0.5">
               {siteConfig.tagline}
             </span>
           </div>

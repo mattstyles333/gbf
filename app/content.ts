@@ -56,14 +56,13 @@ export const navItems: NavItem[] = [
     label: "Fishing",
     href: "/fishing",
     children: [
-      { label: "Overview", href: "/fishing" },
-      { label: "North Caicos", href: "/fishing/north-caicos", group: "Our Locations" },
-      { label: "Bottle Creek", href: "/fishing/bottle-creek", group: "Our Locations" },
-      { label: "East Bay & South Cays", href: "/fishing/east-bay", group: "Our Locations" },
+      { label: "Our Locations", href: "/fishing/north-caicos", group: "Where to Fish" },
+      { label: "Bottle Creek", href: "/fishing/bottle-creek", group: "Where to Fish" },
+      { label: "East Bay & South Cays", href: "/fishing/east-bay", group: "Where to Fish" },
+      { label: "Why Turks & Caicos", href: "/fishing/why-turks-caicos", group: "Where to Fish" },
       { label: "DIY Bonefishing", href: "/diy", group: "Self-Guided" },
       { label: "Kayak Rentals", href: "/diy/fishing-kayaks", group: "Self-Guided" },
       { label: "Guided vs. DIY", href: "/diy/guided-vs-diy", group: "Self-Guided" },
-      { label: "Why Turks & Caicos", href: "/fishing/why-turks-caicos" },
     ],
   },
   {
