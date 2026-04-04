@@ -1,241 +1,219 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" fill="none">
   <defs>
-    <!-- Body gradients for depth -->
-    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9DD9E5"/>
-      <stop offset="35%" stop-color="#6BB8D4"/>
-      <stop offset="65%" stop-color="#4A9BB8"/>
+    <!-- Water gradient -->
+    <linearGradient id="waterTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8EDF5"/>
+      <stop offset="50%" stop-color="#7DD3FC"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="waterMid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="waterBot" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <!-- Fish body -->
+    <linearGradient id="fishTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4EFF7"/>
+      <stop offset="40%" stop-color="#8DCFE5"/>
+      <stop offset="100%" stop-color="#4A9BB8"/>
+    </linearGradient>
+    <linearGradient id="fishBot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6BB8D4"/>
       <stop offset="100%" stop-color="#2D7A9A"/>
     </linearGradient>
-    <linearGradient id="bodyDark" x1="0%" y1="0%" x2="80%" y2="100%">
-      <stop offset="0%" stop-color="#5A9AB8"/>
-      <stop offset="100%" stop-color="#1E5A75"/>
-    </linearGradient>
-    <linearGradient id="tailGrad" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#4A9BB8"/>
-      <stop offset="100%" stop-color="#1E5A75"/>
-    </linearGradient>
-    <linearGradient id="dorsalGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#3A8090"/>
-      <stop offset="100%" stop-color="#6BB8D4"/>
-    </linearGradient>
-    <linearGradient id="pectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4A9BB8"/>
-      <stop offset="100%" stop-color="#7DC4D8"/>
+    <linearGradient id="dorsalFin" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#2D7A9A"/>
+      <stop offset="100%" stop-color="#8DCFE5"/>
     </linearGradient>
     <radialGradient id="eyeGrad" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#2C4A5A"/>
+      <stop offset="0%" stop-color="#4A6A7A"/>
       <stop offset="100%" stop-color="#0A1E28"/>
-    </radialGradient>
-    <radialGradient id="snoutGrad" cx="0%" cy="50%" r="100%">
-      <stop offset="0%" stop-color="#A8E0ED"/>
-      <stop offset="100%" stop-color="#6BB8D4"/>
     </radialGradient>
   </defs>
 
-  <!-- Drop shadow -->
-  <ellipse cx="150" cy="90" rx="110" ry="28" fill="#0A1E28" opacity="0.15"/>
+  <!-- ===== WATER / WAVE BACKGROUND ===== -->
+  <!-- Wave layer 1 (back) -->
+  <path d="M0 120 Q40 105 80 115 Q120 125 160 112 Q200 100 240 115 Q280 130 320 118 Q360 108 400 120 L400 160 L0 160Z" fill="url(#waterTop)" opacity="0.5"/>
+  <!-- Wave layer 2 (mid) -->
+  <path d="M0 135 Q50 118 90 130 Q130 142 170 128 Q210 115 250 130 Q290 145 330 132 Q365 122 400 135 L400 175 L0 175Z" fill="url(#waterMid)" opacity="0.5"/>
+  <!-- Wave layer 3 (front) -->
+  <path d="M0 155 Q45 138 85 150 Q125 162 165 148 Q205 135 245 150 Q285 165 325 152 Q360 142 400 155 L400 195 L0 195Z" fill="url(#waterBot)" opacity="0.4"/>
 
-  <!-- ===== TAIL / CAUDAL FIN ===== -->
-  <!-- Tail spread - left lobe -->
-  <path d="M252 80 Q275 55 292 38 Q280 58 278 70 Q285 58 272 48 Q268 65 252 80Z" fill="url(#tailGrad)" opacity="0.95"/>
-  <!-- Tail spread - right lobe -->
-  <path d="M252 80 Q275 105 292 122 Q280 102 278 90 Q285 102 272 112 Q268 95 252 80Z" fill="url(#tailGrad)" opacity="0.95"/>
-  <!-- Tail peduncle (narrowing) -->
-  <path d="M238 78 Q248 75 255 76 Q248 80 255 84 Q248 85 238 82Z" fill="#1E5A75"/>
-  <!-- Tail membrane detail left -->
-  <path d="M252 80 Q268 62 278 52 M252 80 Q262 65 272 58" stroke="#1E5A75" stroke-width="0.6" fill="none" opacity="0.5"/>
-  <!-- Tail membrane detail right -->
-  <path d="M252 80 Q268 98 278 108 M252 80 Q262 95 272 102" stroke="#1E5A75" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <!-- Water shimmer lines -->
+  <path d="M20 142 Q60 130 100 140" stroke="#BAE6FD" stroke-width="1.2" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M80 155 Q120 143 160 153" stroke="#BAE6FD" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M200 148 Q240 136 280 146" stroke="#BAE6FD" stroke-width="1.2" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M300 158 Q340 146 380 155" stroke="#BAE6FD" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M50 168 Q90 156 130 166" stroke="#7DD3FC" stroke-width="0.8" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path d="M220 170 Q260 158 300 168" stroke="#7DD3FC" stroke-width="0.8" fill="none" opacity="0.4" stroke-linecap="round"/>
 
-  <!-- ===== DORSAL FIN ===== -->
-  <path d="M125 74 Q132 52 145 48 Q158 44 172 47 Q185 50 192 55 Q188 60 182 63 Q168 62 155 65 Q142 68 132 74Z" fill="url(#dorsalGrad)" opacity="0.85"/>
+  <!-- ===== BONY FISH (top-down view, curved body) ===== -->
+  <!-- Fish shadow -->
+  <ellipse cx="200" cy="112" rx="115" ry="28" fill="#0A1E28" opacity="0.12"/>
+
+  <!-- TAIL / CAUDAL FIN -->
+  <!-- Tail spread -->
+  <path d="M310 88 Q348 55 375 32 Q358 58 352 72 Q362 55 345 42 Q340 62 325 78 Q335 62 318 48 Q312 68 310 88Z" fill="#2D7A9A"/>
+  <path d="M310 88 Q348 121 375 144 Q358 118 352 104 Q362 121 345 134 Q340 114 325 98 Q335 114 318 128 Q312 108 310 88Z" fill="#2D7A9A"/>
+  <!-- Tail membrane rays -->
+  <path d="M310 88 Q335 62 355 45 M310 88 Q338 72 358 58 M310 88 Q335 88 355 80" stroke="#0369A1" stroke-width="0.7" fill="none" opacity="0.5"/>
+  <path d="M310 88 Q335 114 355 131 M310 88 Q338 104 358 118 M310 88 Q335 88 355 96" stroke="#0369A1" stroke-width="0.7" fill="none" opacity="0.5"/>
+  <!-- Tail peduncle -->
+  <path d="M295 86 Q308 83 318 85 Q308 88 318 91 Q308 93 295 90Z" fill="#1E5A75"/>
+
+  <!-- MAIN BODY (curved, top-down) -->
+  <path d="
+    M80 95
+    Q100 82 130 79
+    Q165 76 200 80
+    Q235 84 265 88
+    Q290 92 310 88
+    Q295 96 275 98
+    Q245 100 210 97
+    Q170 94 135 95
+    Q105 96 80 108
+    Q70 105 80 95Z
+  " fill="url(#fishTop)"/>
+
+  <!-- Body underside (darker) -->
+  <path d="
+    M80 108
+    Q105 104 135 103
+    Q170 102 210 105
+    Q245 108 275 106
+    Q295 104 310 100
+    Q295 112 275 114
+    Q245 116 210 113
+    Q170 110 135 110
+    Q105 110 80 118
+    Q70 115 80 108Z
+  " fill="url(#fishBot)" opacity="0.7"/>
+
+  <!-- Dorsal fin -->
+  <path d="
+    M155 78 Q165 55 182 50 Q200 46 218 49 Q235 53 245 58
+    Q238 64 230 67 Q215 65 200 67 Q185 70 170 75
+    Q162 78 155 78Z
+  " fill="url(#dorsalFin)" opacity="0.85"/>
   <!-- Dorsal fin rays -->
-  <path d="M135 62 Q138 55 142 52 M142 52 Q145 50 148 52 Q146 55 144 60" stroke="#A8E0ED" stroke-width="0.5" fill="none" opacity="0.5"/>
-  <path d="M152 58 Q155 50 159 48 Q162 46 165 50 Q163 54 158 58" stroke="#A8E0ED" stroke-width="0.5" fill="none" opacity="0.5"/>
-  <path d="M170 53 Q173 48 177 49 Q176 53 172 57" stroke="#A8E0ED" stroke-width="0.5" fill="none" opacity="0.5"/>
+  <path d="M168 62 Q172 56 176 54 M176 54 Q179 52 182 55 Q180 58 176 62" stroke="#D4EFF7" stroke-width="0.6" fill="none" opacity="0.6"/>
+  <path d="M190 58 Q194 51 198 49 Q201 47 204 51 Q202 55 198 59" stroke="#D4EFF7" stroke-width="0.6" fill="none" opacity="0.6"/>
+  <path d="M212 54 Q216 48 220 47 Q223 46 225 50 Q223 54 219 57" stroke="#D4EFF7" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <path d="M230 56 Q233 51 237 52 Q236 56 232 59" stroke="#D4EFF7" stroke-width="0.6" fill="none" opacity="0.5"/>
 
-  <!-- ===== PECTORAL FINS ===== -->
-  <!-- Left pectoral (angled up from body) -->
-  <path d="M92 80 Q82 68 70 62 Q76 70 72 78 Q78 76 80 82 Q84 78 92 82Z" fill="url(#pectGrad)" opacity="0.8"/>
-  <path d="M72 70 Q78 72 80 76" stroke="#A8E0ED" stroke-width="0.5" fill="none" opacity="0.5"/>
+  <!-- PECTORAL FINS -->
+  <!-- Left pectoral (angled up) -->
+  <path d="M115 88 Q100 72 82 64 Q92 76 88 86 Q96 82 100 90 Q106 84 115 90Z" fill="#8DCFE5" opacity="0.8"/>
+  <path d="M88 76 Q95 78 98 84" stroke="#D4EFF7" stroke-width="0.7" fill="none" opacity="0.5"/>
   <!-- Right pectoral -->
-  <path d="M92 82 Q82 94 70 100 Q76 92 72 84 Q78 86 80 82 Q84 86 92 80Z" fill="url(#pectGrad)" opacity="0.8"/>
-  <path d="M72 92 Q78 90 80 86" stroke="#A8E0ED" stroke-width="0.5" fill="none" opacity="0.5"/>
+  <path d="M115 98 Q100 114 82 122 Q92 110 88 100 Q96 104 100 96 Q106 102 115 96Z" fill="#8DCFE5" opacity="0.8"/>
+  <path d="M88 110 Q95 108 98 102" stroke="#D4EFF7" stroke-width="0.7" fill="none" opacity="0.5"/>
 
-  <!-- ===== MAIN BODY ===== -->
-  <!-- The bonefish body - sinuous, curved shape (top-down view) -->
+  <!-- SCALES (diagonal arc pattern, multiple rows) -->
+  <!-- Row 1 -->
+  <path d="M100 85 Q104 82 107 85 Q104 86 100 85Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M112 83 Q116 80 119 83 Q116 84 112 83Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M124 82 Q128 79 131 82 Q128 83 124 82Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M136 81 Q140 78 143 81 Q140 82 136 81Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M148 80 Q152 77 155 80 Q152 81 148 80Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M160 80 Q164 77 167 80 Q164 81 160 80Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M172 80 Q176 77 179 80 Q176 81 172 80Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M184 81 Q188 78 191 81 Q188 82 184 81Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M196 82 Q200 79 203 82 Q200 83 196 82Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M208 83 Q212 80 215 83 Q212 84 208 83Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M220 85 Q224 82 227 85 Q224 86 220 85Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.8"/>
+  <path d="M232 87 Q236 84 239 87 Q236 88 232 87Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.7"/>
+  <path d="M244 90 Q248 87 251 90 Q248 91 244 90Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.7"/>
+  <path d="M256 93 Q260 90 263 93 Q260 94 256 93Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.6"/>
+  <path d="M268 96 Q272 93 275 96 Q272 97 268 96Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.5"/>
+  <path d="M280 98 Q284 95 287 98 Q284 99 280 98Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.4"/>
+  <path d="M292 99 Q296 96 299 99 Q296 100 292 99Z" fill="none" stroke="#D4EFF7" stroke-width="0.7" opacity="0.3"/>
+
+  <!-- Row 2 -->
+  <path d="M100 92 Q104 89 107 92 Q104 93 100 92Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M112 90 Q116 87 119 90 Q116 91 112 90Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M124 89 Q128 86 131 89 Q128 90 124 89Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M136 88 Q140 85 143 88 Q140 89 136 88Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M148 87 Q152 84 155 87 Q152 88 148 87Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M160 87 Q164 84 167 87 Q164 88 160 87Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M172 87 Q176 84 179 87 Q176 88 172 87Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M184 88 Q188 85 191 88 Q188 89 184 88Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M196 89 Q200 86 203 89 Q200 90 196 89Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M208 90 Q212 87 215 90 Q212 91 208 90Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M220 92 Q224 89 227 92 Q224 93 220 92Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.7"/>
+  <path d="M232 94 Q236 91 239 94 Q236 95 232 94Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.6"/>
+  <path d="M244 97 Q248 94 251 97 Q248 98 244 97Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.6"/>
+  <path d="M256 100 Q260 97 263 100 Q260 101 256 100Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.5"/>
+  <path d="M268 102 Q272 99 275 102 Q272 103 268 102Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.4"/>
+  <path d="M280 103 Q284 100 287 103 Q284 104 280 103Z" fill="none" stroke="#8DCFE5" stroke-width="0.7" opacity="0.3"/>
+
+  <!-- Row 3 -->
+  <path d="M100 99 Q104 96 107 99 Q104 100 100 99Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M112 97 Q116 94 119 97 Q116 98 112 97Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M124 96 Q128 93 131 96 Q128 97 124 96Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M136 95 Q140 92 143 95 Q140 96 136 95Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M148 94 Q152 91 155 94 Q152 95 148 94Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M160 94 Q164 91 167 94 Q164 95 160 94Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M172 94 Q176 91 179 94 Q176 95 172 94Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M184 95 Q188 92 191 95 Q188 96 184 95Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M196 96 Q200 93 203 96 Q200 97 196 96Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M208 98 Q212 95 215 98 Q212 99 208 98Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.6"/>
+  <path d="M220 100 Q224 97 227 100 Q224 101 220 100Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.5"/>
+  <path d="M232 102 Q236 99 239 102 Q236 103 232 102Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.5"/>
+  <path d="M244 105 Q248 102 251 105 Q248 106 244 105Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.4"/>
+  <path d="M256 108 Q260 105 263 108 Q260 109 256 108Z" fill="none" stroke="#6BB8D4" stroke-width="0.7" opacity="0.3"/>
+
+  <!-- Row 4 (belly) -->
+  <path d="M104 106 Q108 103 111 106 Q108 107 104 106Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M116 104 Q120 101 123 104 Q120 105 116 104Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M128 103 Q132 100 135 103 Q132 104 128 103Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M140 102 Q144 99 147 102 Q144 103 140 102Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M152 101 Q156 98 159 101 Q156 102 152 101Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M164 101 Q168 98 171 101 Q168 102 164 101Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M176 102 Q180 99 183 102 Q180 103 176 102Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M188 103 Q192 100 195 103 Q192 104 188 103Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M200 105 Q204 102 207 105 Q204 106 200 105Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.5"/>
+  <path d="M212 107 Q216 104 219 107 Q216 108 212 107Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.4"/>
+  <path d="M224 109 Q228 106 231 109 Q228 110 224 109Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.4"/>
+  <path d="M236 111 Q240 108 243 111 Q240 112 236 111Z" fill="none" stroke="#4A9BB8" stroke-width="0.6" opacity="0.3"/>
+
+  <!-- HEAD / SNOUT -->
   <path d="
-    M58 80
-    Q65 72 80 70
-    Q100 68 130 72
-    Q160 76 190 80
-    Q215 84 235 82
-    Q245 80 252 80
-    Q245 88 235 90
-    Q215 92 190 88
-    Q160 84 130 80
-    Q100 76 80 78
-    Q65 80 58 88
-    Q55 84 58 80Z
-  " fill="url(#bodyGrad)"/>
+    M80 95 Q68 94 56 93 Q46 92 38 91 Q34 92 38 93 Q48 94 58 95 Q68 96 80 108
+    Q70 105 80 95Z
+  " fill="#8DCFE5"/>
+  <!-- Mouth (inferior, characteristic of bonefish) -->
+  <ellipse cx="39" cy="96" rx="7" ry="1.5" fill="#1E5A75" opacity="0.7"/>
+  <path d="M33 96 Q39 94.5 45 96" stroke="#0369A1" stroke-width="1" fill="none" stroke-linecap="round"/>
 
-  <!-- Body shading - lighter top, darker bottom (3D effect) -->
-  <path d="
-    M58 80
-    Q65 72 80 70
-    Q100 68 130 72
-    Q160 76 190 80
-    Q215 84 235 82
-    Q245 80 248 80
-    Q240 82 232 82
-    Q210 84 185 82
-    Q155 79 128 78
-    Q100 76 80 78
-    Q65 79 58 84
-    Q55 82 58 80Z
-  " fill="#A8E0ED" opacity="0.3"/>
-
-  <!-- ===== LATERAL LINE ===== -->
-  <path d="M60 84 Q90 82 130 81 Q175 80 220 81 Q240 81 250 80" 
-        stroke="#1E5A75" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
-
-  <!-- ===== SCALES ===== -->
-  <!-- Each scale is a small arc, overlapping pattern from gills to tail -->
-  <!-- Row 1 (top) -->
-  <path d="M75 74 Q78 72 80 74 Q78 75 75 74Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M84 73 Q87 71 89 73 Q87 74 84 73Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M93 72 Q96 70 98 72 Q96 73 93 72Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M102 71 Q105 69 107 71 Q105 72 102 71Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M111 70 Q114 68 116 70 Q114 71 111 70Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M120 70 Q123 68 125 70 Q123 71 120 70Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M129 70 Q132 68 134 70 Q132 71 129 70Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M138 71 Q141 69 143 71 Q141 72 138 71Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M147 72 Q150 70 152 72 Q150 73 147 72Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M156 73 Q159 71 161 73 Q159 74 156 73Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M165 74 Q168 72 170 74 Q168 75 165 74Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M174 76 Q177 74 179 76 Q177 77 174 76Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M183 78 Q186 76 188 78 Q186 79 183 78Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.6"/>
-  <path d="M192 80 Q195 78 197 80 Q195 81 192 80Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.6"/>
-  <path d="M201 82 Q204 80 206 82 Q204 83 201 82Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.5"/>
-  <path d="M210 84 Q213 82 215 84 Q213 85 210 84Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.5"/>
-  <path d="M219 85 Q222 83 224 85 Q222 86 219 85Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.4"/>
-  <path d="M228 85 Q231 83 233 85 Q231 86 228 85Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.4"/>
-  <path d="M237 84 Q240 82 242 84 Q240 85 237 84Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.3"/>
-
-  <!-- Row 2 (middle-top) -->
-  <path d="M72 78 Q75 76 77 78 Q75 79 72 78Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.6"/>
-  <path d="M80 77 Q83 75 85 77 Q83 78 80 77Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M88 76 Q91 74 93 76 Q91 77 88 76Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M96 75 Q99 73 101 75 Q99 76 96 75Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M104 74 Q107 72 109 74 Q107 75 104 74Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M112 73 Q115 71 117 73 Q115 74 112 73Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M120 73 Q123 71 125 73 Q123 74 120 73Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M128 73 Q131 71 133 73 Q131 74 128 73Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M136 73 Q139 71 141 73 Q139 74 136 73Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M144 74 Q147 72 149 74 Q147 75 144 74Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M152 75 Q155 73 157 75 Q155 76 152 75Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M160 76 Q163 74 165 76 Q163 77 160 76Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M168 78 Q171 76 173 78 Q171 79 168 78Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.7"/>
-  <path d="M176 80 Q179 78 181 80 Q179 81 176 80Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.6"/>
-  <path d="M184 82 Q187 80 189 82 Q187 83 184 82Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.6"/>
-  <path d="M192 84 Q195 82 197 84 Q195 85 192 84Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.5"/>
-  <path d="M200 85 Q203 83 205 85 Q203 86 200 85Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.5"/>
-  <path d="M208 86 Q211 84 213 86 Q211 87 208 86Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.4"/>
-  <path d="M216 86 Q219 84 221 86 Q219 87 216 86Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.4"/>
-  <path d="M224 85 Q227 83 229 85 Q227 86 224 85Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.3"/>
-  <path d="M232 84 Q235 82 237 84 Q235 85 232 84Z" fill="none" stroke="#A8E0ED" stroke-width="0.5" opacity="0.3"/>
-
-  <!-- Row 3 (middle-bottom) -->
-  <path d="M72 82 Q75 80 77 82 Q75 83 72 82Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.5"/>
-  <path d="M80 81 Q83 79 85 81 Q83 82 80 81Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M88 80 Q91 78 93 80 Q91 81 88 80Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M96 79 Q99 77 101 79 Q99 80 96 79Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M104 78 Q107 76 109 78 Q107 79 104 78Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M112 77 Q115 75 117 77 Q115 78 112 77Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M120 77 Q123 75 125 77 Q123 78 120 77Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M128 77 Q131 75 133 77 Q131 78 128 77Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M136 78 Q139 76 141 78 Q139 79 136 78Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M144 79 Q147 77 149 79 Q147 80 144 79Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M152 80 Q155 78 157 80 Q155 81 152 80Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M160 82 Q163 80 165 82 Q163 83 160 82Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.6"/>
-  <path d="M168 84 Q171 82 173 84 Q171 85 168 84Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.5"/>
-  <path d="M176 86 Q179 84 181 86 Q179 87 176 86Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.5"/>
-  <path d="M184 88 Q187 86 189 88 Q187 89 184 88Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.4"/>
-  <path d="M192 89 Q195 87 197 89 Q195 90 192 89Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.4"/>
-  <path d="M200 89 Q203 87 205 89 Q203 90 200 89Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.3"/>
-  <path d="M208 88 Q211 86 213 88 Q211 89 208 88Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.3"/>
-  <path d="M216 87 Q219 85 221 87 Q219 88 216 87Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.3"/>
-  <path d="M224 85 Q227 83 229 85 Q227 86 224 85Z" fill="none" stroke="#6BB8D4" stroke-width="0.5" opacity="0.25"/>
-
-  <!-- Row 4 (bottom) -->
-  <path d="M76 86 Q79 84 81 86 Q79 87 76 86Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.4"/>
-  <path d="M84 85 Q87 83 89 85 Q87 86 84 85Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M92 84 Q95 82 97 84 Q95 85 92 84Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M100 83 Q103 81 105 83 Q103 84 100 83Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M108 82 Q111 80 113 82 Q111 83 108 82Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M116 81 Q119 79 121 81 Q119 82 116 81Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M124 81 Q127 79 129 81 Q127 82 124 81Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M132 82 Q135 80 137 82 Q135 83 132 82Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M140 83 Q143 81 145 83 Q143 84 140 83Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M148 85 Q151 83 153 85 Q151 86 148 85Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.5"/>
-  <path d="M156 87 Q159 85 161 87 Q159 88 156 87Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.4"/>
-  <path d="M164 89 Q167 87 169 89 Q167 90 164 89Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.4"/>
-  <path d="M172 91 Q175 89 177 91 Q175 92 172 91Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.3"/>
-  <path d="M180 92 Q183 90 185 92 Q183 93 180 92Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.3"/>
-  <path d="M188 92 Q191 90 193 92 Q191 93 188 92Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.25"/>
-  <path d="M196 91 Q199 89 201 91 Q199 92 196 91Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.25"/>
-  <path d="M204 89 Q207 87 209 89 Q207 90 204 89Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.2"/>
-  <path d="M212 87 Q215 85 217 87 Q215 88 212 87Z" fill="none" stroke="#4A9BB8" stroke-width="0.5" opacity="0.2"/>
-
-  <!-- ===== HEAD / SNOUT ===== -->
-  <!-- Head shape - bonefish has a slightly bulbous head tapering to a rounded snout -->
-  <path d="
-    M58 80
-    Q52 80 46 79
-    Q40 78 36 77
-    Q34 78 36 79
-    Q40 80 46 81
-    Q52 82 58 82
-    Q55 81 58 80Z
-  " fill="url(#snoutGrad)"/>
-
-  <!-- Mouth - inferior (bonefish mouths are on the bottom of the snout) -->
-  <ellipse cx="37" cy="80.5" rx="5" ry="1.2" fill="#1E5A75" opacity="0.6"/>
-  <path d="M33 80.5 Q37 79.5 41 80.5" stroke="#1E5A75" stroke-width="0.8" fill="none" stroke-linecap="round"/>
-
-  <!-- ===== GILL PLATE / OPERCUUM ===== -->
-  <path d="M58 78 Q54 78 52 80 Q54 82 58 82" stroke="#1E5A75" stroke-width="0.8" fill="none" opacity="0.4"/>
-  <path d="M62 77 Q58 76 56 78 Q58 80 62 80" stroke="#1E5A75" stroke-width="0.5" fill="none" opacity="0.3"/>
-
+  <!-- GILL PLATE -->
+  <path d="M78 92 Q72 91 68 93 Q72 95 78 96" stroke="#1E5A75" stroke-width="1" fill="none" opacity="0.4"/>
   <!-- Gill membrane lines -->
-  <path d="M54 78 Q56 80 54 82" stroke="#1E5A75" stroke-width="0.4" fill="none" opacity="0.3"/>
-  <path d="M56 77 Q58 79 56 81" stroke="#1E5A75" stroke-width="0.4" fill="none" opacity="0.3"/>
-  <path d="M58 77 Q60 79 58 81" stroke="#1E5A75" stroke-width="0.4" fill="none" opacity="0.3"/>
+  <path d="M70 93 Q72 95 70 97" stroke="#1E5A75" stroke-width="0.6" fill="none" opacity="0.3"/>
+  <path d="M74 92 Q76 94 74 96" stroke="#1E5A75" stroke-width="0.6" fill="none" opacity="0.3"/>
+  <path d="M78 92 Q80 94 78 96" stroke="#1E5A75" stroke-width="0.6" fill="none" opacity="0.3"/>
 
-  <!-- ===== EYE ===== -->
-  <!-- Eye socket / ring -->
-  <circle cx="48" cy="78" r="4.5" fill="#0F2A38" opacity="0.8"/>
-  <!-- Iris -->
-  <circle cx="48" cy="78" r="3.5" fill="url(#eyeGrad)"/>
-  <!-- Pupil -->
-  <circle cx="48" cy="78" r="1.8" fill="#050D12"/>
-  <!-- Highlight -->
-  <circle cx="47" cy="77" r="1" fill="white" opacity="0.7"/>
-  <circle cx="49" cy="79" r="0.4" fill="white" opacity="0.4"/>
-  <!-- Eye ring detail -->
-  <circle cx="48" cy="78" r="4.5" fill="none" stroke="#2C4A5A" stroke-width="0.5" opacity="0.6"/>
+  <!-- EYE -->
+  <circle cx="58" cy="91" r="6" fill="#0F2A38" opacity="0.9"/>
+  <circle cx="58" cy="91" r="5" fill="url(#eyeGrad)"/>
+  <circle cx="58" cy="91" r="2.5" fill="#050D12"/>
+  <circle cx="56.5" cy="89.5" r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="59.5" cy="92.5" r="0.6" fill="white" opacity="0.4"/>
+  <circle cx="58" cy="91" r="6" fill="none" stroke="#2C4A5A" stroke-width="0.6" opacity="0.7"/>
 
-  <!-- ===== BODY EDGE HIGHLIGHT ===== -->
-  <!-- Top edge highlight for 3D depth -->
-  <path d="M58 80 Q65 72 80 70 Q100 68 130 72 Q160 76 190 80 Q215 84 235 82"
-        stroke="#C8EDF5" stroke-width="0.6" fill="none" opacity="0.35" stroke-linecap="round"/>
+  <!-- LATERAL LINE -->
+  <path d="M42 95 Q80 90 130 91 Q175 92 220 93 Q260 94 295 92"
+        stroke="#0369A1" stroke-width="1" fill="none" opacity="0.35" stroke-linecap="round"/>
 
-  <!-- Bottom edge shadow -->
-  <path d="M58 88 Q65 88 80 88 Q100 90 130 90 Q160 92 190 92 Q215 94 235 92"
-        stroke="#0F2A38" stroke-width="0.4" fill="none" opacity="0.2"/>
+  <!-- BODY EDGE HIGHLIGHT (top, gives 3D depth) -->
+  <path d="M80 95 Q100 82 130 79 Q165 76 200 80 Q235 84 265 88 Q290 92 310 88"
+        stroke="#E8F8FD" stroke-width="0.8" fill="none" opacity="0.4" stroke-linecap="round"/>
 
-  <!-- ===== FISH SHADOW / DEPTH ===== -->
-  <!-- Subtle shadow under the body to lift it off the background -->
-  <ellipse cx="150" cy="88" rx="100" ry="8" fill="#0A1E28" opacity="0.08"/>
+  <!-- BODY BOTTOM SHADOW -->
+  <path d="M80 108 Q105 106 135 105 Q170 104 210 107 Q245 110 275 108 Q295 106 310 102"
+        stroke="#0A1E28" stroke-width="0.5" fill="none" opacity="0.2" stroke-linecap="round"/>
 </svg>
