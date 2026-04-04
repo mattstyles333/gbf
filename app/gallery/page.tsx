@@ -110,12 +110,26 @@ function toCategory(name: string) {
 const galleryImages = fs
   .readdirSync(galleryDir)
   .filter((file) => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
+  .filter((file) => !["gallery-feature-01.jpg", "great-bone-fishing-mark.jpg"].includes(file))
   .sort((a, b) => a.localeCompare(b))
   .map((file, index) => ({
     src: `/images/gallery/${file}`,
     title: toTitle(file),
     category: toCategory(file),
-    tall: index % 7 === 2 || index % 7 === 5,
+    heightClass:
+      index % 7 === 0
+        ? "h-[20rem]"
+        : index % 7 === 1
+          ? "h-[28rem]"
+          : index % 7 === 2
+            ? "h-[24rem]"
+            : index % 7 === 3
+              ? "h-[18rem]"
+              : index % 7 === 4
+                ? "h-[26rem]"
+                : index % 7 === 5
+                  ? "h-[21rem]"
+                  : "h-[30rem]",
   }));
 
 export default function GalleryPage() {
@@ -135,10 +149,10 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
             {galleryImages.map((image, index) => (
-              <figure key={image.src} className="card overflow-hidden bg-white">
-                <div className={`relative w-full ${image.tall ? "h-[28rem]" : "h-80"}`}>
+              <figure key={image.src} className="card mb-5 break-inside-avoid overflow-hidden bg-white">
+                <div className={`relative w-full ${image.heightClass}`}>
                   <Image
                     src={image.src}
                     alt={image.title}

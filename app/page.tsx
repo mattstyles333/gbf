@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-16 lg:pt-20">
+      <section className="relative flex min-h-screen items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/gallery/fishing-along-the-mangroves.jpg"

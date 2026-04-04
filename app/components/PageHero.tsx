@@ -9,7 +9,7 @@ interface Props {
 
 export default function PageHero({ title, subtitle, description, children }: Props) {
   return (
-    <section className="page-hero pt-36 pb-16 sm:pt-40 lg:pt-44">
+    <section className="page-hero py-16 sm:py-20 lg:py-24">
       <div className="section-container">
         <div className="max-w-3xl">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
