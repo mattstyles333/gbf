@@ -98,12 +98,18 @@ export default function Header() {
     setMobileExpanded(null);
   }
 
+  function handleMobileToggle(event: React.PointerEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    event.stopPropagation();
+    setMobileOpen((open) => !open);
+  }
+
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-ocean-950/92 backdrop-blur-md border-b border-white/10 shadow-lg shadow-ocean-950/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 h-16 lg:h-20">
         <Link
           href="/"
-          className="flex items-center gap-3 group flex-shrink-0"
+          className="flex min-w-0 items-center gap-3 group"
           onClick={closeMobile}
         >
           <span className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden lg:h-11 lg:w-11">
@@ -116,7 +122,7 @@ export default function Header() {
               priority
             />
           </span>
-          <div className="min-w-0 flex-1 sm:flex-none">
+          <div className="min-w-0 max-w-[calc(100vw-7.5rem)] sm:max-w-none sm:flex-none">
             <span className="block truncate text-lg font-bold tracking-tight leading-none text-white sm:text-base">
               {siteConfig.name}
             </span>
@@ -185,8 +191,9 @@ export default function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden p-2 -mr-2 text-ocean-200 hover:text-white transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          type="button"
+          className="relative z-10 shrink-0 rounded-lg p-2 -mr-2 text-ocean-200 hover:text-white hover:bg-ocean-800/40 transition-colors touch-manipulation lg:hidden"
+          onPointerUp={handleMobileToggle}
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
