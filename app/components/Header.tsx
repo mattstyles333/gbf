@@ -210,7 +210,7 @@ export default function Header() {
 
       {/* Mobile Nav Overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-ocean-950/98 backdrop-blur-sm z-30 animate-fadeIn overflow-y-auto">
+        <div className="lg:hidden absolute left-0 right-0 top-full z-40 h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 bg-ocean-950/98 backdrop-blur-sm animate-fadeIn">
           <nav className="px-4 py-6 space-y-1">
             {navItems.map((item) => (
               <div key={item.href}>
