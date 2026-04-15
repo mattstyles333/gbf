@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/rates/",
   },
+  openGraph: {
+    title: "Bonefishing Rates — Turks & Caicos",
+    description: "Transparent bonefishing rates for the Turks & Caicos. Guided trips from $700, lodge packages from $1,250 per person.",
+    images: [
+      {
+        url: "/images/gallery/fishing-along-the-mangroves.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bonefishing rates and packages in Turks & Caicos",
+      },
+    ],
+  },
 };
 
 export default function RatesPage() {

@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     canonical: "/deposit/",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 

@@ -8,9 +8,21 @@ import { fishingSpots } from "../content";
 export const metadata: Metadata = {
   title: "Guided Bonefishing — Turks & Caicos",
   description:
-    "Guided bonefishing on North Caicos with local guides, classic flats skiffs, clear water, and easy access to productive flats.",
+    "Guided bonefishing on North Caicos with local guides, classic flats skiffs, clear water, and easy access to productive flats. Full-day trips from $700.",
   alternates: {
     canonical: "/fishing/",
+  },
+  openGraph: {
+    title: "Guided Bonefishing — Turks & Caicos",
+    description: "Guided bonefishing on North Caicos with local guides, classic flats skiffs, clear water, and easy access to productive flats.",
+    images: [
+      {
+        url: "/images/gallery/sightfishing-for-bonefish.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Guided bonefishing on the flats of North Caicos",
+      },
+    ],
   },
 };
 

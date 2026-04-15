@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/diy/fishing-kayaks/",
   },
+  openGraph: {
+    title: "Fishing Kayaks — DIY Bonefishing in Turks & Caicos",
+    description: "Fishing kayaks for rent at the Bonefish Lodge. 11ft and 14ft sizes perfect for self-guided bonefishing on the flats.",
+    images: [
+      {
+        url: "/images/gbf/Manta_Ray.png",
+        width: 1200,
+        height: 630,
+        alt: "Fishing kayaks for bonefishing in Turks & Caicos",
+      },
+    ],
+  },
 };
 
 export default function FishingKayaksPage() {

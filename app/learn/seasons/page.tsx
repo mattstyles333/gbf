@@ -7,9 +7,21 @@ import BookingCTA from "../../components/BookingCTA";
 export const metadata: Metadata = {
   title: "Fishing Seasons — Turks & Caicos",
   description:
-    "Bonefishing seasons in the Turks & Caicos: weather conditions, water temperature, and what to expect from autumn through summer.",
+    "Bonefishing seasons in the Turks & Caicos: weather conditions, water temperature, and what to expect from autumn through summer. Best time to fish.",
   alternates: {
     canonical: "/learn/seasons/",
+  },
+  openGraph: {
+    title: "Fishing Seasons — Turks & Caicos",
+    description: "Bonefishing seasons in the Turks & Caicos: weather, water temperature, and what to expect year-round.",
+    images: [
+      {
+        url: "/images/gallery/endless-flats.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fishing seasons in Turks & Caicos",
+      },
+    ],
   },
 };
 

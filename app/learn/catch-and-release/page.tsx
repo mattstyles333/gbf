@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/learn/catch-and-release/",
   },
+  openGraph: {
+    title: "Catch & Release Bonefish Handling — Turks & Caicos",
+    description: "Proper catch and release handling for bonefish: wet hands, horizontal hold, revive technique, and predator awareness.",
+    images: [
+      {
+        url: "/images/gallery/gentle-release.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Proper bonefish catch and release handling",
+      },
+    ],
+  },
 };
 
 export default function CatchAndReleasePage() {

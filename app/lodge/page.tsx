@@ -19,6 +19,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/lodge/",
   },
+  openGraph: {
+    title: "Bonefishing Lodge — Turks & Caicos",
+    description: "Stay on Bottle Creek in waterfront units, just steps from the flats. Lodge packages from $1,250 per person.",
+    images: [
+      {
+        url: "/images/gbf/Bonefish-Fishing-Lodge.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bonefish Lodge on Bottle Creek, North Caicos",
+      },
+    ],
+  },
 };
 
 export default function LodgePage() {

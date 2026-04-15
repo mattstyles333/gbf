@@ -50,6 +50,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/diy/",
   },
+  openGraph: {
+    title: "DIY Bonefishing — Turks & Caicos",
+    description: "Self-guided bonefishing on North Caicos with kayak access and lodge-based options for experienced anglers.",
+    images: [
+      {
+        url: "/images/gallery/solo-on-the-flats-of.jpg",
+        width: 1200,
+        height: 630,
+        alt: "DIY bonefishing on the flats of North Caicos",
+      },
+    ],
+  },
 };
 
 export default function DIYPage() {

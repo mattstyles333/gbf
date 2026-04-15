@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "../content";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Great Bone Fishing | Book Your Trip",
   description: `Contact ${siteConfig.name} to check availability and book your bonefishing trip in the Turks & Caicos. Call ${siteConfig.phoneUSA} or ${siteConfig.phoneTCI}.`,
   alternates: {
     canonical: "/book/",

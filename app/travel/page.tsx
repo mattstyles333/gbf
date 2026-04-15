@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/travel/",
   },
+  openGraph: {
+    title: "Getting Here — Travel to North Caicos",
+    description: "How to get from Providenciales to North Caicos. Ferry schedule, transfer details, and travel tips.",
+    images: [
+      {
+        url: "/images/gbf/Ferry.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ferry from Providenciales to North Caicos",
+      },
+    ],
+  },
 };
 
 export default function TravelPage() {

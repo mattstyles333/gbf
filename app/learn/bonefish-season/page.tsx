@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/learn/bonefish-season/",
   },
+  openGraph: {
+    title: "Bonefish Season & Spawning — Turks & Caicos",
+    description: "When bonefish spawn in the Turks & Caicos and why late spring is peak season for large bonefish.",
+    images: [
+      {
+        url: "/images/gallery/double-figure-bonefish-alt.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bonefish spawning season in Turks & Caicos",
+      },
+    ],
+  },
 };
 
 export default function BonefishSeasonPage() {

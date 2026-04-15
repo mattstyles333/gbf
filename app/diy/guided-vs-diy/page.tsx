@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/diy/guided-vs-diy/",
   },
+  openGraph: {
+    title: "Guided vs. DIY Bonefishing — Which Is Right for You?",
+    description: "Compare guided bonefishing with self-guided options. Cost, experience level, independence, and what to expect.",
+    images: [
+      {
+        url: "/images/gallery/calf-deep-wading-for.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Guided vs DIY bonefishing comparison",
+      },
+    ],
+  },
 };
 
 export default function GuidedVsDIYPage() {

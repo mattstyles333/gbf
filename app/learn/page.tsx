@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/learn/",
   },
+  openGraph: {
+    title: "Learn About Bonefishing — Turks & Caicos",
+    description: "Learn about bonefishing: seasons, bonefish behavior, flies, tackle, wading, and catch & release best practices.",
+    images: [
+      {
+        url: "/images/gallery/endless-flats.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Learn about bonefishing in Turks & Caicos",
+      },
+    ],
+  },
 };
 
 export default function LearnPage() {

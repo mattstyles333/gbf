@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/learn/bonefish-flies/",
   },
+  openGraph: {
+    title: "Bonefish Flies — Best Patterns for Turks & Caicos",
+    description: "The best bonefish flies: Crazy Charlie, Gotcha, Merkin, Clouser Minnows, and when to use each pattern.",
+    images: [
+      {
+        url: "/images/gbf/Crazy-Charlie.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bonefish flies for Turks & Caicos",
+      },
+    ],
+  },
 };
 
 export default function BonefishFliesPage() {

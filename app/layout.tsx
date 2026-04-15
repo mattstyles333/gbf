@@ -21,6 +21,11 @@ const localBusinessSchema = {
     addressLocality: "North Caicos",
     addressCountry: "TC",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "21.9162",
+    longitude: "71.9200",
+  },
   areaServed: [
     {
       "@type": "Place",
@@ -36,6 +41,18 @@ const localBusinessSchema = {
     "https://www.tripadvisor.com/Attraction_Review-g656907-d12094913-Reviews-The_Great_Bonefishing_Company-North_Caicos_Turks_and_Caicos.html",
     "https://www.greatsailfishing.com/",
   ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.baseUrl,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${siteConfig.baseUrl}/search?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const lora = Lora({
@@ -117,6 +134,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Header />
         <main className="flex-1">{children}</main>

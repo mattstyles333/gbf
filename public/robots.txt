@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
-Disallow: /wp-admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /deposit/
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /images/
+
 Sitemap: https://greatbonefishing.com/sitemap.xml

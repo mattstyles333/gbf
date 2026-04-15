@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What to Expect on a Guided Bonefishing Day",
     description:
-      "What a guided bonefishing day around Bottle Creek looks like: your guide, schedule, wading and skiff mix, target species, and how the day is tailored to the angler.",
+      "What a guided bonefishing day around Bottle Creek looks like: your guide, schedule, wading and skiff mix, target species.",
     images: [
       {
         url: "/images/gallery/darel-bonefishing-on-the-flats.jpg",
-        width: 1360,
-        height: 1020,
+        width: 1200,
+        height: 630,
         alt: "Guided bonefishing day with Darrel around Bottle Creek",
       },
     ],

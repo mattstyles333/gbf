@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/fishing/why-turks-caicos/",
   },
+  openGraph: {
+    title: "Why Fish Turks & Caicos for Bonefish?",
+    description: "Discover why Turks & Caicos is one of the world's premier bonefish destinations. Pristine flats, clear water, and experienced guides.",
+    images: [
+      {
+        url: "/images/gallery/north-caicos-flats-around.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Why fish Turks & Caicos for bonefish",
+      },
+    ],
+  },
 };
 
 export default function WhyTurksCaicosPage() {
