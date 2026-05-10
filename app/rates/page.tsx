@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "../components/PageHero";
 import BookingCTA from "../components/BookingCTA";
+import { siteConfig } from "../content";
 
 export const metadata: Metadata = {
   title: "Bonefishing Rates — Turks & Caicos",
@@ -24,9 +25,103 @@ export const metadata: Metadata = {
   },
 };
 
+const offerCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Great Bone Fishing Rates and Packages",
+  url: `${siteConfig.baseUrl}/rates/`,
+  itemListElement: [
+    {
+      "@type": "Offer",
+      name: "Full-Day Guided Bonefishing Trip",
+      description:
+        "Full-day guided bonefishing trip on classic flats skiff for up to two guests on North Caicos and Bottle Creek flats.",
+      price: "700",
+      priceCurrency: "USD",
+      url: `${siteConfig.baseUrl}/rates/#guided`,
+      availability: "https://schema.org/InStock",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "700",
+        priceCurrency: "USD",
+        unitText: "per boat plus 12% TCI tax",
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Guided bonefishing trip",
+        serviceType: "Guided flats fishing",
+        areaServed: "North Caicos, Turks and Caicos Islands",
+        provider: {
+          "@type": "LocalBusiness",
+          name: siteConfig.name,
+          url: siteConfig.baseUrl,
+        },
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "4 Nights / 3 Days Lodge Package",
+      description:
+        "Bonefish Lodge package with four nights lodging, one guided skiff day, two self-guided kayak days, transfers, breakfast and lunch on guided day.",
+      price: "1250",
+      priceCurrency: "USD",
+      url: `${siteConfig.baseUrl}/rates/#lodge-packages`,
+      availability: "https://schema.org/InStock",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "1250",
+        priceCurrency: "USD",
+        unitText: "per person plus 12% TCI tax",
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Bonefishing lodge package",
+        serviceType: "Lodging and fishing package",
+        areaServed: "Bottle Creek, North Caicos",
+        provider: {
+          "@type": "LocalBusiness",
+          name: siteConfig.name,
+          url: siteConfig.baseUrl,
+        },
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "DIY Fishing Kayak Rental",
+      description:
+        "Daily fishing kayak rental for experienced self-guided anglers fishing Bottle Creek and North Caicos flats.",
+      price: "110",
+      priceCurrency: "USD",
+      url: `${siteConfig.baseUrl}/rates/#diy-options`,
+      availability: "https://schema.org/InStock",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "110",
+        priceCurrency: "USD",
+        unitText: "per day plus 12% TCI tax",
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Fishing kayak rental",
+        serviceType: "Self-guided bonefishing kayak rental",
+        areaServed: "Bottle Creek, North Caicos",
+        provider: {
+          "@type": "LocalBusiness",
+          name: siteConfig.name,
+          url: siteConfig.baseUrl,
+        },
+      },
+    },
+  ],
+};
+
 export default function RatesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }}
+      />
       <PageHero
         title="Bonefishing Rates"
         subtitle="Transparent pricing for guided fishing and lodge packages in the Turks & Caicos. No hidden fees."

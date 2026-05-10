@@ -3,6 +3,7 @@ import Image from "next/image";
 import PageHero from "../components/PageHero";
 import BookingCTA from "../components/BookingCTA";
 import LodgeGallery from "./LodgeGallery";
+import { siteConfig } from "../content";
 
 const lodgeImages = [
   { src: "/images/gbf/Bonefish-Fishing-Lodge.jpg", alt: "Bonefish Lodge exterior on Bottle Creek", title: "Waterfront lodge exterior" },
@@ -33,9 +34,60 @@ export const metadata: Metadata = {
   },
 };
 
+const lodgingBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  name: "Bonefish Lodge",
+  description:
+    "Waterfront bonefishing lodge on Bottle Creek, North Caicos with one- and two-bedroom units steps from productive flats.",
+  url: `${siteConfig.baseUrl}/lodge/`,
+  image: lodgeImages.map((image) => `${siteConfig.baseUrl}${image.src}`),
+  telephone: [siteConfig.phoneUSA, siteConfig.phoneTCI],
+  email: siteConfig.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bottle Creek",
+    addressLocality: "North Caicos",
+    addressCountry: "TC",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "21.9162",
+    longitude: "-71.9200",
+  },
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Waterfront Bottle Creek location", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Full kitchen", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Air conditioning", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Fishing kayak access", value: true },
+  ],
+  makesOffer: {
+    "@type": "Offer",
+    name: "4 Nights / 3 Days Bonefishing Lodge Package",
+    price: "1250",
+    priceCurrency: "USD",
+    url: `${siteConfig.baseUrl}/lodge/#package`,
+    availability: "https://schema.org/InStock",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: "1250",
+      priceCurrency: "USD",
+      unitText: "per person plus 12% TCI tax",
+    },
+    itemOffered: {
+      "@type": "LodgingReservation",
+      name: "4-night Bonefish Lodge package with guided and self-guided fishing",
+    },
+  },
+};
+
 export default function LodgePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingBusinessSchema) }}
+      />
       <PageHero
         title="Bonefishing Lodge"
         subtitle="Stay directly on the flats of Bottle Creek, North Caicos. Our lodge puts you steps from some of the best bonefish water in the islands."
