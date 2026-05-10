@@ -22,6 +22,52 @@ export default function PayPalDepositButton() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
+    function initializePayPal() {
+      if (!window.paypal) {
+        setError("PayPal is not available. Please try again later.");
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        window.paypal
+          .Buttons({
+            createOrder: function (_data, actions) {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: {
+                      value: "175.00",
+                    },
+                    description: "Bonefishing Deposit",
+                  },
+                ],
+              });
+            },
+            onApprove: function (_data, actions) {
+              return actions.order.capture().then(function () {
+                setIsSuccess(true);
+                // Redirect after a brief delay to show success message
+                setTimeout(() => {
+                  window.location.href = "https://greatbonefishing.com/payment-successful";
+                }, 2000);
+              });
+            },
+            onError: function () {
+              setError("Payment could not be processed. Please try again or contact us.");
+            },
+            onCancel: function () {
+              // User cancelled - no action needed
+            },
+          })
+          .render("#paypal-button-container");
+        setIsLoading(false);
+      } catch {
+        setError("Could not initialize PayPal. Please refresh the page.");
+        setIsLoading(false);
+      }
+    }
+
     // Check if PayPal script is already loaded
     if (window.paypal) {
       initializePayPal();
@@ -48,52 +94,6 @@ export default function PayPalDepositButton() {
       }
     };
   }, []);
-
-  const initializePayPal = () => {
-    if (!window.paypal) {
-      setError("PayPal is not available. Please try again later.");
-      setIsLoading(false);
-      return;
-    }
-
-    try {
-      window.paypal
-        .Buttons({
-          createOrder: function (_data, actions) {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  amount: {
-                    value: "175.00",
-                  },
-                  description: "Bonefishing Deposit",
-                },
-              ],
-            });
-          },
-          onApprove: function (_data, actions) {
-            return actions.order.capture().then(function () {
-              setIsSuccess(true);
-              // Redirect after a brief delay to show success message
-              setTimeout(() => {
-                window.location.href = "https://greatbonefishing.com/payment-successful";
-              }, 2000);
-            });
-          },
-          onError: function () {
-            setError("Payment could not be processed. Please try again or contact us.");
-          },
-          onCancel: function () {
-            // User cancelled - no action needed
-          },
-        })
-        .render("#paypal-button-container");
-      setIsLoading(false);
-    } catch {
-      setError("Could not initialize PayPal. Please refresh the page.");
-      setIsLoading(false);
-    }
-  };
 
   if (isSuccess) {
     return (

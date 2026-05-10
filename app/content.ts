@@ -15,6 +15,7 @@ export interface FishingSpot {
   name: string;
   slug: string;
   description: string;
+  excerpt: string;
   highlights: string[];
   imageUrl: string;
 }
@@ -100,6 +101,8 @@ export const fishingSpots: FishingSpot[] = [
     slug: "bottle-creek",
     description:
       "Protected North Caicos reserve with hard-bottom flats, clear water, and some of the most consistent sight-fishing in the islands.",
+    excerpt:
+      "Hard-bottom flats, clear water, and productive tidal drains only minutes from the lodge and launch.",
     highlights: [
       "Ankle-deep wading flats",
       "Classic flats skiffs",
@@ -114,6 +117,8 @@ export const fishingSpots: FishingSpot[] = [
     slug: "east-bay",
     description:
       "Remote creeks, channels, and ocean-side flats that fish best on moving tides and regularly hold larger bonefish.",
+    excerpt:
+      "Remote creeks, channels, cays, and ocean-side flats that reward good timing on moving water.",
     highlights: [
       "Remote and unfished",
       "Large bonefish on tides",
@@ -128,6 +133,8 @@ export const fishingSpots: FishingSpot[] = [
     slug: "north-caicos",
     description:
       "The lushest of the Caicos Islands, with mangrove nurseries, open flats, and very light fishing pressure around Bottle Creek and nearby North Caicos water.",
+    excerpt:
+      "Lightly pressured North Caicos water with mangrove nurseries, open flats, cuts, and channels.",
     highlights: [
       "Average bonefish 4–5 lbs, larger common",
       "Wading directly from land possible",

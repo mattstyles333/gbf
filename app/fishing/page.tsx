@@ -182,7 +182,7 @@ export default function FishingPage() {
                     {spot.name}
                   </h3>
                   <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                    {spot.description.slice(0, 100)}...
+                    {spot.excerpt}
                   </p>
                   <ul className="space-y-1 mb-4">
                     {spot.highlights.slice(0, 3).map((h, i) => (

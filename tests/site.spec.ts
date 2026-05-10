@@ -1,6 +1,7 @@
 import { test, expect, ConsoleMessage } from "@playwright/test";
+import vercelConfig from "../vercel.json";
 
-const BASE = "https://gbf-nine.vercel.app";
+const BASE = process.env.BASE_URL || "https://gbf-nine.vercel.app";
 
 const PAGES = [
   { path: "/", name: "Homepage" },
@@ -20,9 +21,45 @@ const PAGES = [
   { path: "/learn/bonefish-season/", name: "Bonefish Season" },
   { path: "/learn/bonefish-flies/", name: "Bonefish Flies" },
   { path: "/learn/catch-and-release/", name: "Catch & Release" },
+  { path: "/learn/tackle-and-gear/", name: "Tackle & Gear" },
+  { path: "/faq/", name: "FAQ" },
   { path: "/gallery/", name: "Gallery" },
   { path: "/book/", name: "Book" },
+  { path: "/contact/", name: "Contact" },
+  { path: "/deposit/", name: "Deposit" },
 ];
+
+const LEGACY_REDIRECTS = [
+  ["/page-sitemap.xml", "/sitemap.xml"],
+  ["/links/", "/"],
+  ["/flyfishing-in-the-turks-and-caicos/", "/fishing/"],
+  ["/flyfishing-in-the-turks-and-caicos/north-caicos/", "/fishing/north-caicos/"],
+  ["/flyfishing-in-the-turks-and-caicos/bottle-creek/", "/fishing/bottle-creek/"],
+  ["/flyfishing-in-the-turks-and-caicos/east-baysouth-cays/", "/fishing/east-bay/"],
+  ["/flyfishing-in-the-turks-and-caicos/wading_for_bonefish/", "/diy/"],
+  ["/offshore-fishing-in-the-turks-and-caicos/", "/fishing/"],
+  ["/last-chance/", "/travel/"],
+  ["/extra-stuff-dont-wanna-delete-get/", "/"],
+  ["/size-bonefish-can-expect-see/", "/fishing/"],
+  ["/twitter-test/", "/"],
+  ["/fly-fish-bonefish/", "/fishing/"],
+  ["/seasons/", "/learn/seasons/"],
+  ["/payment-successful/", "/book/?sent=1"],
+  ["/transport-provo/", "/travel/"],
+  ["/bonefishing-rates/", "/rates/"],
+  ["/bonefish-spawning-and-fishing-season/", "/learn/bonefish-season/"],
+  ["/bonefish-flies/", "/learn/bonefish-flies/"],
+  ["/contact-us/", "/book/"],
+  ["/catch-and-release-bonefish-handling/", "/learn/catch-and-release/"],
+  ["/why-the-turks-and-caicos-is-great-for-bonefishing/", "/fishing/why-turks-caicos/"],
+  ["/accommodation/", "/lodge/#other-accommodation"],
+  ["/bonefishing-trip/", "/fishing/"],
+  ["/diy-bonefishing/", "/diy/"],
+  ["/bonefishing-lodge-turks-caicos/", "/lodge/"],
+  ["/diy-bonefishing-boat/", "/diy/guided-vs-diy/"],
+  ["/fishing-kayaks/", "/diy/fishing-kayaks/"],
+  ["/book-a-trip/", "/book/"],
+] as const;
 
 for (const { path, name } of PAGES) {
   test(`${name} (${path}) loads without errors`, async ({ page }) => {
@@ -53,7 +90,7 @@ for (const { path, name } of PAGES) {
 
     await expect(page.locator("header")).toBeVisible();
     await expect(page.locator("footer")).toBeVisible();
-    await expect(page.locator('a:has-text("Book")').first()).toBeVisible();
+    await expect(page.locator('a:has-text("Book"):visible').first()).toBeVisible();
   });
 
   test(`${name} has correct page title`, async ({ page }) => {
@@ -117,5 +154,15 @@ test("Navigation links resolve (no 404s for key pages)", async ({ page }) => {
   for (const link of unique.slice(0, 5)) {
     const response = await page.goto(`${BASE}${link}`);
     expect(response?.status()).toBeLessThan(400);
+  }
+});
+
+test("Legacy sitemap URLs have Vercel redirects configured", async () => {
+  const redirects = new Map(
+    vercelConfig.redirects.map((redirect) => [redirect.source, redirect.destination])
+  );
+
+  for (const [source, destination] of LEGACY_REDIRECTS) {
+    expect(redirects.get(source), `${source} should redirect`).toBe(destination);
   }
 });

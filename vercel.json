@@ -1,0 +1,289 @@
+{
+  "redirects": [
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/links/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/links",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/north-caicos/",
+      "destination": "/fishing/north-caicos/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/north-caicos",
+      "destination": "/fishing/north-caicos/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/bottle-creek/",
+      "destination": "/fishing/bottle-creek/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/bottle-creek",
+      "destination": "/fishing/bottle-creek/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/east-baysouth-cays/",
+      "destination": "/fishing/east-bay/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/east-baysouth-cays",
+      "destination": "/fishing/east-bay/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/wading_for_bonefish/",
+      "destination": "/diy/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/wading_for_bonefish",
+      "destination": "/diy/",
+      "permanent": true
+    },
+    {
+      "source": "/offshore-fishing-in-the-turks-and-caicos/",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/offshore-fishing-in-the-turks-and-caicos",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/last-chance/",
+      "destination": "/travel/",
+      "permanent": true
+    },
+    {
+      "source": "/last-chance",
+      "destination": "/travel/",
+      "permanent": true
+    },
+    {
+      "source": "/extra-stuff-dont-wanna-delete-get/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/extra-stuff-dont-wanna-delete-get",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/size-bonefish-can-expect-see/",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/size-bonefish-can-expect-see",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/twitter-test/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/twitter-test",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fly-fish-bonefish/",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/fly-fish-bonefish",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/seasons/",
+      "destination": "/learn/seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/seasons",
+      "destination": "/learn/seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/payment-successful/",
+      "destination": "/book/?sent=1",
+      "permanent": true
+    },
+    {
+      "source": "/payment-successful",
+      "destination": "/book/?sent=1",
+      "permanent": true
+    },
+    {
+      "source": "/transport-provo/",
+      "destination": "/travel/",
+      "permanent": true
+    },
+    {
+      "source": "/transport-provo",
+      "destination": "/travel/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-rates/",
+      "destination": "/rates/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-rates",
+      "destination": "/rates/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefish-spawning-and-fishing-season/",
+      "destination": "/learn/bonefish-season/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefish-spawning-and-fishing-season",
+      "destination": "/learn/bonefish-season/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefish-flies/",
+      "destination": "/learn/bonefish-flies/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefish-flies",
+      "destination": "/learn/bonefish-flies/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/catch-and-release-bonefish-handling/",
+      "destination": "/learn/catch-and-release/",
+      "permanent": true
+    },
+    {
+      "source": "/catch-and-release-bonefish-handling",
+      "destination": "/learn/catch-and-release/",
+      "permanent": true
+    },
+    {
+      "source": "/why-the-turks-and-caicos-is-great-for-bonefishing/",
+      "destination": "/fishing/why-turks-caicos/",
+      "permanent": true
+    },
+    {
+      "source": "/why-the-turks-and-caicos-is-great-for-bonefishing",
+      "destination": "/fishing/why-turks-caicos/",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/",
+      "destination": "/lodge/#other-accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation",
+      "destination": "/lodge/#other-accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-trip/",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-trip",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-bonefishing/",
+      "destination": "/diy/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-bonefishing",
+      "destination": "/diy/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-lodge-turks-caicos/",
+      "destination": "/lodge/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-lodge-turks-caicos",
+      "destination": "/lodge/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-bonefishing-boat/",
+      "destination": "/diy/guided-vs-diy/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-bonefishing-boat",
+      "destination": "/diy/guided-vs-diy/",
+      "permanent": true
+    },
+    {
+      "source": "/fishing-kayaks/",
+      "destination": "/diy/fishing-kayaks/",
+      "permanent": true
+    },
+    {
+      "source": "/fishing-kayaks",
+      "destination": "/diy/fishing-kayaks/",
+      "permanent": true
+    },
+    {
+      "source": "/book-a-trip/",
+      "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/book-a-trip",
+      "destination": "/book/",
+      "permanent": true
+    }
+  ]
+}

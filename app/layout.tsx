@@ -24,7 +24,7 @@ const localBusinessSchema = {
   geo: {
     "@type": "GeoCoordinates",
     latitude: "21.9162",
-    longitude: "71.9200",
+    longitude: "-71.9200",
   },
   areaServed: [
     {
@@ -48,11 +48,6 @@ const websiteSchema = {
   "@type": "WebSite",
   name: siteConfig.name,
   url: siteConfig.baseUrl,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${siteConfig.baseUrl}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
 };
 
 const lora = Lora({

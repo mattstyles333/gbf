@@ -166,7 +166,7 @@ export default function HomePage() {
                     {spot.name}
                   </h3>
                   <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                    {spot.description.slice(0, 120)}...
+                    {spot.excerpt}
                   </p>
                   <span className="text-ocean-600 font-semibold text-sm group-hover:underline">
                     Learn more &rarr;
@@ -179,6 +179,51 @@ export default function HomePage() {
             <Link href="/fishing" className="btn-primary">
               Full Fishing Overview
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why North Caicos */}
+      <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
+        <div className="section-container">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+            <div className="lg:col-span-1">
+              <p className="text-ocean-600 font-semibold uppercase tracking-widest text-sm mb-3">
+                Why This Fishery
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-5">
+                Less Running. More Fishing.
+              </h2>
+              <p className="text-slate-500 leading-relaxed">
+                Bottle Creek gives anglers quick access to flats, mangrove edges, tidal cuts,
+                and protected channels without the long day runs common from busier islands.
+              </p>
+            </div>
+            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {[
+                {
+                  title: "Built Around the Tide",
+                  text: "The best water changes with tide, wind, moon, and light. Local guides choose whether to pole, drift, or wade based on where fish are feeding that day.",
+                },
+                {
+                  title: "Good Wading Bottom",
+                  text: "Many Bottle Creek flats are firm enough for ankle-deep stalking, giving fly and spin anglers realistic shots at cruising fish and tailing schools.",
+                },
+                {
+                  title: "Guided or Independent",
+                  text: "First-time guests can start with a guided skiff day, while experienced flats anglers can add DIY kayak days once they understand the local water.",
+                },
+                {
+                  title: "Realistic Big-Fish Potential",
+                  text: "Schools of 2-4 lb bonefish are common, but larger singles and pairs regularly move through the skinny water and can push into double figures.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="card p-6">
+                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -262,6 +307,11 @@ export default function HomePage() {
                 For experienced anglers who prefer to find their own water, our DIY
                 bonefishing option offers full independence. Rent kayaks, get a
                 briefing from your guide on day one, then head out on your own.
+              </p>
+              <p className="text-slate-500 leading-relaxed mb-6">
+                DIY days work best for anglers who can read flats, manage wind and tides,
+                and move quietly through shallow water. We will point you toward the right
+                starting areas, explain safe access, and help you avoid wasting time on dead water.
               </p>
               <Link href="/diy" className="btn-primary">
                 DIY Bonefishing Options
