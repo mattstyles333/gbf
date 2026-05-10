@@ -245,7 +245,7 @@ export const legacyRedirects: Record<string, string> = {
   "/hello-world/": "/",
   "/twitter-test/": "/",
   "/extra-stuff-dont-wanna-delete-get/": "/",
-  "/payment-successful/": "/book",
+  "/payment-successful/": "/payment-successful",
   "/links/": "/",
   "/offshore-fishing-in-the-turks-and-caicos/": "/fishing",
   "/last-chance/": "/travel",

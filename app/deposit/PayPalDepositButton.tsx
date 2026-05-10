@@ -49,7 +49,7 @@ export default function PayPalDepositButton() {
                 setIsSuccess(true);
                 // Redirect after a brief delay to show success message
                 setTimeout(() => {
-                  window.location.href = "https://greatbonefishing.com/payment-successful";
+                  window.location.href = "/payment-successful/";
                 }, 2000);
               });
             },

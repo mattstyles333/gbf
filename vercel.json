@@ -136,16 +136,6 @@
       "permanent": true
     },
     {
-      "source": "/payment-successful/",
-      "destination": "/book/?sent=1",
-      "permanent": true
-    },
-    {
-      "source": "/payment-successful",
-      "destination": "/book/?sent=1",
-      "permanent": true
-    },
-    {
       "source": "/transport-provo/",
       "destination": "/travel/",
       "permanent": true

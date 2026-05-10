@@ -27,6 +27,7 @@ const PAGES = [
   { path: "/book/", name: "Book" },
   { path: "/contact/", name: "Contact" },
   { path: "/deposit/", name: "Deposit" },
+  { path: "/payment-successful/", name: "Payment Successful" },
 ];
 
 const LEGACY_REDIRECTS = [
@@ -44,7 +45,6 @@ const LEGACY_REDIRECTS = [
   ["/twitter-test/", "/"],
   ["/fly-fish-bonefish/", "/fishing/"],
   ["/seasons/", "/learn/seasons/"],
-  ["/payment-successful/", "/book/?sent=1"],
   ["/transport-provo/", "/travel/"],
   ["/bonefishing-rates/", "/rates/"],
   ["/bonefish-spawning-and-fishing-season/", "/learn/bonefish-season/"],
