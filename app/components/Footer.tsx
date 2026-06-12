@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/diy" className="text-base text-ocean-100 hover:text-white transition-colors">
-                  DIY Bonefishing
+                  Kayak Access
                 </Link>
               </li>
               <li>

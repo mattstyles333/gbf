@@ -10,7 +10,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: siteConfig.name,
   description:
-    "Guided bonefishing trips, DIY access, and waterfront lodge stays on Bottle Creek in North Caicos, Turks & Caicos.",
+    "Guided bonefishing trips, waterfront lodge stays, and kayak access after local orientation on Bottle Creek in North Caicos, Turks & Caicos.",
   url: siteConfig.baseUrl,
   image: `${siteConfig.baseUrl}/images/gbf/cropped-fishing-along-the-mangroves.jpg`,
   email: siteConfig.email,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "World-class bonefishing on the pristine flats of Bottle Creek, North Caicos, Turks & Caicos. Guided trips, self-guided fishing, and on-site lodge accommodation.",
+    "World-class bonefishing on the pristine flats of Bottle Creek, North Caicos, Turks & Caicos. Guided trips, lodge accommodation, and kayak access after local orientation.",
   keywords: [
     "bonefishing",
     "turks and caicos",

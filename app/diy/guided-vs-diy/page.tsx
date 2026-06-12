@@ -3,21 +3,21 @@ import PageHero from "../../components/PageHero";
 import BookingCTA from "../../components/BookingCTA";
 
 export const metadata: Metadata = {
-  title: "Guided vs. DIY Bonefishing — Which Is Right for You?",
+  title: "Guided First Before Kayak Access — Which Is Right for You?",
   description:
-    "Compare guided bonefishing with self-guided options in the Turks & Caicos. Cost, experience level, independence, and what to expect from each approach.",
+    "Why most anglers should book a guided bonefishing trip first before considering self-guided kayak access in the Turks & Caicos.",
   alternates: {
     canonical: "/diy/guided-vs-diy/",
   },
   openGraph: {
-    title: "Guided vs. DIY Bonefishing — Which Is Right for You?",
-    description: "Compare guided bonefishing with self-guided options. Cost, experience level, independence, and what to expect.",
+    title: "Guided First Before Kayak Access — Which Is Right for You?",
+    description: "Why most anglers should book a guided bonefishing trip first before considering self-guided kayak access.",
     images: [
       {
         url: "/images/gallery/calf-deep-wading-for.jpg",
         width: 1200,
         height: 630,
-        alt: "Guided vs DIY bonefishing comparison",
+        alt: "Guided-first kayak access comparison",
       },
     ],
   },
@@ -27,23 +27,23 @@ export default function GuidedVsDIYPage() {
   return (
     <>
       <PageHero
-        title="Guided vs. DIY Bonefishing"
-        subtitle="Which approach is right for your Turks & Caicos bonefishing trip?"
+        title="Guided First, Kayak Access Only If It Fits"
+        subtitle="Self-guided kayak access can be useful for the right angler, but a guided day is the best first step on unfamiliar flats."
       />
       <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {/* DIY Benefits */}
+              {/* Kayak Access Fit */}
               <div className="card p-8">
-                <h3 className="text-xl font-bold mb-4 text-ocean-700">DIY Fishing Benefits</h3>
+                <h3 className="text-xl font-bold mb-4 text-ocean-700">Where Kayak Access Can Fit</h3>
                 <ul className="space-y-3">
                   {[
-                    { title: "Cost-Effective", desc: "Eliminates guide and boat costs, significantly reducing trip expense." },
-                    { title: "Flexibility & Independence", desc: "Explore at your own pace, fish as long as you like, follow your own schedule." },
-                    { title: "Learning Experience", desc: "Develop deeper understanding of bonefish behavior, tides, and the flats ecosystem." },
-                    { title: "Adventure & Exploration", desc: "Navigate the flats on foot or kayak, discovering spots off the beaten path." },
-                    { title: "Closer to Nature", desc: "Walking the flats provides an intimate, solitary experience with the environment." },
+                    { title: "After a Guided Day", desc: "Use what your guide shows you about tides, channels, and safe access before fishing alone." },
+                    { title: "Experienced Anglers", desc: "Best for anglers who already read flats, manage wind, and wade quietly." },
+                    { title: "Extra Water Time", desc: "Works as an add-on to a guided or lodge package when conditions are appropriate." },
+                    { title: "Short Follow-Up Sessions", desc: "Useful for returning to a known nearby flat after a guided day has shown you the safe approach." },
+                    { title: "Quiet Access", desc: "Kayaks can be quiet and practical when you already know where and when to use them." },
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-ocean-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,16 +58,16 @@ export default function GuidedVsDIYPage() {
                 </ul>
               </div>
 
-              {/* DIY Challenges */}
+              {/* Self-Guided Challenges */}
               <div className="card p-8">
-                <h3 className="text-xl font-bold mb-4 text-slate-600">DIY Challenges to Consider</h3>
+                <h3 className="text-xl font-bold mb-4 text-slate-600">Self-Guided Challenges to Consider</h3>
                 <ul className="space-y-3">
                   {[
-                    { title: "Limited Local Knowledge", desc: "Without a guide, you may spend time in unproductive areas or miss prime feeding windows." },
-                    { title: "Harder to Spot Fish", desc: "Guides are experts at sight-fishing. DIY anglers often struggle to identify bonefish in varying light conditions." },
-                    { title: "Access Limitations", desc: "Without a boat, your range is confined to wading-accessible areas. A guide can reach remote flats." },
-                    { title: "Safety Considerations", desc: "Be aware of tides, weather changes, sharp coral, and stingrays. A guide ensures safety on unfamiliar water." },
-                    { title: "Steeper Learning Curve", desc: "More trial and error — which can be frustrating for novice or intermediate anglers." },
+                    { title: "Limited Local Knowledge", desc: "Without a guide, you can lose prime tide windows or spend the day in unproductive water." },
+                    { title: "Harder to Spot Fish", desc: "Guides are experts at sight-fishing. New visitors often struggle with glare, depth, and fish movement." },
+                    { title: "Access Limitations", desc: "Without a boat and guide, your range is limited and some productive flats are not realistic." },
+                    { title: "Safety Considerations", desc: "Tides, weather, channels, sharp coral, and stingrays matter. Local guidance reduces avoidable risk." },
+                    { title: "Steeper Learning Curve", desc: "Self-guided fishing is usually frustrating for first-time or intermediate anglers on unfamiliar flats." },
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,12 +87,10 @@ export default function GuidedVsDIYPage() {
             <div className="card p-8 bg-ocean-50 border border-ocean-100">
               <h3 className="text-xl font-bold mb-4">Our Recommendation</h3>
               <p className="text-slate-600 leading-relaxed">
-                The most effective approach is a hybrid: book one or two guided days to
-                learn the water from an expert who has fished these flats their whole
-                life. Your guide will show you the channels, tidal patterns, and
-                productive flats, then set you up for successful self-guided days in
-                the fishing kayaks from the lodge. This gives you the knowledge to fish
-                confidently on your own while keeping costs manageable.
+                Book a guided day first. That gives you the best chance at fish and helps
+                you understand the channels, tidal patterns, productive flats, and safety
+                considerations before you think about kayak access. For most guests,
+                self-guided fishing should be a secondary add-on, not the main trip plan.
               </p>
             </div>
           </div>

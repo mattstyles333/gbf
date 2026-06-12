@@ -62,7 +62,7 @@ const offerCatalogSchema = {
       "@type": "Offer",
       name: "4 Nights / 3 Days Lodge Package",
       description:
-        "Bonefish Lodge package with four nights lodging, one guided skiff day, two self-guided kayak days, transfers, breakfast and lunch on guided day.",
+        "Bonefish Lodge package with four nights lodging, guided fishing, kayak access when appropriate, transfers, breakfast and lunch on guided day.",
       price: "1250",
       priceCurrency: "USD",
       url: `${siteConfig.baseUrl}/rates/#lodge-packages`,
@@ -87,9 +87,9 @@ const offerCatalogSchema = {
     },
     {
       "@type": "Offer",
-      name: "DIY Fishing Kayak Rental",
+      name: "Fishing Kayak Access",
       description:
-        "Daily fishing kayak rental for experienced self-guided anglers fishing Bottle Creek and North Caicos flats.",
+        "Daily fishing kayak access for experienced anglers, recommended after a guided day on Bottle Creek and North Caicos flats.",
       price: "110",
       priceCurrency: "USD",
       url: `${siteConfig.baseUrl}/rates/#diy-options`,
@@ -102,8 +102,8 @@ const offerCatalogSchema = {
       },
       itemOffered: {
         "@type": "Service",
-        name: "Fishing kayak rental",
-        serviceType: "Self-guided bonefishing kayak rental",
+        name: "Fishing kayak access",
+        serviceType: "Guided-first bonefishing kayak access",
         areaServed: "Bottle Creek, North Caicos",
         provider: {
           "@type": "LocalBusiness",
@@ -141,19 +141,19 @@ export default function RatesPage() {
             <div className="card p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocean-600 mb-2">Most Popular</p>
               <h2 className="text-xl font-bold mb-2">Lodge Packages</h2>
-              <p className="text-sm text-slate-500 mb-4">Stay on Bottle Creek and combine guided days with self-guided time on the flats.</p>
+              <p className="text-sm text-slate-500 mb-4">Stay on Bottle Creek with guided fishing first and kayak access when appropriate.</p>
               <div className="flex gap-3 flex-wrap">
                 <Link href="#lodge-packages" className="text-ocean-700 font-semibold hover:underline">See package</Link>
                 <Link href="/lodge" className="text-ocean-700 font-semibold hover:underline">View lodge</Link>
               </div>
             </div>
             <div className="card p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocean-600 mb-2">Independent Anglers</p>
-              <h2 className="text-xl font-bold mb-2">DIY Options</h2>
-              <p className="text-sm text-slate-500 mb-4">Kayak access and self-guided options for anglers comfortable reading water and tides.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocean-600 mb-2">After a Guided Day</p>
+              <h2 className="text-xl font-bold mb-2">Kayak Access</h2>
+              <p className="text-sm text-slate-500 mb-4">Kayak access is best for experienced anglers after they understand the local water.</p>
               <div className="flex gap-3 flex-wrap">
-                <Link href="#diy-options" className="text-ocean-700 font-semibold hover:underline">See DIY rate</Link>
-                <Link href="/diy" className="text-ocean-700 font-semibold hover:underline">DIY overview</Link>
+                <Link href="#diy-options" className="text-ocean-700 font-semibold hover:underline">See kayak rate</Link>
+                <Link href="/diy" className="text-ocean-700 font-semibold hover:underline">Guided-first advice</Link>
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function RatesPage() {
           <div id="guided" className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-2">Guided Fishing</h2>
             <p className="text-slate-500 mb-8">
-              Straightforward guided, lodge, and DIY pricing for anglers who want great
+              Straightforward guided, lodge, and kayak-access pricing for anglers who want great
               water without resort-style markup. We&apos;ll help you choose the option that
               best fits your budget, experience, and trip goals.
             </p>
@@ -170,7 +170,7 @@ export default function RatesPage() {
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                 <div>
                   <h3 className="text-xl font-bold">Full-Day Guided Trip</h3>
-                  <p className="text-slate-500 text-sm mt-1">7:30am departure · Back by 2pm · 4pm ferry-friendly return</p>
+                  <p className="text-slate-500 text-sm mt-1">8am start · Back by 2pm · 4pm ferry-friendly return</p>
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-ocean-700">$700</div>
@@ -194,7 +194,7 @@ export default function RatesPage() {
                 {[
                   "Classic flats skiff with expert guide",
                   "All tackle and equipment",
-                  "7:30am departure, back by 2pm, and back on the 4pm ferry",
+                  "8am start, back by 2pm, and back on the 4pm ferry",
                   "Up to 2 guests per boat",
                   "Fly gear available for hire: $60 + tax",
                   "Fishing license available ($15/day)",
@@ -227,8 +227,8 @@ export default function RatesPage() {
           <div id="lodge-packages" className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-2">Lodge Packages</h2>
             <p className="text-slate-500 mb-8">
-              Combine comfortable lodge accommodation with guided and self-guided fishing
-              days. Minimum stay is three nights.
+              Combine comfortable lodge accommodation with guided fishing and kayak access
+              when it fits your experience. Minimum stay is three nights.
             </p>
             <div className="card overflow-hidden mb-8">
               <div className="p-8">
@@ -247,16 +247,16 @@ export default function RatesPage() {
                 </div>
                 <p className="text-slate-500 mb-6">
                   Stay at the Bonefish Lodge on Bottle Creek and fish the pristine flats of
-                  North Caicos with a mix of guided and self-guided days. The first guided
-                  day orients you to the water — then you&apos;re set up to fish the kayak on
-                  subsequent days with full confidence.
+                  North Caicos with guided days first. If your experience and conditions fit,
+                  kayak access can add extra time on known water after your guide has oriented
+                  you to the flats.
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   {[
                     "4 nights lodge accommodation",
                     "1 guided day on flats skiff",
-                    "2 days self-guided fishing kayaks",
-                    "Guided day sets up your DIY strategy",
+                    "Kayak-access days when appropriate",
+                    "Guided day comes first for local water and safety",
                     "Transfers to/from Sandy Point",
                     "Breakfast and lunch on guided day",
                     "Kayak rental and cleaning fee",
@@ -273,7 +273,7 @@ export default function RatesPage() {
                   <strong className="text-foreground">Additional Days:</strong>
                   <ul className="mt-2 space-y-1 text-slate-600">
                     <li>Extra guided day: <strong>$1,050/day</strong> (per boat)</li>
-                    <li>Extra self-guided day: <strong>$205/person/day</strong></li>
+                    <li>Extra kayak-access day: <strong>$205/person/day</strong></li>
                   </ul>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -284,11 +284,15 @@ export default function RatesPage() {
             </div>
           </div>
 
-          {/* DIY */}
+          {/* Kayak Access */}
           <div id="diy-options" className="max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-2">DIY Options</h2>
+            <h2 className="text-3xl font-bold mb-2">Kayak Access</h2>
             <div className="card p-8">
-              <h3 className="text-lg font-bold mb-4">Kayak Rental (Non-Lodge Guests)</h3>
+              <h3 className="text-lg font-bold mb-4">Kayak Rental (Experienced Anglers)</h3>
+              <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                We recommend booking a guided day first. Kayak access is only a good fit when
+                you can read flats, manage tides, and understand the safe routes from the lodge.
+              </p>
               <div className="flex items-center justify-between py-3 border-b border-slate-100">
                 <span className="text-slate-600">Kayak rental per day</span>
                 <strong className="text-ocean-700">$110 + tax</strong>
@@ -301,8 +305,8 @@ export default function RatesPage() {
                 Learn more about kayaks &rarr;
               </Link>
               <div className="mt-6 flex flex-wrap gap-4">
-                <Link href="/book" className="btn-primary">Book DIY Option</Link>
-                <Link href="/diy" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">DIY Overview</Link>
+                <Link href="/book" className="btn-primary">Book Guided Trip First</Link>
+                <Link href="/diy" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Guided-First Advice</Link>
               </div>
             </div>
           </div>

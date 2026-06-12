@@ -59,7 +59,7 @@ export default function LearnPage() {
     {
       href: "/faq",
       title: "FAQ",
-      desc: "Answers to common trip-planning questions about rates, ferry timing, tackle, lodge packages, and DIY fishing.",
+      desc: "Answers to common trip-planning questions about rates, ferry timing, tackle, lodge packages, and kayak access.",
       icon: "❓",
     },
   ];

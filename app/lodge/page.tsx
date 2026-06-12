@@ -59,7 +59,7 @@ const lodgingBusinessSchema = {
     { "@type": "LocationFeatureSpecification", name: "Waterfront Bottle Creek location", value: true },
     { "@type": "LocationFeatureSpecification", name: "Full kitchen", value: true },
     { "@type": "LocationFeatureSpecification", name: "Air conditioning", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Fishing kayak access", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Fishing kayak access after local orientation", value: true },
   ],
   makesOffer: {
     "@type": "Offer",
@@ -76,7 +76,7 @@ const lodgingBusinessSchema = {
     },
     itemOffered: {
       "@type": "LodgingReservation",
-      name: "4-night Bonefish Lodge package with guided and self-guided fishing",
+      name: "4-night Bonefish Lodge package with guided fishing and kayak access",
     },
   },
 };
@@ -113,10 +113,9 @@ export default function LodgePage() {
               <p className="text-slate-500 text-lg leading-relaxed">
                 The lodge is located directly on the shore of Bottle Creek. The grounds
                 slope gently to the water where you will find the flats boats and fishing
-                kayaks. It is directly across from one of the most productive flats — so
-                you can choose your time based on tides and fish for as long as you like.
-                That proximity is especially useful in the early morning, when the skinny water
-                is still cool and schools of tailing bonefish can push high onto the flats.
+                kayaks. It is directly across from one of the most productive flats, which
+                makes it a practical base for guided days and, when appropriate, extra kayak
+                access after local orientation.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="#package" className="btn-primary">
@@ -180,16 +179,17 @@ export default function LodgePage() {
               flats of Bottle Creek.
             </p>
             <p className="text-slate-500 leading-relaxed mb-8">
-              The first day is guided on one of our flats boats — where you will be
-              shown around the most productive areas given the tide and design a strategy
-              for fishing self-guided in our fishing kayaks for the following day. The
-              third fishing day is back on a flats boat with a guide.
+              The first fishing day should be guided on one of our flats boats, where you
+              will be shown the most productive areas, safe routes, and how tide affects the
+              flats. If conditions and experience line up, kayak access can add extra time
+              on known water during the package. The third fishing day is back on a flats
+              boat with a guide.
             </p>
             <div className="rounded-2xl border border-ocean-100 bg-ocean-50/70 p-5 mb-8">
               <p className="text-sm text-ocean-900 font-semibold mb-2">Good fit for</p>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Anglers who want a comfortable lodge base, one guided orientation day, and enough time
-                to mix skiff fishing with independent sessions on the flats.
+                Anglers who want a comfortable lodge base, guided skiff fishing first, and
+                optional kayak-access time when the local conditions and experience level fit.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -198,11 +198,11 @@ export default function LodgePage() {
                 <ul className="space-y-2">
                   {[
                     "4 nights lodge accommodation",
-                    "Guided & self-guided fishing days",
+                    "Guided fishing with kayak-access time",
                     "Transfers to/from Sandy Point",
                     "Breakfast and lunch (guided day)",
                     "Cleaning fee",
-                    "Kayak rental",
+                    "Kayak access when appropriate",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
                       <svg className="w-4 h-4 text-ocean-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,7 +226,7 @@ export default function LodgePage() {
                     <svg className="w-4 h-4 text-ocean-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Additional self-guided day: <strong>$205/person/day</strong>
+                    Additional kayak-access day: <strong>$205/person/day</strong>
                   </li>
                 </ul>
                 <h3 className="font-bold mb-3 mt-6">Minimum Stay</h3>

@@ -7,14 +7,14 @@ import { faqItems, faqSchema } from "../faqData";
 export const metadata: Metadata = {
   title: "Bonefishing FAQ — Turks & Caicos",
   description:
-    "Answers to common questions about guided trips, lodge packages, DIY kayak fishing, ferry schedules, tackle, deposits, and planning a bonefishing trip to North Caicos.",
+    "Answers to common questions about guided trips, lodge packages, kayak access, ferry schedules, tackle, deposits, and planning a bonefishing trip to North Caicos.",
   alternates: {
     canonical: "/faq/",
   },
   openGraph: {
     title: "Bonefishing FAQ — Turks & Caicos",
     description:
-      "Answers to common questions about guided trips, lodge packages, DIY kayak fishing, ferry schedules, tackle, deposits, and planning a bonefishing trip to North Caicos.",
+      "Answers to common questions about guided trips, lodge packages, kayak access, ferry schedules, tackle, deposits, and planning a bonefishing trip to North Caicos.",
     images: [
       {
         url: "/images/gallery/fishing-along-the-mangroves.jpg",
@@ -48,8 +48,8 @@ export default function FAQPage() {
           <div className="max-w-4xl mx-auto mt-10 card p-6 sm:p-8">
             <h2 className="text-xl font-bold mb-3">Still Need Help Choosing?</h2>
             <p className="text-slate-500 mb-4">
-              If you already know you want guided fishing, a lodge package, or a DIY kayak plan,
-              start with the relevant page below and then send your dates.
+              If you already know you want guided fishing or a lodge package, start with the
+              relevant page below and send your dates. We&apos;ll advise on kayak access only if it fits.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/rates" className="btn-primary">View Rates</Link>

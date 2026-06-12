@@ -115,7 +115,7 @@ export default function WhyTurksCaicosPage() {
               Ready to Fish These Flats?
             </h2>
             <p className="text-ocean-200 mb-6 max-w-lg mx-auto">
-              Whether you want a guided day on the skiff or prefer to explore in a fishing kayak, we have options for every angler.
+              Start with a guided day on the skiff so you can learn the tides, flats, and safe access before considering kayak time.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/fishing" className="btn-primary">

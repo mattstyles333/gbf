@@ -85,7 +85,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
                     This form sends directly to {siteConfig.email}. No online payment is required.
                   </p>
                   <div className="mb-6 rounded-xl bg-ocean-50 border border-ocean-100 p-4 text-sm text-slate-600">
-                    Most guests start by comparing <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline">guided rates</Link>, <Link href="/rates#lodge-packages" className="text-ocean-700 font-semibold hover:underline">lodge packages</Link>, and <Link href="/rates#diy-options" className="text-ocean-700 font-semibold hover:underline">DIY options</Link> before sending dates.
+                    Most guests should start with a <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline">guided day</Link> or <Link href="/rates#lodge-packages" className="text-ocean-700 font-semibold hover:underline">lodge package</Link>. If kayak access makes sense for your experience and dates, we&apos;ll recommend it after that.
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
@@ -117,7 +117,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent"
-                        placeholder="[email protected]"
+                        placeholder="Your email address"
                       />
                     </div>
                     <div>
@@ -148,7 +148,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
                       >
                         <option value="guided-day-trip">Guided Day Trip</option>
                         <option value="lodge-package">Lodge Package</option>
-                        <option value="diy-kayak-fishing">DIY Kayak Fishing</option>
+                        <option value="diy-kayak-fishing">Kayak Access After Guided Day</option>
                       </select>
                     </div>
                     <div>
@@ -195,7 +195,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-transparent resize-none"
-                        placeholder="Tell us about your group, experience level, and whether you want guided, DIY, or lodge options."
+                        placeholder="Tell us about your group, experience level, dates, and whether you want a guided day or lodge package."
                       />
                     </div>
                   </div>
@@ -222,7 +222,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
               <div className="card p-6 mb-6">
                 <h3 className="font-bold mb-3">Before You Submit</h3>
                 <p className="text-sm text-slate-500 mb-4">
-                  If you&apos;re still comparing options, the rates page breaks down guided days, lodge packages, and DIY pricing.
+                  If you&apos;re still comparing options, the rates page breaks down guided days, lodge packages, and kayak access.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline text-sm">
@@ -232,7 +232,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
                     Lodge packages
                   </Link>
                   <Link href="/rates#diy-options" className="text-ocean-700 font-semibold hover:underline text-sm">
-                    DIY pricing
+                    Kayak access
                   </Link>
                 </div>
               </div>
@@ -297,7 +297,8 @@ function BookPageContent({ sent }: { sent: boolean }) {
                 <h3 className="font-bold mb-3">Need Quick Info?</h3>
                 <p className="text-slate-500 text-sm mb-4">
                   If you already know your dates, call or email us directly and we&apos;ll help
-                  you choose the right guided, DIY, or lodge package.
+                  you choose the right guided day or lodge package. If kayak access is a fit,
+                  we&apos;ll suggest it after a guided plan is in place.
                 </p>
                 <p className="text-slate-500 text-sm">
                   We&apos;re happy to talk through tides, travel logistics, and the right fit for

@@ -5,15 +5,15 @@ import PageHero from "../../components/PageHero";
 import BookingCTA from "../../components/BookingCTA";
 
 export const metadata: Metadata = {
-  title: "Fishing Kayaks — DIY Bonefishing in Turks & Caicos",
+  title: "Fishing Kayaks — Guided-First Bonefishing Access",
   description:
-    "Fishing kayaks available for rent in 11ft and 14ft sizes at the Bonefish Lodge. Perfect for self-guided bonefishing on the flats of North Caicos.",
+    "Fishing kayaks available in 11ft and 14ft sizes at the Bonefish Lodge, recommended for experienced anglers after a guided day.",
   alternates: {
     canonical: "/diy/fishing-kayaks/",
   },
   openGraph: {
-    title: "Fishing Kayaks — DIY Bonefishing in Turks & Caicos",
-    description: "Fishing kayaks for rent at the Bonefish Lodge. 11ft and 14ft sizes perfect for self-guided bonefishing on the flats.",
+    title: "Fishing Kayaks — Guided-First Bonefishing Access",
+    description: "Fishing kayaks at the Bonefish Lodge for experienced anglers after a guided day and local water briefing.",
     images: [
       {
         url: "/images/gbf/Manta_Ray.png",
@@ -30,7 +30,7 @@ export default function FishingKayaksPage() {
     <>
       <PageHero
         title="Fishing Kayaks"
-        subtitle="Explore the pristine bonefish flats of North Caicos at your own pace from a kayak."
+        subtitle="Kayak access is best for experienced anglers after a guided day and local water briefing."
       />
       <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
         <div className="section-container">
@@ -40,23 +40,21 @@ export default function FishingKayaksPage() {
                 Kayak Fishing for Bonefish
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-5">
-                Fishing for bonefish from a kayak offers several distinct advantages,
-                making it an exciting and rewarding way to pursue these elusive fish.
-                When staying at the lodge, we have kayaks available for DIY fishing.
+                Fishing from a kayak can be useful once you understand the local water,
+                but we recommend booking a guided day first. Your guide can show you the
+                safe routes, productive flats, and timing that make kayak access worthwhile.
               </p>
               <p className="text-slate-500 leading-relaxed mb-6">
-                These kayaks are perfect for anglers who want to explore the nearby
-                bonefishing flats on their own or enjoy the surrounding waters at their
-                leisure. Paddle out to some of the best fishing spots just a short
-                distance from the lodge, giving you flexibility and independence to
-                enhance your fishing adventure.
+                These kayaks are available for experienced anglers staying at the lodge or
+                renting separately when conditions and experience line up. They are not a
+                substitute for local guidance if you are new to Bottle Creek.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/book" className="btn-primary">
-                  Rent Kayak
+                  Book Guided Trip First
                 </Link>
-                <Link href="/diy" className="btn-outline !text-ocean-700 !border-ocean-400">
-                  DIY Overview
+                <Link href="/diy/guided-vs-diy" className="btn-outline !text-ocean-700 !border-ocean-400">
+                  Guided First Advice
                 </Link>
               </div>
             </div>
@@ -74,12 +72,12 @@ export default function FishingKayaksPage() {
           {/* Benefits */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
-              { title: "Access Shallow Water", desc: "Bonefish are found in shallow flats that can be difficult to reach even with our boats. Kayaks go where motors can't." },
-              { title: "Quiet & Stealthy", desc: "No motor noise means a stealthier approach. Get closer to bonefish without spooking them." },
-              { title: "Mobile & Flexible", desc: "Navigate narrow channels, coastlines, and across flats easily. Adjust position based on fish behavior or tide." },
-              { title: "Cost-Effective", desc: "No guide fees or gas costs. Significantly reduces the per-day cost of fishing the flats." },
-              { title: "More Fishing Time", desc: "Launch directly from the lodge with good flats starting directly opposite. Easy in and out." },
-              { title: "Catch & Release Friendly", desc: "Close to the water makes handling bonefish for photos and release efficient and less harmful to the fish." },
+              { title: "Useful After Guidance", desc: "A guided day helps you understand where kayak access makes sense and where it does not." },
+              { title: "Quiet Approach", desc: "No motor noise helps once you already know how to position around wind, tide, and fish movement." },
+              { title: "Local Access", desc: "Launch directly from the lodge when conditions, tide, and experience make kayak fishing appropriate." },
+              { title: "Extra Water Time", desc: "Best used as an add-on after guided fishing, not as the main plan for first-time guests." },
+              { title: "Experienced Anglers", desc: "Suited to anglers who can read flats, wade safely, and handle changing conditions independently." },
+              { title: "Catch & Release Friendly", desc: "Staying close to the water helps with careful bonefish handling and quick release." },
             ].map((benefit, i) => (
               <div key={i} className="card p-6">
                 <h3 className="font-bold mb-2">{benefit.title}</h3>
@@ -91,6 +89,10 @@ export default function FishingKayaksPage() {
           {/* Rates */}
           <div className="card p-8 max-w-lg">
             <h3 className="text-xl font-bold mb-4">Kayak Rental Rates</h3>
+            <p className="text-sm text-slate-500 leading-relaxed mb-4">
+              We recommend using kayak access after a guided day so you know the safe routes,
+              tides, and flats worth fishing.
+            </p>
             <div className="space-y-3 text-sm text-slate-600">
               <div className="flex justify-between items-center py-2 border-b border-slate-100">
                 <span>Kayak Rental (non-lodge guests)</span>
@@ -110,7 +112,7 @@ export default function FishingKayaksPage() {
               </div>
             </div>
             <Link href="/book" className="btn-primary w-full justify-center mt-6">
-              Book
+              Start With a Guided Booking
             </Link>
           </div>
         </div>

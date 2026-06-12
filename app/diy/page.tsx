@@ -44,21 +44,21 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "DIY Bonefishing — Turks & Caicos",
+  title: "Guided-First Kayak Access — Turks & Caicos",
   description:
-    "Self-guided bonefishing on North Caicos with kayak access, practical local advice, and lodge-based options for experienced anglers.",
+    "Kayak access on North Caicos for experienced anglers, best used after a guided bonefishing day and local water briefing.",
   alternates: {
     canonical: "/diy/",
   },
   openGraph: {
-    title: "DIY Bonefishing — Turks & Caicos",
-    description: "Self-guided bonefishing on North Caicos with kayak access and lodge-based options for experienced anglers.",
+    title: "Guided-First Kayak Access — Turks & Caicos",
+    description: "Kayak access on North Caicos for experienced anglers, best used after a guided bonefishing day and local water briefing.",
     images: [
       {
         url: "/images/gallery/solo-on-the-flats-of.jpg",
         width: 1200,
         height: 630,
-        alt: "DIY bonefishing on the flats of North Caicos",
+        alt: "Guided-first kayak access on the flats of North Caicos",
       },
     ],
   },
@@ -72,46 +72,48 @@ export default function DIYPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <PageHero
-        title="DIY Bonefishing"
-        subtitle="For experienced anglers who prefer to find their own way — explore the pristine flats of North Caicos at your own pace."
+        title="Kayak Access After a Guided Day"
+        subtitle="Self-guided fishing is best treated as an add-on for experienced anglers after you understand the local tides, channels, and safe access."
       />
       <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h2 className="text-3xl font-bold mb-5">
-                Bonefishing Without a Guide
+                Start With Local Guidance
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-5">
-                DIY bonefishing is a strong fit for anglers who already read tides,
-                wade confidently, and want the freedom to fish on their own schedule.
+                We recommend booking a guided skiff day first. The local water changes
+                quickly with tide, wind, and light, and a guide gives you the best chance
+                to learn the safe routes and productive flats before fishing independently.
               </p>
               <p className="text-slate-500 leading-relaxed mb-6">
                 The Bonefish Lodge is situated directly across from good wading flats
-                and the kayak launch is directly from the lodge. This allows you to pick
-                and choose the best time to fish each flat — with the option of returning
-                to the lodge as the tide goes slack and then returning later. It is
-                approximately three-quarters of a mile from the water&apos;s edge at the
-                lodge across to the mangroves of the closest productive flat.
+                and the kayak launch is directly from the lodge. That access can be useful
+                once you know where to go, but it should not replace a first guided day if
+                you are new to Bottle Creek. It is approximately three-quarters of a mile
+                from the water&apos;s edge at the lodge across to the mangroves of the closest
+                productive flat.
               </p>
               <p className="text-slate-500 leading-relaxed mb-6">
-                DIY works best when you want flexibility. You can fish early, rest when the
-                tide goes slack, and head back out later without committing to a full guided day.
-                It is one of the most practical ways to extend your time on the flats without adding guide or fuel cost.
+                Kayak access works best as extra water time after a guided trip, especially
+                for anglers who already read flats, manage wind and tides, and wade quietly.
+                If you are unsure, send your dates and we&apos;ll steer you toward the right
+                guided plan first.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/diy/fishing-kayaks" className="btn-primary">
-                  Fishing Kayaks
+                <Link href="/book" className="btn-primary">
+                  Book Guided Trip First
                 </Link>
-                <Link href="/diy/guided-vs-diy" className="btn-outline !text-ocean-700 !border-ocean-400">
-                  Guided vs. DIY
+                <Link href="/diy/fishing-kayaks" className="btn-outline !text-ocean-700 !border-ocean-400">
+                  Kayak Access Details
                 </Link>
               </div>
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/gallery/solo-on-the-flats-of.jpg"
-                alt="DIY bonefishing in North Caicos"
+                alt="Guided-first kayak access in North Caicos"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -120,7 +122,7 @@ export default function DIYPage() {
           </div>
 
           {/* Options */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-2xl">
             <div className="card overflow-hidden">
               <div className="relative h-48">
                 <Image
@@ -135,34 +137,12 @@ export default function DIYPage() {
                 <h3 className="text-xl font-bold mb-3">Fishing Kayaks</h3>
                 <p className="text-slate-500 text-sm leading-relaxed mb-4">
                   Available in 11ft and 14ft sizes for flats fishing. Rent kayaks at the
-                  lodge or separately. Perfect for anglers who want to explore the nearby
-                  bonefishing flats on their own.
+                  lodge or separately after we confirm the fit for your experience, dates,
+                  and conditions.
                 </p>
                 <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                  Kayaks are quiet, easy to launch, and ideal for reaching skinny water,
-                  mangrove edges, and nearby estuaries that can be awkward to approach by boat.
-                </p>
-                <Link href="/diy/fishing-kayaks" className="text-ocean-600 font-semibold text-sm hover:underline">
-                  Learn more &rarr;
-                </Link>
-              </div>
-            </div>
-            <div className="card overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src="/images/gbf/Versaboard.jpg"
-                  alt="Stand Up Paddleboards"
-                  fill
-                  className="object-cover"
-                  sizes="50vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">Stand Up Paddleboards</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                  Versaboard SUPs available — ideal for sight fishing while standing,
-                  with fly rod holders, anchor, and ample stowage for a full day on the
-                  flats.
+                  Kayaks are quiet and easy to launch, but they are best used by anglers
+                  who have already had a guided orientation to the flats, channels, and safe access.
                 </p>
                 <Link href="/diy/fishing-kayaks" className="text-ocean-600 font-semibold text-sm hover:underline">
                   Learn more &rarr;

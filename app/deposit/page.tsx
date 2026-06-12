@@ -61,7 +61,7 @@ export default function DepositPage() {
                 <h2 className="text-2xl font-bold mb-4">What You&apos;re Paying For</h2>
                 <p className="text-slate-600 mb-6">
                   This $175 deposit confirms your reservation and is applied toward 
-                  your total trip cost. It&apos;s fully transferable if you need to reschedule.
+                  your total trip cost. Contact us as soon as possible if your dates change.
                 </p>
                 
                 <div className="bg-ocean-50 rounded-lg p-5 mb-6">
@@ -106,8 +106,8 @@ export default function DepositPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium text-slate-800">Transferable</p>
-                      <p className="text-sm text-slate-500">Can be moved to new dates if needed</p>
+                      <p className="font-medium text-slate-800">Rescheduling Support</p>
+                      <p className="text-sm text-slate-500">Contact us early if your travel dates need to change</p>
                     </div>
                   </div>
                 </div>

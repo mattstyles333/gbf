@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.greatbonefishing.com"
+        }
+      ],
+      "destination": "https://greatbonefishing.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/page-sitemap.xml",
       "destination": "/sitemap.xml",
       "permanent": true
@@ -273,6 +284,166 @@
     {
       "source": "/book-a-trip",
       "destination": "/book/",
+      "permanent": true
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/attachment-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/author-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/form-maker-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/fmemailverification-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/the-great-bonefishing-company-2/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/the-great-bonefishing-company-2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/solitude-seclusion-success-2/",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/solitude-seclusion-success-2",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/seasons/:path*",
+      "destination": "/learn/seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-rates/:path*",
+      "destination": "/rates/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-trip/:path*",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/north-caicos/:path*",
+      "destination": "/fishing/north-caicos/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/bottle-creek/:path*",
+      "destination": "/fishing/bottle-creek/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/east-baysouth-cays/:path*",
+      "destination": "/fishing/east-bay/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/wading_for_bonefish/:path*",
+      "destination": "/diy/",
+      "permanent": true
+    },
+    {
+      "source": "/flyfishing-in-the-turks-and-caicos/:path*",
+      "destination": "/fishing/",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation/:path*",
+      "destination": "/lodge/#other-accommodation",
+      "permanent": true
+    },
+    {
+      "source": "/transport-provo/:path*",
+      "destination": "/travel/",
+      "permanent": true
+    },
+    {
+      "source": "/last-chance/:path*",
+      "destination": "/travel/",
+      "permanent": true
+    },
+    {
+      "source": "/fishing-kayaks/:path*",
+      "destination": "/diy/fishing-kayaks/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-bonefishing-boat/:path*",
+      "destination": "/diy/guided-vs-diy/",
+      "permanent": true
+    },
+    {
+      "source": "/diy-bonefishing/:path*",
+      "destination": "/diy/",
+      "permanent": true
+    },
+    {
+      "source": "/bonefishing-lodge-turks-caicos/:path*",
+      "destination": "/lodge/",
+      "permanent": true
+    },
+    {
+      "source": "/catch-and-release-bonefish-handling/:path*",
+      "destination": "/learn/catch-and-release/",
+      "permanent": true
+    },
+    {
+      "source": "/why-the-turks-and-caicos-is-great-for-bonefishing/:path*",
+      "destination": "/fishing/why-turks-caicos/",
       "permanent": true
     }
   ]

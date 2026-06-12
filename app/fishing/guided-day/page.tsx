@@ -67,7 +67,7 @@ export default function GuidedDayPage() {
               <h2 className="text-2xl font-bold mb-4">How the Day Usually Flows</h2>
               <div className="space-y-4 text-slate-500 leading-relaxed">
                 <p>
-                  The day usually starts with a <strong>7:30am departure</strong>. We fish until around <strong>2:00pm</strong>,
+                  The day usually starts around <strong>8am</strong>. We fish until around <strong>2pm</strong>,
                   which keeps the day productive without forcing a rushed return and usually allows guests coming from Provo
                   to get back on the <strong>4:00pm ferry</strong>.
                 </p>
@@ -87,11 +87,11 @@ export default function GuidedDayPage() {
               <h3 className="text-xl font-bold mb-4">Typical Timeline</h3>
               <ul className="space-y-3 text-sm text-slate-600">
                 {[
-                  "7:30am departure",
+                  "8am start",
                   "Early visual water first if conditions line up",
                   "Wade and sight-fish with Darrel beside you",
                   "Shift to skiff water if needed",
-                  "Back around 2:00pm",
+                  "Back around 2pm",
                   "Timed for the 4:00pm ferry return when needed",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">

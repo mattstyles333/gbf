@@ -2,12 +2,12 @@ export const faqItems = [
   {
     question: "What kind of trip should I book first?",
     answer:
-      "Most first-time guests start with a guided day trip or a lodge package that includes at least one guided day. If you already read tides and flats water confidently, a DIY kayak day can make sense too.",
+      "Start with a guided day trip or a lodge package that includes guided fishing. Kayak access is only a good fit after local orientation and for anglers who already read tides and flats confidently.",
   },
   {
     question: "What time does a guided trip run?",
     answer:
-      "Guided trips typically depart around 7:30am, fish until about 2:00pm, and are timed so guests coming from Providenciales can usually make the 4:00pm ferry back.",
+      "Guided trips typically run from 8am to about 2pm and are timed so guests coming from Providenciales can usually make the 4:00pm ferry back.",
   },
   {
     question: "How much is the ferry from Providenciales to North Caicos?",
@@ -17,7 +17,7 @@ export const faqItems = [
   {
     question: "Do I need my own tackle or flies?",
     answer:
-      "No. Guided trips include tackle and equipment. If you need fly gear, it can be hired for $60 plus tax. DIY anglers can also bring their own preferred setup.",
+      "No. Guided trips include tackle and equipment. If you need fly gear, it can be hired for $60 plus tax. Anglers adding kayak access after a guided day can bring their own preferred setup too.",
   },
   {
     question: "How do deposits and final payment work?",
@@ -32,7 +32,7 @@ export const faqItems = [
   {
     question: "Can beginners book a trip?",
     answer:
-      "Yes. Guided days are a good fit for beginners because your guide handles positioning, timing, and coaching. DIY fishing is better suited to anglers who already have some flats experience.",
+      "Yes. Guided days are the right fit for beginners because your guide handles positioning, timing, and coaching. We do not recommend self-guided kayak fishing as a first trip on unfamiliar flats.",
   },
   {
     question: "Where do you actually fish?",

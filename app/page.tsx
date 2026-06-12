@@ -8,7 +8,7 @@ import { homepageFaqItems, faqSchema } from "./faqData";
 export const metadata: Metadata = {
   title: "World-Class Bonefishing in Turks & Caicos",
   description:
-    "Guided bonefishing, DIY kayak access, and waterfront lodge stays on North Caicos. Fish Bottle Creek with local guides who know the tides.",
+    "Guided bonefishing and waterfront lodge stays on North Caicos. Fish Bottle Creek with local guides who know the tides.",
   alternates: {
     canonical: "/",
   },
@@ -45,8 +45,8 @@ export default function HomePage() {
             </h1>
              <p className="text-ocean-100 text-lg sm:text-xl leading-relaxed mb-8">
                Fish Bottle Creek and the surrounding flats and estuaries with local guides who grew up on
-               this water. Choose guided skiff days, DIY kayak access, or lodge
-               packages built around the tides.
+               this water. Start with a guided skiff day, then add lodge stays or kayak
+               access only when it fits your experience and conditions.
              </p>
              <div className="flex flex-wrap gap-4">
               <Link href="/book" className="btn-primary text-lg px-8 py-4">
@@ -210,8 +210,8 @@ export default function HomePage() {
                   text: "Many Bottle Creek flats are firm enough for ankle-deep stalking, giving fly and spin anglers realistic shots at cruising fish and tailing schools.",
                 },
                 {
-                  title: "Guided or Independent",
-                  text: "First-time guests can start with a guided skiff day, while experienced flats anglers can add DIY kayak days once they understand the local water.",
+                  title: "Guided First",
+                  text: "Most guests should start with a guided skiff day. Experienced flats anglers can add kayak access only after they understand the local water.",
                 },
                 {
                   title: "Realistic Big-Fish Potential",
@@ -248,8 +248,8 @@ export default function HomePage() {
               <ul className="space-y-3 mb-8">
                 {[
                   "4-night / 3-day packages from $1,250pp",
-                  "Guided and self-guided days combined",
-                  "Kayak rental included",
+                  "Guided days with kayak access available",
+                  "Kayak access after local orientation",
                   "Breakfast and lunch on guided days",
                   "Minutes from the best fishing",
                 ].map((item, i) => (
@@ -283,14 +283,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* DIY */}
+      {/* Kayak access */}
       <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/gallery/calf-deep-wading-for.jpg"
-                alt="DIY bonefishing in Turks & Caicos"
+                alt="Guided-first kayak access in Turks & Caicos"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -298,23 +298,23 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-ocean-600 font-semibold uppercase tracking-widest text-sm mb-3">
-                Self-Guided Fishing
+                Guided-First Planning
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold mb-5">
-                Explore at Your Own Pace
+                Learn the Water Before Going Alone
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-6">
-                For experienced anglers who prefer to find their own water, our DIY
-                bonefishing option offers full independence. Rent kayaks, get a
-                briefing from your guide on day one, then head out on your own.
+                Self-guided kayak fishing is not the best first step for most visitors. Bottle Creek
+                changes with tide, wind, and light, so a guided day gives you the local
+                knowledge needed to fish safely and productively.
               </p>
               <p className="text-slate-500 leading-relaxed mb-6">
-                DIY days work best for anglers who can read flats, manage wind and tides,
-                and move quietly through shallow water. We will point you toward the right
-                starting areas, explain safe access, and help you avoid wasting time on dead water.
+                If you already have strong flats experience, kayak access can be added after
+                a guided orientation. We&apos;ll help decide whether that makes sense for your
+                dates, ability, and conditions.
               </p>
-              <Link href="/diy" className="btn-primary">
-                DIY Bonefishing Options
+              <Link href="/book" className="btn-primary">
+                Book a Guided Trip First
               </Link>
             </div>
           </div>
@@ -342,7 +342,7 @@ export default function HomePage() {
                 and all tackle and equipment.
               </p>
               <ul className="space-y-2">
-                {["7:30am – 2:00pm", "Flats skiff with expert guide", "All tackle and gear", "Fishing license available ($15/day)", "$175 deposit to confirm"].map((item, i) => (
+                {["8am – 2pm", "Flats skiff with expert guide", "All tackle and gear", "Fishing license available ($15/day)", "$175 deposit to confirm"].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
                     <svg className="w-4 h-4 text-ocean-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -359,11 +359,11 @@ export default function HomePage() {
                 <span className="text-slate-400">per person + 12% TCI tax</span>
               </div>
               <p className="text-slate-500 text-sm mb-6">
-                Based on two anglers sharing. Includes lodge accommodation, guided and
-                self-guided days, and kayaks.
+                Based on two anglers sharing. Includes lodge accommodation, guided fishing,
+                and kayak access when appropriate.
               </p>
               <ul className="space-y-2">
-                {["4 nights lodge (dbl occupancy)", "1 guided day + 2 DIY kayak days", "Breakfast and lunch", "Kayak rental", "Sandy Point transfers"].map((item, i) => (
+                {["4 nights lodge (dbl occupancy)", "Guided day first", "Breakfast and lunch", "Kayak access when appropriate", "Sandy Point transfers"].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
                     <svg className="w-4 h-4 text-ocean-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

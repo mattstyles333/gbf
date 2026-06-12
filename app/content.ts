@@ -62,9 +62,9 @@ export const navItems: NavItem[] = [
       { label: "East Bay & South Cays", href: "/fishing/east-bay", group: "Where to Fish" },
       { label: "Guided Day", href: "/fishing/guided-day", group: "Where to Fish" },
       { label: "Why Turks & Caicos", href: "/fishing/why-turks-caicos", group: "Where to Fish" },
-      { label: "DIY Bonefishing", href: "/diy", group: "Self-Guided" },
-      { label: "Kayak Rentals", href: "/diy/fishing-kayaks", group: "Self-Guided" },
-      { label: "Guided vs. DIY", href: "/diy/guided-vs-diy", group: "Self-Guided" },
+      { label: "Kayak Access", href: "/diy", group: "After Guided Day" },
+      { label: "Fishing Kayaks", href: "/diy/fishing-kayaks", group: "After Guided Day" },
+      { label: "Guided First", href: "/diy/guided-vs-diy", group: "After Guided Day" },
     ],
   },
   {
@@ -152,7 +152,7 @@ export const guidedRates: Rate[] = [
     price: "$700",
     note: "plus 12% TCI tax — up to 2 guests",
     details: [
-      "7:30am – 2:00pm",
+      "8am – 2pm",
       "Guided on classic flats skiff",
       "All tackle and equipment",
       "Fishing license available ($15/day)",
@@ -166,12 +166,12 @@ export const lodgePackages: Package[] = [
     title: "4 Nights / 3 Days Package",
     price: "$1,250",
     description:
-      "Stay at our lodge on Bottle Creek with guided and self-guided days mixed in.",
+      "Stay at our lodge on Bottle Creek with guided fishing and kayak access when appropriate.",
     includes: [
       "4 nights lodge accommodation (dbl)",
       "1 guided day on flats skiff",
-      "2 days self-guided in fishing kayaks",
-      "Guided day sets up your DIY strategy",
+      "Kayak access when appropriate",
+      "Guided day comes first for local water and safety",
       "Transfers to/from Sandy Point",
       "Breakfast and lunch (guided day)",
       "Kayak rental and cleaning fee",

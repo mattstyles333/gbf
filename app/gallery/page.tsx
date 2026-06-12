@@ -8,14 +8,14 @@ import GalleryMasonry from "./GalleryMasonry";
 export const metadata: Metadata = {
   title: "Photo Gallery — Bonefishing in Turks & Caicos",
   description:
-    "Browse Great Bone Fishing photos from North Caicos: bonefish, flats, guided days, DIY sessions, lodge views, and release moments.",
+    "Browse Great Bone Fishing photos from North Caicos: bonefish, flats, guided days, lodge views, and release moments.",
   alternates: {
     canonical: "/gallery/",
   },
   openGraph: {
     title: "Photo Gallery — Bonefishing in Turks & Caicos",
     description:
-      "Browse Great Bone Fishing photos from North Caicos: bonefish, flats, guided days, DIY sessions, lodge views, and release moments.",
+      "Browse Great Bone Fishing photos from North Caicos: bonefish, flats, guided days, lodge views, and release moments.",
     images: [
       {
         url: "/images/gallery/fishing-along-the-mangroves.jpg",
@@ -187,7 +187,7 @@ export default function GalleryPage() {
           <GalleryMasonry images={allGalleryImages} />
         </div>
       </section>
-      <BookingCTA title="Seen Enough to Start Planning?" subtitle="Tell us the kind of trip you want and we&apos;ll recommend the right guided, DIY, or lodge setup for your dates." />
+      <BookingCTA title="Seen Enough to Start Planning?" subtitle="Tell us the kind of trip you want and we&apos;ll recommend the right guided day or lodge setup for your dates." />
     </>
   );
 }

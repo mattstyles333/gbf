@@ -116,12 +116,12 @@ export default function TackleAndGearPage() {
             <h2 className="text-2xl font-bold mb-4">Where This Fits Into Trip Planning</h2>
             <p className="text-slate-500 leading-relaxed mb-5">
               If you are booking a guided day, we can simplify your setup and keep the tackle piece easy.
-              If you are planning a lodge package or DIY kayak trip, it helps to think through footwear, spare leaders,
+              If kayak access makes sense after a guided day, it helps to think through footwear, spare leaders,
               flies, and sun gear before you travel.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/fishing" className="text-ocean-700 font-semibold hover:underline">Guided fishing overview</Link>
-              <Link href="/diy" className="text-ocean-700 font-semibold hover:underline">DIY fishing overview</Link>
+              <Link href="/diy" className="text-ocean-700 font-semibold hover:underline">Kayak access guidance</Link>
               <Link href="/faq" className="text-ocean-700 font-semibold hover:underline">FAQ</Link>
             </div>
           </div>

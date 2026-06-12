@@ -52,8 +52,8 @@ export default function TravelPage() {
                 </p>
                 <p>
                   Anglers coming from Providenciales typically catch the 7:30am ferry from
-                  Leeward, arrive in North Caicos around 8:00am, and are fishing shortly after.
-                  The goal is to have lines wet by about 8:30am and still make the return ferry comfortably.
+                  Leeward, arrive in North Caicos around 8:00am, and start the fishing day from there.
+                  The trip runs about 8am to 2pm and still leaves time to make the return ferry comfortably.
                 </p>
               </div>
 
@@ -90,8 +90,7 @@ export default function TravelPage() {
                 <div className="space-y-4">
                   {[
                     { time: "7:30 AM", desc: "Catch ferry from Leeward, Providenciales" },
-                    { time: "8:00 AM", desc: "Arrive North Caicos — met at the dock" },
-                    { time: "8:30 AM", desc: "Lines wet on the flats" },
+                    { time: "8:00 AM", desc: "Arrive North Caicos — fishing day starts" },
                     { time: "2:00 PM", desc: "Head back to the dock" },
                     { time: "3:00 or 4:30 PM", desc: "Ferry back to Providenciales" },
                   ].map((step, i) => (
