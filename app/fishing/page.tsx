@@ -255,7 +255,7 @@ export default function FishingPage() {
             <Link href="/learn/catch-and-release" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Catch &amp; Release &rarr;
             </Link>
-            <Link href="/book" className="text-white font-semibold hover:text-ocean-200 transition-colors">
+            <Link href="/deposit" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Book &rarr;
             </Link>
           </div>

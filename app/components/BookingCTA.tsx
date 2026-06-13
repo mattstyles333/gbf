@@ -21,7 +21,7 @@ export default function BookingCTA({
           >
             <div className={centered ? "max-w-2xl" : "max-w-2xl"}>
               <p className="text-sand-300 text-xs font-semibold uppercase tracking-[0.24em] mb-3">
-                Book Your Trip
+                Secure Your Trip
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{title}</h2>
               <p className={`text-ocean-100 text-lg leading-relaxed ${centered ? "max-w-xl mx-auto" : ""}`}>
@@ -32,7 +32,7 @@ export default function BookingCTA({
             <div className={`flex flex-col gap-4 ${centered ? "items-center" : "lg:items-end"}`}>
               <div className={`flex flex-wrap gap-4 ${centered ? "justify-center" : ""}`}>
                 <Link
-                  href="/book"
+                  href="/deposit"
                   className="inline-flex items-center rounded-xl bg-sand-400 px-6 py-3.5 text-sm font-semibold text-ocean-950 transition hover:bg-sand-300"
                 >
                   Book

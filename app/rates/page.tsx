@@ -135,7 +135,7 @@ export default function RatesPage() {
               <p className="text-sm text-slate-500 mb-4">For anglers who want a single polished skiff day with local guidance.</p>
               <div className="flex gap-3 flex-wrap">
                 <Link href="#guided" className="text-ocean-700 font-semibold hover:underline">See guided rate</Link>
-                <Link href="/book" className="text-ocean-700 font-semibold hover:underline">Book inquiry</Link>
+                <Link href="/book" className="text-ocean-700 font-semibold hover:underline">Send inquiry</Link>
               </div>
             </div>
             <div className="card p-6">
@@ -211,7 +211,7 @@ export default function RatesPage() {
                 ))}
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/book" className="btn-primary">Book Guided Day</Link>
+                <Link href="/deposit" className="btn-primary">Book Guided Day</Link>
                 <Link href="/fishing" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">See Fishing Areas</Link>
               </div>
             </div>
@@ -273,11 +273,11 @@ export default function RatesPage() {
                   <strong className="text-foreground">Additional Days:</strong>
                   <ul className="mt-2 space-y-1 text-slate-600">
                     <li>Extra guided day: <strong>$1,050/day</strong> (per boat)</li>
-                    <li>Extra kayak-access day: <strong>$205/person/day</strong></li>
+                    <li>Extra kayak-access day: <strong>$110/person/day</strong></li>
                   </ul>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <Link href="/book" className="btn-primary">Book Package</Link>
+                  <Link href="/deposit" className="btn-primary">Book Package</Link>
                   <Link href="/lodge" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">View Lodge</Link>
                 </div>
               </div>
@@ -305,7 +305,7 @@ export default function RatesPage() {
                 Learn more about kayaks &rarr;
               </Link>
               <div className="mt-6 flex flex-wrap gap-4">
-                <Link href="/book" className="btn-primary">Book Guided Trip First</Link>
+                <Link href="/deposit" className="btn-primary">Book Guided Trip First</Link>
                 <Link href="/diy" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Guided-First Advice</Link>
               </div>
             </div>
@@ -319,7 +319,7 @@ export default function RatesPage() {
                 Start with your dates and trip goals. We&apos;ll tell you which rate, package, and tide window make the most sense for your group.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/book" className="btn-primary">Start Booking Inquiry</Link>
+                <Link href="/book" className="btn-primary">Start Inquiry</Link>
                 <Link href="/travel" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Travel Info</Link>
               </div>
             </div>

@@ -226,7 +226,7 @@ export default function LodgePage() {
                     <svg className="w-4 h-4 text-ocean-500 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Additional kayak-access day: <strong>$205/person/day</strong>
+                    Additional kayak-access day: <strong>$110/person/day</strong>
                   </li>
                 </ul>
                 <h3 className="font-bold mb-3 mt-6">Minimum Stay</h3>
@@ -234,7 +234,7 @@ export default function LodgePage() {
               </div>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="/book" className="btn-primary">Book This Package</a>
+              <a href="/deposit" className="btn-primary">Book This Package</a>
               <a href="/rates" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Compare Rates</a>
             </div>
           </div>

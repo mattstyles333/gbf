@@ -182,7 +182,7 @@ export default async function FishingSpotPage({ params }: Props) {
                   </>
                 )}
                 <hr className="my-5 border-slate-100" />
-                <Link href="/book" className="btn-primary w-full justify-center">
+                <Link href="/deposit" className="btn-primary w-full justify-center">
                   Book
                 </Link>
                 <Link href="/fishing" className="btn-outline w-full justify-center mt-3">

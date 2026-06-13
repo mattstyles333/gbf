@@ -92,7 +92,7 @@ export const navItems: NavItem[] = [
       { label: "Gallery", href: "/gallery" },
     ],
   },
-  { label: "Book", href: "/book" },
+  { label: "Enquire", href: "/book" },
 ];
 
 export const fishingSpots: FishingSpot[] = [
@@ -178,7 +178,7 @@ export const lodgePackages: Package[] = [
     ],
     extraDays: {
       guided: "$1,050/day",
-      selfGuided: "$205/person/day",
+      selfGuided: "$110/person/day",
     },
   },
 ];

@@ -54,7 +54,7 @@ export default function TackleAndGearPage() {
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/rates#guided" className="btn-primary">See Guided Rates</Link>
-                <Link href="/book" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Book Inquiry</Link>
+                <Link href="/book" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Send Inquiry</Link>
               </div>
             </div>
             <div className="relative h-80 sm:h-96 rounded-xl overflow-hidden shadow-2xl">

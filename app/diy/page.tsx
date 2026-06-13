@@ -102,7 +102,7 @@ export default function DIYPage() {
                 guided plan first.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/book" className="btn-primary">
+                <Link href="/deposit" className="btn-primary">
                   Book Guided Trip First
                 </Link>
                 <Link href="/diy/fishing-kayaks" className="btn-outline !text-ocean-700 !border-ocean-400">

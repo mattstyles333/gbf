@@ -182,7 +182,7 @@ export default function Header() {
             Call
           </a>
           <Link
-            href="/book"
+            href="/deposit"
             className="btn-primary whitespace-nowrap px-5 text-sm font-semibold shadow-lg shadow-ocean-900/30"
           >
             Book
@@ -258,7 +258,7 @@ export default function Header() {
                 <span className="font-medium">{siteConfig.phoneUSA}</span>
               </a>
               <Link
-                href="/book"
+                href="/deposit"
                 onClick={closeMobile}
                 className="btn-primary w-full text-center font-semibold py-3.5"
               >

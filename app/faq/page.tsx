@@ -55,7 +55,7 @@ export default function FAQPage() {
               <Link href="/rates" className="btn-primary">View Rates</Link>
               <Link href="/lodge" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">View Lodge</Link>
               <Link href="/learn/tackle-and-gear" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Tackle &amp; Gear</Link>
-              <Link href="/book" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Book Inquiry</Link>
+              <Link href="/book" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Send Inquiry</Link>
             </div>
           </div>
         </div>

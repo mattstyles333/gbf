@@ -80,7 +80,7 @@ export default function PaymentSuccessfulPage() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/book" className="text-sm font-semibold text-ocean-700 hover:underline">
-              Back to booking
+              Back to enquiry
             </Link>
             <Link href="/travel" className="text-sm font-semibold text-ocean-700 hover:underline">
               Review travel logistics

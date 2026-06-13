@@ -21,7 +21,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
   return (
     <>
       <PageHero
-        title="Book Your Trip"
+        title="Enquire About Your Trip"
         subtitle="No online checkout, no pressure. Tell us your dates, group size, and trip goals, and we&apos;ll reply with availability and the best option for your group."
       />
       <section className="py-16 sm:py-20" style={{ background: "var(--background)" }}>
@@ -275,7 +275,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
               </div>
 
               <div className="card p-6 mb-6">
-                <h3 className="font-bold mb-3">How Booking Works</h3>
+                <h3 className="font-bold mb-3">How Enquiries Work</h3>
                 <ol className="space-y-3 text-sm text-slate-500">
                   {[
                     "Send your inquiry or call us directly",

@@ -49,7 +49,7 @@ export default function HomePage() {
                access only when it fits your experience and conditions.
              </p>
              <div className="flex flex-wrap gap-4">
-              <Link href="/book" className="btn-primary text-lg px-8 py-4">
+              <Link href="/deposit" className="btn-primary text-lg px-8 py-4">
                  Book
                </Link>
                 <Link href="/fishing" className="btn-outline text-lg px-8 py-4">
@@ -313,7 +313,7 @@ export default function HomePage() {
                 a guided orientation. We&apos;ll help decide whether that makes sense for your
                 dates, ability, and conditions.
               </p>
-              <Link href="/book" className="btn-primary">
+              <Link href="/deposit" className="btn-primary">
                 Book a Guided Trip First
               </Link>
             </div>

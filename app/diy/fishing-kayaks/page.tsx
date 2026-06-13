@@ -50,7 +50,7 @@ export default function FishingKayaksPage() {
                 substitute for local guidance if you are new to Bottle Creek.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/book" className="btn-primary">
+                <Link href="/deposit" className="btn-primary">
                   Book Guided Trip First
                 </Link>
                 <Link href="/diy/guided-vs-diy" className="btn-outline !text-ocean-700 !border-ocean-400">
@@ -111,7 +111,7 @@ export default function FishingKayaksPage() {
                 <span>Paddles, life vest</span>
               </div>
             </div>
-            <Link href="/book" className="btn-primary w-full justify-center mt-6">
+            <Link href="/deposit" className="btn-primary w-full justify-center mt-6">
               Start With a Guided Booking
             </Link>
           </div>

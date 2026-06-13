@@ -139,7 +139,7 @@ export default function GuidedDayPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/rates#guided" className="btn-primary">Guided Day Rates</Link>
-              <Link href="/book" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Book a Guided Day</Link>
+              <Link href="/deposit" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Book a Guided Day</Link>
               <Link href="/learn/tackle-and-gear" className="btn-outline !text-ocean-700 !border-ocean-400 hover:!bg-ocean-50">Tackle &amp; Gear</Link>
             </div>
           </div>
