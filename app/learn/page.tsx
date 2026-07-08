@@ -45,6 +45,12 @@ export default function LearnPage() {
       icon: "🎣",
     },
     {
+      href: "/what-to-wear-bonefishing",
+      title: "What to Wear Bonefishing",
+      desc: "Clothing, polarised sunglasses, footwear, sun protection, and a quick packing checklist for Turks & Caicos flats fishing.",
+      icon: "🧢",
+    },
+    {
       href: "/learn/bonefish-flies",
       title: "Bonefish Flies",
       desc: "The best flies for the Turks & Caicos: Crazy Charlie, Gotcha, Merkin, Clouser Minnows, and when to use each.",

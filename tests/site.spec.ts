@@ -22,6 +22,7 @@ const PAGES = [
   { path: "/learn/bonefish-flies/", name: "Bonefish Flies" },
   { path: "/learn/catch-and-release/", name: "Catch & Release" },
   { path: "/learn/tackle-and-gear/", name: "Tackle & Gear" },
+  { path: "/what-to-wear-bonefishing/", name: "What to Wear Bonefishing" },
   { path: "/faq/", name: "FAQ" },
   { path: "/gallery/", name: "Gallery" },
   { path: "/book/", name: "Book" },
