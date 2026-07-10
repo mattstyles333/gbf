@@ -46,8 +46,21 @@ const localBusinessSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteConfig.baseUrl}/#website`,
+  name: siteConfig.name,
+  alternateName: "Great Bonefishing Company",
+  url: siteConfig.baseUrl,
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteConfig.baseUrl}/#organization`,
   name: siteConfig.name,
   url: siteConfig.baseUrl,
+  logo: `${siteConfig.baseUrl}/brand-icon-512.png`,
+  email: siteConfig.email,
+  telephone: siteConfig.phoneUSA,
 };
 
 const lora = Lora({
@@ -104,6 +117,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description:
       "World-class bonefishing on the pristine flats of Bottle Creek, North Caicos.",
+    images: ["/images/gbf/cropped-fishing-along-the-mangroves.jpg"],
   },
   robots: {
     index: true,
@@ -133,6 +147,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <Header />
         <main className="flex-1">{children}</main>
