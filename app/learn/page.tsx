@@ -39,6 +39,12 @@ export default function LearnPage() {
       icon: "🌊",
     },
     {
+      href: "/where-to-bonefish-turks-caicos",
+      title: "Where to Bonefish",
+      desc: "Why Bottle Creek in North Caicos is one of the most consistent bonefishing locations in the Turks & Caicos.",
+      icon: "📍",
+    },
+    {
       href: "/learn/tackle-and-gear",
       title: "Tackle & Gear",
       desc: "What rods, reels, leaders, flies, footwear, and sun gear make sense for Bottle Creek and the nearby North Caicos flats.",

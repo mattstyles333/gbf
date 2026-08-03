@@ -23,6 +23,7 @@ const PAGES = [
   { path: "/learn/catch-and-release/", name: "Catch & Release" },
   { path: "/learn/tackle-and-gear/", name: "Tackle & Gear" },
   { path: "/what-to-wear-bonefishing/", name: "What to Wear Bonefishing" },
+  { path: "/where-to-bonefish-turks-caicos/", name: "Where to Bonefish" },
   { path: "/faq/", name: "FAQ" },
   { path: "/gallery/", name: "Gallery" },
   { path: "/book/", name: "Book" },

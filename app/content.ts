@@ -57,6 +57,7 @@ export const navItems: NavItem[] = [
     label: "Fishing",
     href: "/fishing",
     children: [
+      { label: "Where to Bonefish", href: "/where-to-bonefish-turks-caicos", group: "Where to Fish" },
       { label: "Our Locations", href: "/fishing/north-caicos", group: "Where to Fish" },
       { label: "Bottle Creek", href: "/fishing/bottle-creek", group: "Where to Fish" },
       { label: "East Bay & South Cays", href: "/fishing/east-bay", group: "Where to Fish" },
@@ -85,6 +86,7 @@ export const navItems: NavItem[] = [
     children: [
       { label: "Seasons", href: "/learn/seasons" },
       { label: "Bonefish Season", href: "/learn/bonefish-season" },
+      { label: "Where to Bonefish", href: "/where-to-bonefish-turks-caicos" },
       { label: "What to Wear", href: "/what-to-wear-bonefishing" },
       { label: "Tackle & Gear", href: "/learn/tackle-and-gear" },
       { label: "Bonefish Flies", href: "/learn/bonefish-flies" },
