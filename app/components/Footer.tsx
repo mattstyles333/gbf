@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig, navItems } from "../content";
-
-const tripAdvisorUrl =
-  "https://www.tripadvisor.com/Attraction_Review-g656907-d12094913-Reviews-The_Great_Bonefishing_Company-North_Caicos_Turks_and_Caicos.html";
+import { siteConfig, navItems, tripAdvisorUrl } from "../content";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -55,11 +52,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/gallery" className="text-base text-ocean-100 hover:text-white transition-colors">
-                  Gallery
-                </Link>
-              </li>
             </ul>
           </div>
 
