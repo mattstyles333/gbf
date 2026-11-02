@@ -142,7 +142,7 @@ export default function Header() {
                     onClick={() =>
                       setOpenDropdown(openDropdown === item.href ? null : item.href)
                     }
-                    className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50 xl:px-4"
+                    className="flex items-center gap-1 whitespace-nowrap px-2.5 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50 xl:px-3.5"
                   >
                     {item.label}
                     <svg
@@ -165,7 +165,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="whitespace-nowrap px-3 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50 xl:px-4"
+                  className="whitespace-nowrap px-2.5 py-2 text-sm font-medium text-ocean-200 hover:text-white transition-colors rounded-lg hover:bg-ocean-800/50 xl:px-3.5"
                 >
                   {item.label}
                 </Link>

@@ -26,6 +26,7 @@ const PAGES = [
   { path: "/where-to-bonefish-turks-caicos/", name: "Where to Bonefish" },
   { path: "/faq/", name: "FAQ" },
   { path: "/gallery/", name: "Gallery" },
+  { path: "/reviews/", name: "Reviews" },
   { path: "/book/", name: "Book" },
   { path: "/contact/", name: "Contact" },
   { path: "/deposit/", name: "Deposit" },

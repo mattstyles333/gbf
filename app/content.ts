@@ -52,6 +52,80 @@ export const siteConfig = {
   baseUrl: "https://greatbonefishing.com",
 };
 
+export const tripAdvisorUrl =
+  "https://www.tripadvisor.com/Attraction_Review-g656907-d12094913-Reviews-The_Great_Bonefishing_Company-North_Caicos_Turks_and_Caicos.html";
+
+export const tripAdvisorSummary = {
+  rating: "4.7",
+  reviewCount: 62,
+};
+
+export interface GuestReview {
+  reviewer: string;
+  meta: string;
+  quote: string;
+  source: "Tripadvisor" | "Google";
+}
+
+export const guestReviews: GuestReview[] = [
+  {
+    reviewer: "WanderlustRG",
+    meta: "Ketchum, Idaho · January 2025",
+    quote:
+      "This fishery is pretty darn special. Lots of places to look for fish and incredible scenery. We went out with Darrel and he moved us all around Bottle Creek. We saw ample amounts of fish early in the day.",
+    source: "Tripadvisor",
+  },
+  {
+    reviewer: "tbarkerboston",
+    meta: "Richmond, Virginia · December 2024",
+    quote:
+      "I had a great experience doing my first bonefishing on the fly. Darrel is an expert guide knowledgeable about the fish, the area, and a great instructor. An incredible setting.",
+    source: "Tripadvisor",
+  },
+  {
+    reviewer: "Cullen H",
+    meta: "Google · June 2024",
+    quote:
+      "Had a great time fishing with Darrel. Even though I wasn’t casting well Darrel put me all over fish. Hooked 6 and caught five. Unique opportunity to fish in an unbelievable setting.",
+    source: "Google",
+  },
+  {
+    reviewer: "Mitch F",
+    meta: "November 2024",
+    quote:
+      "Incredible fishery, incredible guiding. 10/10. If you don’t bonefish often and want to catch fish — get a guide. Spotting these fish and fooling them is very difficult if you’re not accustomed to it.",
+    source: "Tripadvisor",
+  },
+  {
+    reviewer: "Kim G",
+    meta: "Google · January 2025",
+    quote:
+      "Husband and friend went with Rudy. They had the best time ever. Smiles from ear to ear — caught 4 apiece.",
+    source: "Google",
+  },
+  {
+    reviewer: "wheresmatt",
+    meta: "Denver, Colorado · June 2022",
+    quote:
+      "My 15-year-old son and I went out on a guided fly fishing trip. Our guide Derral was definitely a ‘bonefish whisperer’ — spotting bonefish 100' away and instructing us exactly when and where to cast.",
+    source: "Tripadvisor",
+  },
+  {
+    reviewer: "rtailshie",
+    meta: "April 2022",
+    quote:
+      "Great trip and absolutely beautiful scenery. Had a very nice day with Darrel. He took his time to work with us on our casting and helping with the small details involved with hooking up on fish.",
+    source: "Tripadvisor",
+  },
+  {
+    reviewer: "rickt505",
+    meta: "Kaslo, Canada · January 2022",
+    quote:
+      "My wife and I just spent 4 days at the lodge and we’re very pleased with everything. The fishing here is exceptional under the skillful guiding of Derral. Bonefish are abundant and the size is way above average.",
+    source: "Tripadvisor",
+  },
+];
+
 export const navItems: NavItem[] = [
   {
     label: "Fishing",
@@ -68,34 +142,11 @@ export const navItems: NavItem[] = [
       { label: "Guided First", href: "/diy/guided-vs-diy", group: "After Guided Day" },
     ],
   },
-  {
-    label: "Stay",
-    href: "/lodge",
-  },
-  {
-    label: "Travel",
-    href: "/travel",
-    children: [
-      { label: "Getting Here", href: "/travel" },
-      { label: "Rates & Packages", href: "/rates" },
-    ],
-  },
-  {
-    label: "Learn",
-    href: "/learn",
-    children: [
-      { label: "Seasons", href: "/learn/seasons" },
-      { label: "Bonefish Season", href: "/learn/bonefish-season" },
-      { label: "Where to Bonefish", href: "/where-to-bonefish-turks-caicos" },
-      { label: "What to Wear", href: "/what-to-wear-bonefishing" },
-      { label: "Tackle & Gear", href: "/learn/tackle-and-gear" },
-      { label: "Bonefish Flies", href: "/learn/bonefish-flies" },
-      { label: "Catch & Release", href: "/learn/catch-and-release" },
-      { label: "FAQ", href: "/faq" },
-      { label: "Gallery", href: "/gallery" },
-    ],
-  },
-  { label: "Enquire", href: "/book" },
+  { label: "Lodge", href: "/lodge" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Rates", href: "/rates" },
+  { label: "Book", href: "/book" },
 ];
 
 export const fishingSpots: FishingSpot[] = [
