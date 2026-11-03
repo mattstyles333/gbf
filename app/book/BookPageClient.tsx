@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { FormEvent, Suspense, useEffect, useRef, useState } from "react";
 import PageHero from "../components/PageHero";
 import { siteConfig } from "../content";
+import { enquiryMailtoHref, submitEnquiry } from "./submitEnquiry";
 
 function BookPageContent({ sent }: { sent: boolean }) {
-  const [status, setStatus] = useState<"idle" | "sending">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+  const [error, setError] = useState<string | null>(null);
+  const submittingRef = useRef(false);
+  const errorRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -17,6 +21,38 @@ function BookPageContent({ sent }: { sent: boolean }) {
     guests: "",
     message: "",
   });
+
+  useEffect(() => {
+    if (status === "error") {
+      errorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [status, error]);
+
+  const phoneHref = `tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`;
+  const mailtoHref = enquiryMailtoHref(form, siteConfig.email);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submittingRef.current) return;
+
+    submittingRef.current = true;
+    setStatus("sending");
+    setError(null);
+
+    const honeypot = Boolean(new FormData(event.currentTarget).get("botcheck"));
+    const result = await submitEnquiry(form, {
+      honeypot: honeypot ? "1" : "",
+    });
+
+    if (result.ok) {
+      window.location.assign("/book/?sent=1");
+      return;
+    }
+
+    setError(result.error);
+    setStatus("error");
+    submittingRef.current = false;
+  }
 
   return (
     <>
@@ -62,22 +98,14 @@ function BookPageContent({ sent }: { sent: boolean }) {
                   </p>
                 </div>
               ) : (
-                <form
-                  action={`https://formsubmit.co/${siteConfig.email}`}
-                  method="POST"
-                  onSubmit={() => setStatus("sending")}
-                  className="card p-8"
-                >
-                  <input type="hidden" name="_subject" value="Great Bone Fishing inquiry" />
-                  <input type="hidden" name="_next" value={`${siteConfig.baseUrl}/book/?sent=1`} />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_captcha" value="false" />
+                <form onSubmit={handleSubmit} className="card p-8">
                   <input
-                    type="text"
-                    name="_honey"
+                    type="checkbox"
+                    name="botcheck"
                     tabIndex={-1}
                     autoComplete="off"
                     className="hidden"
+                    style={{ display: "none" }}
                     aria-hidden="true"
                   />
                   <h2 className="text-2xl font-bold mb-2">Start Your Inquiry</h2>
@@ -199,16 +227,38 @@ function BookPageContent({ sent }: { sent: boolean }) {
                       />
                     </div>
                   </div>
+                  {status === "error" && error ? (
+                    <div
+                      ref={errorRef}
+                      className="mb-6 rounded-xl bg-red-50 border border-red-100 p-4 text-sm text-slate-700"
+                      role="alert"
+                    >
+                      <p className="font-semibold text-red-800 mb-2">We couldn&apos;t send your inquiry.</p>
+                      <p className="mb-3">{error}</p>
+                      <p>
+                        Email{" "}
+                        <a href={mailtoHref} className="text-ocean-700 font-semibold hover:underline">
+                          {siteConfig.email}
+                        </a>{" "}
+                        or call{" "}
+                        <a href={phoneHref} className="text-ocean-700 font-semibold hover:underline">
+                          {siteConfig.phoneUSA}
+                        </a>
+                        .
+                      </p>
+                    </div>
+                  ) : null}
                   <div className="flex flex-wrap gap-4">
                     <button
                       type="submit"
                       disabled={status === "sending"}
+                      aria-busy={status === "sending"}
                       className="btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {status === "sending" ? "Sending..." : "Send Inquiry"}
                     </button>
                     <a
-                      href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
+                      href={phoneHref}
                       className="btn-outline !text-ocean-700 !border-ocean-400"
                     >
                       Or call: {siteConfig.phoneUSA}

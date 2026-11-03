@@ -1,5 +1,26 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+The site is a static export (`output: "export"`) deployed on Cloudflare Pages (project `gbf`, production domain [greatbonefishing.com](https://greatbonefishing.com)).
+
+## Booking enquiry form
+
+The `/book/` form submits with `fetch` + JSON to [Web3Forms](https://web3forms.com) (`https://api.web3forms.com/submit`). It does **not** use FormSubmit. Mail is delivered to **GreatBonefishing@gmail.com** because that is the email bound to the Web3Forms access key.
+
+`NEXT_PUBLIC_*` values are inlined at **build** time, so a new deployment is required after changing the key.
+
+### Activate in production
+
+1. Create an access key at [https://web3forms.com](https://web3forms.com) using **GreatBonefishing@gmail.com**. Web3Forms emails the key to that address; confirm/activate it if they ask you to.
+2. In **Cloudflare Pages → project `gbf` → Settings → Environment variables → Production**, add:
+   - **Variable name:** `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
+   - **Value:** the access key from step 1
+3. **Redeploy** the production site so the new value is baked into the static export. Saving the env var without a rebuild will not update the live form.
+4. Send a test enquiry from https://greatbonefishing.com/book/ and confirm it arrives at GreatBonefishing@gmail.com.
+
+Until that key is set and the site is rebuilt, the form still shows a clear error with mailto/phone fallback instead of hanging on “Sending…”.
+
+Locally, copy `.env.example` to `.env.local` and paste the same key if you want live delivery during `next dev`.
+
 ## Getting Started
 
 First, install dependencies and run the development server with Bun:
