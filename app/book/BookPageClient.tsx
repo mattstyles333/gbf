@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { FormEvent, Suspense, useEffect, useRef, useState } from "react";
 import PageHero from "../components/PageHero";
 import { siteConfig } from "../content";
-import { enquiryMailtoHref, submitEnquiry } from "./submitEnquiry";
+import { enquiryMailtoHref, HONEYPOT_FIELD_NAME, submitEnquiry } from "./submitEnquiry";
 
 function BookPageContent({ sent }: { sent: boolean }) {
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
@@ -39,10 +39,8 @@ function BookPageContent({ sent }: { sent: boolean }) {
     setStatus("sending");
     setError(null);
 
-    const honeypot = Boolean(new FormData(event.currentTarget).get("botcheck"));
-    const result = await submitEnquiry(form, {
-      honeypot: honeypot ? "1" : "",
-    });
+    const honeypot = String(new FormData(event.currentTarget).get(HONEYPOT_FIELD_NAME) ?? "");
+    const result = await submitEnquiry(form, { honeypot });
 
     if (result.ok) {
       window.location.assign("/book/?sent=1");
@@ -100,8 +98,8 @@ function BookPageContent({ sent }: { sent: boolean }) {
               ) : (
                 <form onSubmit={handleSubmit} className="card p-8">
                   <input
-                    type="checkbox"
-                    name="botcheck"
+                    type="text"
+                    name={HONEYPOT_FIELD_NAME}
                     tabIndex={-1}
                     autoComplete="off"
                     className="hidden"

@@ -11,11 +11,14 @@ const sampleEnquiry = {
 };
 
 async function fillEnquiryForm(page: import("@playwright/test").Page) {
-  await page.locator("#name").fill(sampleEnquiry.name);
-  await page.locator("#email").fill(sampleEnquiry.email);
-  await page.locator("#phone").fill(sampleEnquiry.phone);
-  await page.locator("#dates").fill(sampleEnquiry.dates);
-  await page.locator("#message").fill(sampleEnquiry.message);
+  // useSearchParams() Suspense can briefly keep a fallback form in the DOM.
+  await expect(page.locator("form input[id='name']")).toHaveCount(1);
+  const form = page.locator("form");
+  await form.locator("#name").fill(sampleEnquiry.name);
+  await form.locator("#email").fill(sampleEnquiry.email);
+  await form.locator("#phone").fill(sampleEnquiry.phone);
+  await form.locator("#dates").fill(sampleEnquiry.dates);
+  await form.locator("#message").fill(sampleEnquiry.message);
 }
 
 test("Book form does not depend on FormSubmit", async ({ page }) => {
@@ -27,6 +30,16 @@ test("Book form does not depend on FormSubmit", async ({ page }) => {
   const action = (await form.getAttribute("action")) ?? "";
   expect(action).not.toContain("formsubmit");
   await expect(page.locator("input[name='_next'], input[name='_captcha']")).toHaveCount(0);
+});
+
+test("Book form uses a hidden text honeypot instead of a checkbox", async ({ page }) => {
+  await page.goto(`${BASE}/book/`);
+  await page.waitForLoadState("networkidle");
+  await expect(page.locator("form input[id='name']")).toHaveCount(1);
+  await expect(page.locator("form input[name='botcheck'][type='checkbox']")).toHaveCount(0);
+  const honeypot = page.locator("form input[name='website']");
+  await expect(honeypot).toHaveCount(1);
+  await expect(honeypot).toHaveAttribute("type", "text");
 });
 
 test("Book page keeps the success screen at ?sent=1", async ({ page }) => {
@@ -58,7 +71,9 @@ test("failed enquiry submit shows an error and restores the button", async ({ pa
 });
 
 test("successful enquiry submit shows the sent screen", async ({ page }) => {
+  let web3formsCalled = false;
   await page.route("https://api.web3forms.com/submit", async (route) => {
+    web3formsCalled = true;
     await route.fulfill({
       status: 200,
       contentType: "application/json",
@@ -72,4 +87,28 @@ test("successful enquiry submit shows the sent screen", async ({ page }) => {
 
   await expect(page).toHaveURL(/\/book\/?\?sent=1/);
   await expect(page.getByRole("heading", { name: "Inquiry Sent" })).toBeVisible();
+  expect(web3formsCalled).toBe(true);
+});
+
+test("filled honeypot shows success without calling Web3Forms", async ({ page }) => {
+  let web3formsCalled = false;
+  await page.route("https://api.web3forms.com/submit", async (route) => {
+    web3formsCalled = true;
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ success: true, message: "Email sent successfully!" }),
+    });
+  });
+
+  await page.goto(`${BASE}/book/`);
+  await fillEnquiryForm(page);
+  await page.locator("form input[name='website']").evaluate((el: HTMLInputElement) => {
+    el.value = "http://spam.example";
+  });
+  await page.getByRole("button", { name: "Send Inquiry" }).click();
+
+  await expect(page).toHaveURL(/\/book\/?\?sent=1/);
+  await expect(page.getByRole("heading", { name: "Inquiry Sent" })).toBeVisible();
+  expect(web3formsCalled).toBe(false);
 });
