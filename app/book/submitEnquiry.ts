@@ -1,5 +1,7 @@
 export const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 export const SUBMIT_TIMEOUT_MS = 20_000;
+/** Hidden text honeypot. Real users leave this empty; only a non-empty trimmed value is treated as a bot. */
+export const HONEYPOT_FIELD_NAME = "website";
 
 export type EnquiryFields = {
   name: string;
@@ -59,7 +61,7 @@ export async function submitEnquiry(
     fetchFn?: typeof fetch;
   },
 ): Promise<SubmitEnquiryResult> {
-  if (options?.honeypot) {
+  if (options?.honeypot?.trim()) {
     return { ok: true };
   }
 

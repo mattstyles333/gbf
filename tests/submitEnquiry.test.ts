@@ -24,11 +24,45 @@ test("enquiryMailtoHref includes the destination and fields", () => {
   assert.match(decodeURIComponent(href), /Pat Guest/);
 });
 
-test("honeypot short-circuits without calling fetch", async () => {
+test("empty honeypot calls fetch", async () => {
   let called = false;
   const result = await submitEnquiry(fields, {
     accessKey: "test-key",
-    honeypot: "1",
+    honeypot: "",
+    fetchFn: async () => {
+      called = true;
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    },
+  });
+  assert.deepEqual(result, { ok: true });
+  assert.equal(called, true);
+});
+
+test("whitespace-only honeypot calls fetch", async () => {
+  let called = false;
+  const result = await submitEnquiry(fields, {
+    accessKey: "test-key",
+    honeypot: "   \t\n",
+    fetchFn: async () => {
+      called = true;
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    },
+  });
+  assert.deepEqual(result, { ok: true });
+  assert.equal(called, true);
+});
+
+test("filled honeypot short-circuits without calling fetch", async () => {
+  let called = false;
+  const result = await submitEnquiry(fields, {
+    accessKey: "test-key",
+    honeypot: "http://spam.example",
     fetchFn: async () => {
       called = true;
       throw new Error("fetch should not run");

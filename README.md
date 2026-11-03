@@ -6,6 +6,8 @@ The site is a static export (`output: "export"`) deployed on Cloudflare Pages (p
 
 The `/book/` form submits with `fetch` + JSON to [Web3Forms](https://web3forms.com) (`https://api.web3forms.com/submit`). It does **not** use FormSubmit. Mail is delivered to **GreatBonefishing@gmail.com** because that is the email bound to the Web3Forms access key.
 
+Spam protection uses a hidden text field named `website` (not a checkbox). Real users leave it empty; empty and whitespace-only values always POST to Web3Forms. Only a filled honeypot is treated as a bot (silent success, no API call). The success screen (`/book/?sent=1`) is shown for humans only after Web3Forms returns `success: true`.
+
 `NEXT_PUBLIC_*` values are inlined at **build** time, so a new deployment is required after changing the key.
 
 ### Activate in production
