@@ -45,8 +45,27 @@ test("Book form uses a hidden text honeypot instead of a checkbox", async ({ pag
 test("Book page keeps the success screen at ?sent=1", async ({ page }) => {
   await page.goto(`${BASE}/book/?sent=1`);
   await expect(page.getByRole("heading", { name: "Inquiry Sent" })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Send Another Inquiry/i })).toBeVisible();
-  await expect(page.locator("main").getByRole("link", { name: "GreatBonefishing@gmail.com" }).first()).toBeVisible();
+  const another = page.getByRole("link", { name: /Send Another Inquiry/i });
+  await expect(another).toBeVisible();
+  await expect(another).toHaveAttribute("href", "/book/");
+  await expect(page.getByRole("link", { name: /Call \(336\)/ })).toHaveAttribute("href", /^tel:/);
+  const email = page.locator("main").getByRole("link", { name: "GreatBonefishing@gmail.com" }).first();
+  await expect(email).toBeVisible();
+  await expect(email).toHaveAttribute("href", /^mailto:/);
+});
+
+test("Send Another Inquiry returns to a blank enquiry form", async ({ page }) => {
+  await page.goto(`${BASE}/book/?sent=1`);
+  await expect(page.getByRole("heading", { name: "Inquiry Sent" })).toBeVisible();
+
+  await page.getByRole("link", { name: /Send Another Inquiry/i }).click();
+
+  await expect(page).toHaveURL(/\/book\/$/);
+  await expect(page).not.toHaveURL(/sent=/);
+  await expect(page.getByRole("heading", { name: "Start Your Inquiry" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Inquiry Sent" })).toHaveCount(0);
+  await expect(page.locator("form")).toBeVisible();
+  await expect(page.locator("form input[id='name']")).toHaveValue("");
 });
 
 test("failed enquiry submit shows an error and restores the button", async ({ page }) => {

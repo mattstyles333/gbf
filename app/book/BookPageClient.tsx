@@ -75,9 +75,10 @@ function BookPageContent({ sent }: { sent: boolean }) {
                     reply within 24 to 48 hours with availability and the best options for your trip.
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
-                    <Link href="/book" className="btn-primary">
+                    {/* Hard-navigate to /book/ so static-export client routing cannot keep ?sent=1. */}
+                    <a href="/book/" className="btn-primary">
                       Send Another Inquiry
-                    </Link>
+                    </a>
                     <a
                       href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
                       className="btn-outline !text-ocean-700 !border-ocean-400"
