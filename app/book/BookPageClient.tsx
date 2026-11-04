@@ -7,6 +7,89 @@ import PageHero from "../components/PageHero";
 import { siteConfig } from "../content";
 import { enquiryMailtoHref, HONEYPOT_FIELD_NAME, submitEnquiry } from "./submitEnquiry";
 
+/** Idle time on the inquiry-sent card before returning home. Easy to tweak. */
+const SUCCESS_IDLE_HOME_REDIRECT_MS = 12_000;
+
+function InquirySentCard() {
+  const cancelledRef = useRef(false);
+  const [secondsLeft, setSecondsLeft] = useState(() =>
+    Math.ceil(SUCCESS_IDLE_HOME_REDIRECT_MS / 1000),
+  );
+  const [redirectArmed, setRedirectArmed] = useState(true);
+
+  useEffect(() => {
+    if (cancelledRef.current) return;
+
+    const startedAt = Date.now();
+
+    const tickId = window.setInterval(() => {
+      if (cancelledRef.current) return;
+      const remainingMs = SUCCESS_IDLE_HOME_REDIRECT_MS - (Date.now() - startedAt);
+      setSecondsLeft(Math.max(0, Math.ceil(remainingMs / 1000)));
+    }, 250);
+
+    const timeoutId = window.setTimeout(() => {
+      if (cancelledRef.current) return;
+      window.location.assign("/");
+    }, SUCCESS_IDLE_HOME_REDIRECT_MS);
+
+    return () => {
+      window.clearInterval(tickId);
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  function cancelIdleRedirect() {
+    cancelledRef.current = true;
+    setRedirectArmed(false);
+  }
+
+  const phoneHref = `tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`;
+
+  return (
+    <div className="card p-12 text-center">
+      <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-6">
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h2 className="text-2xl font-bold mb-3">Inquiry Sent</h2>
+      <p className="text-slate-500 mb-6">
+        Thanks for reaching out. Your inquiry was submitted to our team. We usually
+        reply within 24 to 48 hours with availability and the best options for your trip.
+      </p>
+      <div className="flex flex-wrap gap-4 justify-center">
+        {/* Hard-navigate to /book/ so static-export client routing cannot keep ?sent=1. */}
+        <a href="/book/" className="btn-primary" onClick={cancelIdleRedirect}>
+          Send Another Inquiry
+        </a>
+        <a
+          href={phoneHref}
+          className="btn-outline !text-ocean-700 !border-ocean-400"
+          onClick={cancelIdleRedirect}
+        >
+          Call {siteConfig.phoneUSA}
+        </a>
+      </div>
+      <p className="text-sm text-slate-500 mt-6">
+        Direct email:{" "}
+        <a
+          href={`mailto:${siteConfig.email}`}
+          className="text-ocean-700 font-semibold hover:underline"
+          onClick={cancelIdleRedirect}
+        >
+          {siteConfig.email}
+        </a>
+      </p>
+      {redirectArmed ? (
+        <p className="text-sm text-slate-400 mt-6">
+          Returning home in {secondsLeft === 1 ? "1 second" : `${secondsLeft} seconds`}…
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
 function BookPageContent({ sent }: { sent: boolean }) {
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -63,39 +146,7 @@ function BookPageContent({ sent }: { sent: boolean }) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               {sent ? (
-                <div className="card p-12 text-center">
-                  <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h2 className="text-2xl font-bold mb-3">Inquiry Sent</h2>
-                  <p className="text-slate-500 mb-6">
-                    Thanks for reaching out. Your inquiry was submitted to our team. We usually
-                    reply within 24 to 48 hours with availability and the best options for your trip.
-                  </p>
-                  <div className="flex flex-wrap gap-4 justify-center">
-                    {/* Hard-navigate to /book/ so static-export client routing cannot keep ?sent=1. */}
-                    <a href="/book/" className="btn-primary">
-                      Send Another Inquiry
-                    </a>
-                    <a
-                      href={`tel:${siteConfig.phoneUSA.replace(/[^0-9+]/g, "")}`}
-                      className="btn-outline !text-ocean-700 !border-ocean-400"
-                    >
-                      Call {siteConfig.phoneUSA}
-                    </a>
-                  </div>
-                  <p className="text-sm text-slate-500 mt-6">
-                    Direct email:{" "}
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="text-ocean-700 font-semibold hover:underline"
-                    >
-                      {siteConfig.email}
-                    </a>
-                  </p>
-                </div>
+                <InquirySentCard />
               ) : (
                 <form onSubmit={handleSubmit} className="card p-8">
                   <input
