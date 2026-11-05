@@ -135,6 +135,7 @@ export default async function FishingSpotPage({ params }: Props) {
                     </p>
                   </div>
                   <div className="mt-6 flex flex-wrap gap-4">
+                    <Link href="/fishing/tides" className="text-ocean-700 font-semibold hover:underline">Where to fish by tide</Link>
                     <Link href="/travel" className="text-ocean-700 font-semibold hover:underline">Travel logistics</Link>
                     <Link href="/rates#guided" className="text-ocean-700 font-semibold hover:underline">Guided day rates</Link>
                   </div>

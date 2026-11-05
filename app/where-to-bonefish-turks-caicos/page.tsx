@@ -183,6 +183,11 @@ export default function WhereToBonefishTurksCaicosPage() {
                   <p className="text-2xl font-bold text-foreground leading-snug">
                     There can be up to a 3.5-hour difference in tide timing across different areas of the flats.
                   </p>
+                  <p className="mt-4">
+                    <Link href="/fishing/tides" className="text-ocean-700 font-semibold hover:underline">
+                      See where to fish at each tide stage &rarr;
+                    </Link>
+                  </p>
                 </div>
               </section>
 
@@ -268,8 +273,9 @@ export default function WhereToBonefishTurksCaicosPage() {
 
               <section id="more-guides" className="mb-12 scroll-mt-24">
                 <h2 className="text-3xl font-bold mb-5">Explore More Bonefishing Guides</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
+                    ["Where to Fish by Tide", "/fishing/tides"],
                     ["What to Wear Bonefishing", "/what-to-wear-bonefishing"],
                     ["Best Time to Bonefish", "/learn/seasons"],
                     ["DIY Bonefishing Guide", "/diy"],

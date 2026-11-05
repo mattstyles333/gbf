@@ -132,6 +132,7 @@ export const navItems: NavItem[] = [
     href: "/fishing",
     children: [
       { label: "Where to Bonefish", href: "/where-to-bonefish-turks-caicos", group: "Where to Fish" },
+      { label: "Tide Stages", href: "/fishing/tides", group: "Where to Fish" },
       { label: "Our Locations", href: "/fishing/north-caicos", group: "Where to Fish" },
       { label: "Bottle Creek", href: "/fishing/bottle-creek", group: "Where to Fish" },
       { label: "East Bay & South Cays", href: "/fishing/east-bay", group: "Where to Fish" },

@@ -10,6 +10,7 @@ const PAGES = [
   { path: "/fishing/east-bay/", name: "East Bay" },
   { path: "/fishing/north-caicos/", name: "North Caicos" },
   { path: "/fishing/why-turks-caicos/", name: "Why Turks & Caicos" },
+  { path: "/fishing/tides/", name: "Tide Stages" },
   { path: "/lodge/", name: "Lodge" },
   { path: "/diy/", name: "DIY" },
   { path: "/diy/fishing-kayaks/", name: "Fishing Kayaks" },

@@ -82,6 +82,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/fishing/tides" className="text-base text-ocean-100 hover:text-white transition-colors">
+                  Tide Stages
+                </Link>
+              </li>
+              <li>
                 <Link href="/learn/seasons" className="text-base text-ocean-100 hover:text-white transition-colors">
                   Fishing Seasons
                 </Link>
