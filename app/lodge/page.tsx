@@ -97,7 +97,7 @@ export default function LodgePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <p className="text-ocean-600 font-semibold uppercase tracking-widest text-sm mb-3">
-                Our Lodge — 2025 Season
+                Lodge 2026/7 season
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold mb-5">
                 Right Across From the Flats
