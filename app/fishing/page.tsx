@@ -61,9 +61,12 @@ export default function FishingPage() {
                   Caicos where fish see very little traffic.
                 </p>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2">
                 <Link href="/fishing/guided-day" className="text-ocean-700 font-semibold hover:underline">
                   What to expect on a guided day &rarr;
+                </Link>
+                <Link href="/fishing/tides" className="text-ocean-700 font-semibold hover:underline">
+                  Where to fish by tide &rarr;
                 </Link>
               </div>
             </div>
@@ -165,6 +168,23 @@ export default function FishingPage() {
               least-pressured bonefish habitat in the Caribbean.
             </p>
           </div>
+          <Link
+            href="/fishing/tides"
+            className="card p-6 sm:p-8 mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 group"
+          >
+            <div>
+              <h3 className="text-lg font-bold mb-1 group-hover:text-ocean-600 transition-colors">
+                Where to fish by tide
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Northern mouths lead; Bottle Creek Mouth lags. One flat can flood while another
+                still ebbs — up to about 3.5 hours across the fishery.
+              </p>
+            </div>
+            <span className="text-ocean-600 font-semibold text-sm whitespace-nowrap group-hover:underline">
+              See tide stages &rarr;
+            </span>
+          </Link>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {fishingSpots.map((spot) => (
               <Link key={spot.slug} href={`/fishing/${spot.slug}`} className="card group">
@@ -251,6 +271,9 @@ export default function FishingPage() {
             </Link>
             <Link href="/fishing/guided-day" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Guided Day &rarr;
+            </Link>
+            <Link href="/fishing/tides" className="text-white font-semibold hover:text-ocean-200 transition-colors">
+              Tide Stages &rarr;
             </Link>
             <Link href="/learn/catch-and-release" className="text-white font-semibold hover:text-ocean-200 transition-colors">
               Catch &amp; Release &rarr;

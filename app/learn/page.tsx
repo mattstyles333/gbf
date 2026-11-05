@@ -45,6 +45,12 @@ export default function LearnPage() {
       icon: "📍",
     },
     {
+      href: "/fishing/tides",
+      title: "Where to Fish by Tide",
+      desc: "Which openings and flats to fish on early flood, mid flood, high slack, ebb, and low slack around Bottle Creek.",
+      icon: "🕒",
+    },
+    {
       href: "/learn/tackle-and-gear",
       title: "Tackle & Gear",
       desc: "What rods, reels, leaders, flies, footwear, and sun gear make sense for Bottle Creek and the nearby North Caicos flats.",
