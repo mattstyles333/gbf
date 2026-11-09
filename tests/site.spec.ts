@@ -1,5 +1,6 @@
 import { test, expect, ConsoleMessage } from "@playwright/test";
-import vercelConfig from "../vercel.json";
+import fs from "node:fs";
+import path from "node:path";
 
 const BASE = process.env.BASE_URL || "https://gbf-nine.vercel.app";
 
@@ -56,7 +57,7 @@ const LEGACY_REDIRECTS = [
   ["/contact-us/", "/book/"],
   ["/catch-and-release-bonefish-handling/", "/learn/catch-and-release/"],
   ["/why-the-turks-and-caicos-is-great-for-bonefishing/", "/fishing/why-turks-caicos/"],
-  ["/accommodation/", "/lodge/#other-accommodation"],
+  ["/accommodation/", "/lodge/"],
   ["/bonefishing-trip/", "/fishing/"],
   ["/diy-bonefishing/", "/diy/"],
   ["/bonefishing-lodge-turks-caicos/", "/lodge/"],
@@ -161,12 +162,47 @@ test("Navigation links resolve (no 404s for key pages)", async ({ page }) => {
   }
 });
 
-test("Legacy sitemap URLs have Vercel redirects configured", async () => {
-  const redirects = new Map(
-    vercelConfig.redirects.map((redirect) => [redirect.source, redirect.destination])
-  );
+function parseCloudflareRedirects() {
+  const text = fs.readFileSync(path.join(process.cwd(), "public/_redirects"), "utf8");
+  return text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith("#"))
+    .map((line) => {
+      const [source, destination, code = "302"] = line.split(/\s+/);
+      return { source, destination, code };
+    });
+}
+
+test("Legacy sitemap URLs have Cloudflare _redirects (301, both slash variants)", () => {
+  const rules = parseCloudflareRedirects();
+  const bySource = new Map(rules.map((rule) => [rule.source, rule]));
 
   for (const [source, destination] of LEGACY_REDIRECTS) {
-    expect(redirects.get(source), `${source} should redirect`).toBe(destination);
+    const withSlash = bySource.get(source);
+    expect(withSlash, `${source} should redirect`).toBeTruthy();
+    expect(withSlash?.destination, source).toBe(destination);
+    expect(withSlash?.code, source).toBe("301");
+
+    if (source.endsWith("/") && source.length > 1) {
+      const withoutSlash = source.slice(0, -1);
+      const noSlash = bySource.get(withoutSlash);
+      expect(noSlash, `${withoutSlash} should redirect`).toBeTruthy();
+      expect(noSlash?.destination, withoutSlash).toBe(destination);
+      expect(noSlash?.code, withoutSlash).toBe("301");
+    }
+  }
+});
+
+test("Cloudflare _redirects do not chain through other redirect sources", () => {
+  const rules = parseCloudflareRedirects();
+  const sources = new Set(rules.map((rule) => rule.source));
+
+  for (const rule of rules) {
+    const destPath = rule.destination.split("#")[0];
+    expect(
+      sources.has(destPath),
+      `${rule.source} -> ${rule.destination} would chain through ${destPath}`
+    ).toBe(false);
   }
 });
