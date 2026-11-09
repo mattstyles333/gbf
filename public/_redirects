@@ -1,0 +1,126 @@
+# Cloudflare Pages redirects for the Next.js static export.
+# vercel.json redirects are not applied when output is `export`.
+# Static rules first, then dynamic splats. Destinations are canonical trailing-slash URLs (single hop, 301).
+
+# --- WordPress leftover sitemaps ---
+/page-sitemap.xml /sitemap.xml 301
+/page-sitemap.xml/ /sitemap.xml 301
+/post-sitemap.xml /sitemap.xml 301
+/post-sitemap.xml/ /sitemap.xml 301
+/attachment-sitemap.xml /sitemap.xml 301
+/attachment-sitemap.xml/ /sitemap.xml 301
+/category-sitemap.xml /sitemap.xml 301
+/category-sitemap.xml/ /sitemap.xml 301
+/author-sitemap.xml /sitemap.xml 301
+/author-sitemap.xml/ /sitemap.xml 301
+/form-maker-sitemap.xml /sitemap.xml 301
+/form-maker-sitemap.xml/ /sitemap.xml 301
+/fmemailverification-sitemap.xml /sitemap.xml 301
+/fmemailverification-sitemap.xml/ /sitemap.xml 301
+/sitemap_index.xml /sitemap.xml 301
+/sitemap_index.xml/ /sitemap.xml 301
+
+# --- Retired / unused pages ---
+/index.html / 301
+/links / 301
+/links/ / 301
+/hello-world / 301
+/hello-world/ / 301
+/twitter-test / 301
+/twitter-test/ / 301
+/extra-stuff-dont-wanna-delete-get / 301
+/extra-stuff-dont-wanna-delete-get/ / 301
+/the-great-bonefishing-company-2 / 301
+/the-great-bonefishing-company-2/ / 301
+/category / 301
+/category/ / 301
+/author / 301
+/author/ / 301
+
+# --- Fishing (legacy WordPress + earlier Next routes) ---
+/flyfishing-in-the-turks-and-caicos /fishing/ 301
+/flyfishing-in-the-turks-and-caicos/ /fishing/ 301
+/flyfishing-in-the-turks-and-caicos/north-caicos /fishing/north-caicos/ 301
+/flyfishing-in-the-turks-and-caicos/north-caicos/ /fishing/north-caicos/ 301
+/flyfishing-in-the-turks-and-caicos/bottle-creek /fishing/bottle-creek/ 301
+/flyfishing-in-the-turks-and-caicos/bottle-creek/ /fishing/bottle-creek/ 301
+/flyfishing-in-the-turks-and-caicos/east-baysouth-cays /fishing/east-bay/ 301
+/flyfishing-in-the-turks-and-caicos/east-baysouth-cays/ /fishing/east-bay/ 301
+/flyfishing-in-the-turks-and-caicos/wading_for_bonefish /diy/ 301
+/flyfishing-in-the-turks-and-caicos/wading_for_bonefish/ /diy/ 301
+/offshore-fishing-in-the-turks-and-caicos /fishing/ 301
+/offshore-fishing-in-the-turks-and-caicos/ /fishing/ 301
+/fly-fish-bonefish /fishing/ 301
+/fly-fish-bonefish/ /fishing/ 301
+/size-bonefish-can-expect-see /fishing/ 301
+/size-bonefish-can-expect-see/ /fishing/ 301
+/bonefishing-trip /fishing/ 301
+/bonefishing-trip/ /fishing/ 301
+/why-the-turks-and-caicos-is-great-for-bonefishing /fishing/why-turks-caicos/ 301
+/why-the-turks-and-caicos-is-great-for-bonefishing/ /fishing/why-turks-caicos/ 301
+/solitude-seclusion-success-2 /fishing/ 301
+/solitude-seclusion-success-2/ /fishing/ 301
+
+# --- Lodge / rates / book ---
+/bonefishing-rates /rates/ 301
+/bonefishing-rates/ /rates/ 301
+/book-a-trip /book/ 301
+/book-a-trip/ /book/ 301
+/contact-us /book/ 301
+/contact-us/ /book/ 301
+/bonefishing-lodge-turks-caicos /lodge/ 301
+/bonefishing-lodge-turks-caicos/ /lodge/ 301
+/accommodation /lodge/ 301
+/accommodation/ /lodge/ 301
+
+# --- Travel ---
+/last-chance /travel/ 301
+/last-chance/ /travel/ 301
+/transport-provo /travel/ 301
+/transport-provo/ /travel/ 301
+
+# --- Learn ---
+/seasons /learn/seasons/ 301
+/seasons/ /learn/seasons/ 301
+/bonefish-spawning-and-fishing-season /learn/bonefish-season/ 301
+/bonefish-spawning-and-fishing-season/ /learn/bonefish-season/ 301
+/bonefish-flies /learn/bonefish-flies/ 301
+/bonefish-flies/ /learn/bonefish-flies/ 301
+/catch-and-release-bonefish-handling /learn/catch-and-release/ 301
+/catch-and-release-bonefish-handling/ /learn/catch-and-release/ 301
+
+# --- DIY ---
+/diy-bonefishing /diy/ 301
+/diy-bonefishing/ /diy/ 301
+/diy-bonefishing-boat /diy/guided-vs-diy/ 301
+/diy-bonefishing-boat/ /diy/guided-vs-diy/ 301
+/fishing-kayaks /diy/fishing-kayaks/ 301
+/fishing-kayaks/ /diy/fishing-kayaks/ 301
+
+# --- Nested leftovers (specific splats before general) ---
+/flyfishing-in-the-turks-and-caicos/north-caicos/* /fishing/north-caicos/ 301
+/flyfishing-in-the-turks-and-caicos/bottle-creek/* /fishing/bottle-creek/ 301
+/flyfishing-in-the-turks-and-caicos/east-baysouth-cays/* /fishing/east-bay/ 301
+/flyfishing-in-the-turks-and-caicos/wading_for_bonefish/* /diy/ 301
+/flyfishing-in-the-turks-and-caicos/* /fishing/ 301
+/why-the-turks-and-caicos-is-great-for-bonefishing/* /fishing/why-turks-caicos/ 301
+/offshore-fishing-in-the-turks-and-caicos/* /fishing/ 301
+/fly-fish-bonefish/* /fishing/ 301
+/size-bonefish-can-expect-see/* /fishing/ 301
+/bonefishing-trip/* /fishing/ 301
+/bonefishing-rates/* /rates/ 301
+/book-a-trip/* /book/ 301
+/contact-us/* /book/ 301
+/bonefishing-lodge-turks-caicos/* /lodge/ 301
+/accommodation/* /lodge/ 301
+/last-chance/* /travel/ 301
+/transport-provo/* /travel/ 301
+/seasons/* /learn/seasons/ 301
+/bonefish-spawning-and-fishing-season/* /learn/bonefish-season/ 301
+/bonefish-flies/* /learn/bonefish-flies/ 301
+/catch-and-release-bonefish-handling/* /learn/catch-and-release/ 301
+/diy-bonefishing-boat/* /diy/guided-vs-diy/ 301
+/diy-bonefishing/* /diy/ 301
+/fishing-kayaks/* /diy/fishing-kayaks/ 301
+/category/* / 301
+/author/* / 301
